@@ -1,0 +1,171 @@
+<!--meta
+{
+  "title": "Contact Jarvees Infotech | Ambegaon Bk., Pune",
+  "description": "Contact Jarvees Infotech and Jarvees Academy, Row House 6, Rilicon Fremount Hills CHS, Ambegaon Bk., Pune. Call +91 90225 84956, WhatsApp us or send an enquiry about SAP consulting and courses.",
+  "nav": "contact",
+  "bodyClass": "page-contact",
+  "scripts": ["contact.js"]
+}
+-->
+<section class="hero hero--page" aria-labelledby="page-title">
+  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
+      <h1 class="display split" id="page-title">Let's talk about <em>your next move.</em></h1>
+      <p class="lead reveal" style="--d:240ms">Planning an SAP project or choosing a course? Send us a message and the team will get back to you. We are available every day from 9 AM to 9 PM.</p>
+    </div>
+    <aside class="hud reveal" style="--d:320ms" aria-label="Ways to reach us">
+      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
+      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Channels online</p>
+      <div class="hud__row"><span>Hours</span><b>Daily · 9 AM – 9 PM</b></div>
+      <div class="hud__row"><span>WhatsApp</span><b>Instant chat</b></div>
+      <div class="hud__row"><span>Phone</span><b>2 direct lines</b></div>
+      <div class="hud__row"><span>Office</span><b>Ambegaon Bk., Pune</b></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--flush-top" id="enquiry" aria-labelledby="form-title">
+  <div class="container contact-grid">
+    <div class="card form-panel reveal">
+      <span class="kicker">Send an enquiry</span>
+      <h2 class="title form-panel__title" id="form-title">Tell us what <em>you need.</em></h2>
+      <form class="form" data-enquiry-form data-whatsapp="{{site.whatsapp}}" data-email="{{site.email}}" novalidate>
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="f-name">Full name</label>
+            <input class="field__input" id="f-name" name="name" type="text" autocomplete="name" required minlength="2" maxlength="80" placeholder="Your name" aria-describedby="f-name-error">
+            <p class="field__error" id="f-name-error"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-phone">Phone / WhatsApp</label>
+            <input class="field__input" id="f-phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" required maxlength="20" placeholder="+91 98765 43210" aria-describedby="f-phone-error">
+            <p class="field__error" id="f-phone-error"></p>
+          </div>
+        </div>
+        <div class="form__row">
+          <div class="field">
+            <label class="field__label" for="f-email">Email <span>(optional)</span></label>
+            <input class="field__input" id="f-email" name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@example.com" aria-describedby="f-email-error">
+            <p class="field__error" id="f-email-error"></p>
+          </div>
+          <div class="field">
+            <label class="field__label" for="f-interest">I'm interested in</label>
+            <select class="field__input" id="f-interest" name="interest" required aria-describedby="f-interest-error">
+              <option value="" selected disabled>Choose a course or service</option>
+              {{@interestOptions}}
+            </select>
+            <p class="field__error" id="f-interest-error"></p>
+          </div>
+        </div>
+        <fieldset class="seg">
+          <legend class="field__label">Preferred mode</legend>
+          <label><input type="radio" name="mode" value="Online" checked><span>Online</span></label>
+          <label><input type="radio" name="mode" value="Classroom"><span>Classroom</span></label>
+          <label><input type="radio" name="mode" value="Not sure yet"><span>Not sure yet</span></label>
+        </fieldset>
+        <div class="field">
+          <label class="field__label" for="f-message">Message <span>(optional)</span></label>
+          <textarea class="field__input" id="f-message" name="message" rows="4" maxlength="1200" placeholder="Tell us about your goals, background or project…"></textarea>
+        </div>
+        <div class="form__actions">
+          <button class="btn btn--whatsapp btn--lg" type="submit" name="via" value="whatsapp"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Send on WhatsApp</button>
+          <button class="btn btn--ghost btn--lg" type="submit" name="via" value="email"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Send by email</button>
+        </div>
+        <p class="form__fine">Your message goes straight to our team through WhatsApp or your email app. This website does not store your details. <a href="privacy.html">Privacy</a></p>
+        <div class="form__status" role="status" tabindex="-1" data-form-status>
+          <b data-status-title>Almost done!</b>
+          <p data-status-text>We've opened WhatsApp with your message ready. Tap send there and our team will reply shortly.</p>
+          <p class="form__fine">Nothing opened? <a href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener" data-status-link>Open it here</a>.</p>
+        </div>
+      </form>
+    </div>
+
+    <div class="info-stack" data-stagger="80">
+      <div class="card spot info-card">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span>
+        <div>
+          <h3>Visit</h3>
+          <address><p>{{site.address.line1}},<br>{{site.address.line2}},<br>{{site.address.city}} {{site.address.postal}}, {{site.address.region}}</p></address>
+          <a class="link-arrow" href="{{site.mapsUrl}}" target="_blank" rel="noopener">Get directions <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </div>
+      <div class="card spot info-card">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span>
+        <div>
+          <h3>Call</h3>
+          <a href="tel:{{site.phones.0.e164}}">{{site.phones.0.label}}</a>
+          <a href="tel:{{site.phones.1.e164}}">{{site.phones.1.label}}</a>
+        </div>
+      </div>
+      <div class="card spot info-card">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
+        <div>
+          <h3>WhatsApp</h3>
+          <a href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener">{{site.phones.0.label}}</a>
+        </div>
+      </div>
+      <div class="card spot info-card">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span>
+        <div>
+          <h3>Email</h3>
+          <a href="mailto:{{site.email}}">{{site.email}}</a>
+        </div>
+      </div>
+      <div class="card spot info-card">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span>
+        <div>
+          <h3>Hours</h3>
+          <p>{{site.hours}}</p>
+          <a class="link-arrow" href="{{site.facebook}}" target="_blank" rel="noopener">Follow on Facebook <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section section--tight" id="map" aria-labelledby="map-title">
+  <div class="container">
+    <h2 class="sr-only" id="map-title">Find us on the map</h2>
+    <div class="map reveal">
+      <iframe src="{{site.mapsEmbed}}" title="Map showing the Jarvees Infotech office in Ambegaon Bk., Pune" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
+      <div class="map__overlay">
+        <span class="kicker">Head office</span>
+        <p>{{site.address.line1}}, {{site.address.line2}}, {{site.address.city}} {{site.address.postal}}</p>
+        <a class="btn btn--primary btn--sm" href="{{site.mapsUrl}}" target="_blank" rel="noopener">Open in Google Maps <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="kicker reveal">Good to know</span>
+      <h2 class="title split" id="faq-title">Before you <em>reach out.</em></h2>
+    </div>
+    <div class="faq" data-stagger="60">
+      <details class="faq__item">
+        <summary class="faq__q">When will I hear back?<span class="faq__icon" aria-hidden="true"></span></summary>
+        <div class="faq__a"><div><p>We respond every day between 9 AM and 9 PM. WhatsApp is usually the quickest way to reach the team.</p></div></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Can I visit the office?<span class="faq__icon" aria-hidden="true"></span></summary>
+        <div class="faq__a"><div><p>Yes. We are at {{site.address.line1}}, {{site.address.line2}}, {{site.address.city}}. Call ahead so the right person is available to meet you.</p></div></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">Do you work with companies outside Pune?<span class="faq__icon" aria-hidden="true"></span></summary>
+        <div class="faq__a"><div><p>Yes. Consulting and corporate training can be delivered online, so we can work with teams wherever they are.</p></div></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">What should a project enquiry include?<span class="faq__icon" aria-hidden="true"></span></summary>
+        <div class="faq__a"><div><p>A short description of your business, your current system and what you want to achieve. We will take it from there.</p></div></div>
+      </details>
+      <details class="faq__item">
+        <summary class="faq__q">How do I find out course fees and batch dates?<span class="faq__icon" aria-hidden="true"></span></summary>
+        <div class="faq__a"><div><p>Choose the course in the form above and send it. We will reply with the current fee, the next batch dates and the available modes.</p></div></div>
+      </details>
+    </div>
+  </div>
+</section>

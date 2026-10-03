@@ -1,0 +1,12 @@
+[
+  { "id": "sap-implementation", "title": "SAP greenfield implementation" },
+  { "id": "sap-migration", "title": "SAP migration & S/4HANA conversion" },
+  { "id": "sap-support", "title": "SAP application support" },
+  { "id": "sap-enhancement", "title": "Custom enhancement (ABAP / Fiori)" },
+  { "id": "sap-testing", "title": "SAP testing" },
+  { "id": "sap-documentation", "title": "End-user documentation" },
+  { "id": "data-cloud", "title": "Data science & cloud consulting" },
+  { "id": "corporate-training", "title": "Corporate SAP training" },
+  { "id": "s4hana-skills", "title": "S/4HANA skill development" },
+  { "id": "web-design", "title": "Web design" }
+]

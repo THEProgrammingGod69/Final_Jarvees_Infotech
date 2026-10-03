@@ -1,0 +1,75 @@
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a class="brand" href="{{base}}index.html" aria-label="Jarvees Infotech home">
+          <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg>
+          <span class="brand__text">
+            <span class="brand__name">Jarvees</span>
+            <span class="brand__sub">Infotech</span>
+          </span>
+        </a>
+        <p class="footer__tagline">“{{site.tagline}}”</p>
+        <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
+        <ul class="footer__badges" role="list">
+          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since {{site.founded}}</li>
+        </ul>
+      </div>
+
+      <nav class="footer__col" aria-label="Company">
+        <h2 class="footer__title">Company</h2>
+        <ul class="footer__links" role="list">
+          <li><a href="{{base}}about.html">About us</a></li>
+          <li><a href="{{base}}services.html">Consulting services</a></li>
+          <li><a href="{{base}}academy.html">Jarvees Academy</a></li>
+          <li><a href="{{base}}courses.html">All courses</a></li>
+          <li><a href="{{base}}contact.html">Contact</a></li>
+          <li><a href="{{base}}privacy.html">Privacy</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Popular courses">
+        <h2 class="footer__title">Popular courses</h2>
+        <ul class="footer__links" role="list">
+          {{@footerCourses}}
+        </ul>
+      </nav>
+
+      <div class="footer__col">
+        <h2 class="footer__title">Reach us</h2>
+        <address class="footer__contact">
+          <a href="{{site.mapsUrl}}" target="_blank" rel="noopener">
+            <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>
+            <span>{{site.address.line1}},<br>{{site.address.line2}},<br>{{site.address.city}} {{site.address.postal}}, {{site.address.region}}</span>
+          </a>
+          <a href="tel:{{site.phones.0.e164}}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span>{{site.phones.0.label}}</span></a>
+          <a href="tel:{{site.phones.1.e164}}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg><span>{{site.phones.1.label}}</span></a>
+          <a href="mailto:{{site.email}}"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg><span>{{site.email}}</span></a>
+          <span class="footer__hours"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg><span>{{site.hours}}</span></span>
+        </address>
+        <div class="footer__social">
+          <a class="social" href="{{site.facebook}}" target="_blank" rel="noopener" aria-label="Jarvees Academy on Facebook"><svg class="i" aria-hidden="true"><use href="#i-facebook"/></svg></a>
+          <a class="social" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></a>
+          <a class="social" href="mailto:{{site.email}}" aria-label="Email Jarvees"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></a>
+        </div>
+      </div>
+    </div>
+
+    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
+      <defs>
+        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
+          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
+    </svg>
+
+    <div class="footer__bottom">
+      <p>© <span data-year>{{year}}</span> {{site.legalName}}. All rights reserved.</p>
+      <p class="footer__made">Engineered in Pune, India</p>
+      <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+  </div>
+</footer>

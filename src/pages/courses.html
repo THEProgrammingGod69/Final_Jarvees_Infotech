@@ -1,0 +1,103 @@
+<!--meta
+{
+  "title": "Courses | SAP, S/4HANA, Salesforce, Testing & Data Science | Jarvees Academy",
+  "description": "Explore all Jarvees Academy courses: SAP FICO, MM, SD, PP, ABAP, BASIS, Fiori, S/4HANA, Salesforce CRM, software testing, data science, Java, .NET and accounting. Online and classroom batches in Pune.",
+  "nav": "courses",
+  "bodyClass": "page-courses",
+  "scripts": ["courses.js"],
+  "cta": {
+    "kicker": "Need advice?",
+    "title": "Not sure which course <em>fits you best?</em>",
+    "text": "Tell us about your background and goals. A counsellor will recommend the right track, batch and mode for you.",
+    "primaryLabel": "Get course advice",
+    "primaryHref": "contact.html?interest=career-guidance",
+    "secondaryLabel": "Visit the academy",
+    "secondaryHref": "academy.html"
+  }
+}
+-->
+<section class="hero hero--page" aria-labelledby="page-title">
+  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
+      <h1 class="display split" id="page-title">{{@courseCount}} courses. <em>One standard: job-ready.</em></h1>
+      <p class="lead reveal" style="--d:240ms">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
+    </div>
+    <aside class="hud reveal" style="--d:320ms" aria-label="Catalogue summary">
+      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
+      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Catalogue</p>
+      <div class="hud__row"><span>Courses</span><b>{{@courseCount}}</b></div>
+      <div class="hud__row"><span>Tracks</span><b>{{@categoryCount}}</b></div>
+      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
+      <div class="hud__row"><span>Included</span><b>Projects · Notes · Certificate</b></div>
+    </aside>
+  </div>
+</section>
+
+<section class="section section--flush-top catalog" aria-label="Course catalogue">
+  <div class="container">
+    <div class="catalog__bar" role="search">
+      <div class="catalog__row">
+        <label class="search">
+          <span class="sr-only">Search courses</span>
+          <svg class="i" aria-hidden="true"><use href="#i-search"/></svg>
+          <input type="search" placeholder="Search courses, modules or topics…" autocomplete="off" spellcheck="false" data-course-search>
+        </label>
+        <p class="catalog__count" aria-live="polite"><b data-course-count>{{@courseCount}}</b> of {{@courseCount}} courses</p>
+      </div>
+      <div class="filters" role="group" aria-label="Filter by track">
+        {{@courseFilters}}
+      </div>
+    </div>
+
+    <div class="course-grid" data-course-grid>
+      {{@courseGrid}}
+    </div>
+
+    <div class="empty" data-course-empty hidden>
+      <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></span>
+      <h2 class="h3">No courses match that search</h2>
+      <p>Try a different keyword or track, or ask us directly. We regularly run custom and corporate programmes.</p>
+      <div class="hero__ctas">
+        <button class="btn btn--ghost" type="button" data-course-reset>Clear filters</button>
+        <a class="btn btn--primary" href="contact.html">Ask the team <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="programmes" aria-labelledby="programmes-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <span class="kicker reveal">Programmes &amp; add-ons</span>
+        <h2 class="title split" id="programmes-title">Go further than <em>the classroom.</em></h2>
+      </div>
+      <p class="lead reveal">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
+    </div>
+    <div class="grid grid--4">
+      {{@programmeCards}}
+    </div>
+  </div>
+</section>
+
+{{> cta}}
+
+<dialog class="course-dialog" data-course-dialog aria-labelledby="dialog-title">
+  <div class="dialog__head">
+    <div>
+      <span class="course__cat" data-dialog-cat></span>
+      <h2 class="dialog__title" id="dialog-title" data-dialog-title></h2>
+      <p class="dialog__sub" data-dialog-sub></p>
+    </div>
+    <button class="dialog__close" type="button" aria-label="Close course details" data-dialog-close>
+      <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
+    </button>
+  </div>
+  <div class="dialog__body" data-dialog-body data-lenis-prevent></div>
+  <div class="dialog__foot">
+    <a class="btn btn--ghost" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+    <a class="btn btn--primary" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+  </div>
+</dialog>

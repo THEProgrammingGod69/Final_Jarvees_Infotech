@@ -1,0 +1,17 @@
+{
+  "name": "jarvees-infotech-website",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Multi-page website for Jarvees Infotech Pvt. Ltd. and Jarvees Academy, Pune.",
+  "type": "module",
+  "scripts": {
+    "build": "node scripts/build.mjs",
+    "start": "node scripts/build.mjs && node scripts/serve.mjs",
+    "serve": "node scripts/serve.mjs",
+    "images": "node scripts/render-images.mjs"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "license": "UNLICENSED"
+}

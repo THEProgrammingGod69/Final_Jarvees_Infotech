@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en-IN" class="no-js"{{{htmlAttrs}}}>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>{{title}}</title>
+  <meta name="description" content="{{description}}">
+  <meta name="robots" content="{{robots}}">
+  <link rel="canonical" href="{{canonical}}">
+  <meta name="theme-color" content="#05070e">
+  <meta name="color-scheme" content="dark">
+  <meta name="format-detection" content="telephone=no">
+
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Jarvees Infotech">
+  <meta property="og:locale" content="en_IN">
+  <meta property="og:title" content="{{title}}">
+  <meta property="og:description" content="{{description}}">
+  <meta property="og:url" content="{{canonical}}">
+  <meta property="og:image" content="{{site.url}}/assets/img/og-image.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Jarvees Infotech — SAP consulting and Jarvees Academy, Pune">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="{{base}}favicon.svg" type="image/svg+xml">
+  <link rel="icon" href="{{base}}assets/img/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="{{base}}assets/img/apple-touch-icon.png">
+  <link rel="manifest" href="{{base}}site.webmanifest">
+
+  <link rel="preload" href="{{base}}assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{base}}assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{{@asset assets/css/main.css}}">
+
+  <script>
+    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
+    (function (d) {
+      var h = d.documentElement;
+      h.classList.remove('no-js');
+      h.classList.add('js');
+      try {
+        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
+          h.classList.add('is-intro');
+          sessionStorage.setItem('jv-intro', '1');
+        }
+      } catch (e) { /* storage blocked: skip the intro */ }
+    })(document);
+  </script>
+  <script src="{{@asset assets/vendor/lenis.min.js}}" defer></script>
+  <script src="{{@asset assets/js/main.js}}" defer></script>
+  {{@pageScripts}}
+  <script type="speculationrules">
+    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+  </script>
+  {{@jsonLd}}
+</head>
+<body class="{{bodyClass}}" id="top">
+  {{> sprite}}
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <div class="bg-layers" aria-hidden="true">
+    <div class="bg-layers__aurora"></div>
+    <div class="bg-layers__grid"></div>
+    <div class="bg-layers__noise"></div>
+  </div>
+
+  {{> header}}
+
+  <main id="main" tabindex="-1">
+{{{content}}}
+  </main>
+
+  {{> footer}}
+  {{> overlays}}
+</body>
+</html>

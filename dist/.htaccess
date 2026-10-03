@@ -1,0 +1,32 @@
+# Jarvees Infotech: Apache configuration (Hostinger, cPanel and similar hosts).
+# Upload the contents of dist/ to public_html; this file travels with them.
+
+ErrorDocument 404 /404.html
+
+<IfModule mod_mime.c>
+  AddType font/woff2 .woff2
+  AddType application/manifest+json .webmanifest
+  AddType image/svg+xml .svg
+</IfModule>
+
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/css text/javascript application/javascript application/json application/xml image/svg+xml application/manifest+json
+</IfModule>
+
+# CSS/JS URLs carry a content hash (?v=…), so they can be cached for a year.
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType text/css "access plus 1 year"
+  ExpiresByType text/javascript "access plus 1 year"
+  ExpiresByType application/javascript "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+  ExpiresByType image/png "access plus 1 month"
+  ExpiresByType image/svg+xml "access plus 1 month"
+</IfModule>
+
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+</IfModule>

@@ -1,0 +1,313 @@
+{
+  "categories": [
+    {
+      "id": "sap-functional",
+      "name": "SAP Functional",
+      "icon": "layers",
+      "blurb": "Business-process modules for IT and non-IT graduates.",
+      "includes": ["Live project experience", "Structured training notes", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "sap-technical",
+      "name": "SAP Technical",
+      "icon": "code",
+      "blurb": "Development and system-administration tracks.",
+      "includes": ["Live project experience", "Structured training notes", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "s4hana",
+      "name": "SAP S/4HANA",
+      "icon": "zap",
+      "blurb": "The next-generation SAP suite, end to end.",
+      "includes": ["Live project experience", "Structured training notes", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "crm",
+      "name": "Salesforce CRM",
+      "icon": "cloud",
+      "blurb": "Admin and development on the Salesforce platform.",
+      "includes": ["Live project experience", "Structured training notes", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "testing",
+      "name": "Software Testing",
+      "icon": "flask",
+      "blurb": "Manual and automation testing with a live project.",
+      "includes": ["Live project", "Experience letter", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "data",
+      "name": "Data Science",
+      "icon": "chart",
+      "blurb": "Python, statistics and machine learning.",
+      "includes": ["Capstone project", "Structured training notes", "Course certificate", "100% placement assistance"]
+    },
+    {
+      "id": "programming",
+      "name": "Programming",
+      "icon": "terminal",
+      "blurb": "Java, C++ and .NET foundations.",
+      "includes": ["Hands-on projects", "Structured training notes", "Course certificate", "Placement assistance"]
+    },
+    {
+      "id": "accounts",
+      "name": "Accounts & Office",
+      "icon": "rupee",
+      "blurb": "Accounting, finance and essential office skills.",
+      "includes": ["Practical sessions", "Course certificate", "Career guidance"]
+    }
+  ],
+
+  "featured": ["sap-fico", "sap-mm", "sap-sd", "sap-abap", "sap-s4hana", "salesforce", "data-science"],
+
+  "courses": [
+    {
+      "id": "sap-fico",
+      "cat": "sap-functional",
+      "title": "SAP FICO",
+      "subtitle": "Finance & Controlling",
+      "short": "Run record-to-report in SAP, from the general ledger and payables to cost centres and profitability.",
+      "topics": ["Enterprise structure & global settings", "General Ledger accounting", "Accounts Payable & Receivable", "Asset Accounting", "Bank accounting & reconciliation", "Cost centre & profit centre accounting", "Internal orders & product costing basics", "Integration with MM & SD", "S/4HANA Universal Journal & Business Partner"],
+      "audience": "Commerce and finance graduates, accountants and finance professionals moving into SAP."
+    },
+    {
+      "id": "sap-mm",
+      "cat": "sap-functional",
+      "title": "SAP MM",
+      "subtitle": "Materials Management",
+      "short": "Master procure-to-pay: purchasing, inventory and invoice verification on SAP.",
+      "topics": ["Organisational structure for procurement", "Material & supplier master data", "Purchase requisitions, RFQs & purchase orders", "Info records, source lists & release strategy", "Inventory management & goods movements", "Physical inventory", "Logistics invoice verification", "Valuation & account determination", "Integration with FI, SD & PP"],
+      "audience": "Graduates and professionals from purchase, stores, supply-chain or engineering backgrounds."
+    },
+    {
+      "id": "sap-sd",
+      "cat": "sap-functional",
+      "title": "SAP SD",
+      "subtitle": "Sales & Distribution",
+      "short": "Own order-to-cash: sales orders, pricing, shipping and billing in SAP.",
+      "topics": ["Enterprise structure for sales", "Customer master & Business Partner", "Sales documents & item categories", "Pricing procedure & condition technique", "Availability check & delivery scheduling", "Shipping & picking", "Billing & revenue account determination", "Credit management", "Integration with MM & FI"],
+      "audience": "Graduates and professionals from sales, marketing, logistics or commerce backgrounds."
+    },
+    {
+      "id": "sap-pp",
+      "cat": "sap-functional",
+      "title": "SAP PP",
+      "subtitle": "Production Planning",
+      "short": "Plan and execute manufacturing with BOMs, routings, MRP and production orders.",
+      "topics": ["Material master, BOM & work centres", "Routings & master recipes", "Demand management & planning strategies", "MRP run & evaluation", "Production order lifecycle", "Capacity planning", "Repetitive & process manufacturing overview", "Integration with MM, QM & CO"],
+      "audience": "Engineers and production, planning or operations professionals."
+    },
+    {
+      "id": "sap-pm",
+      "cat": "sap-functional",
+      "title": "SAP PM",
+      "subtitle": "Plant Maintenance",
+      "short": "Keep assets productive with equipment records, notifications, work orders and preventive plans.",
+      "topics": ["Functional locations & equipment", "Maintenance notifications", "Maintenance orders & execution", "Breakdown & corrective maintenance", "Preventive maintenance plans & scheduling", "Spare parts & material integration", "Calibration & refurbishment overview", "Maintenance reporting & cost settlement"],
+      "audience": "Mechanical, electrical and maintenance engineers."
+    },
+    {
+      "id": "sap-qm",
+      "cat": "sap-functional",
+      "title": "SAP QM",
+      "subtitle": "Quality Management",
+      "short": "Build quality into procurement, production and delivery with SAP QM.",
+      "topics": ["Inspection characteristics, methods & plans", "Inspection types & inspection lots", "Sampling procedures & dynamic modification", "Results recording & usage decisions", "Quality notifications", "Quality certificates", "Integration with MM, PP & SD"],
+      "audience": "Quality engineers, laboratory staff and QA/QC professionals."
+    },
+    {
+      "id": "sap-hcm",
+      "cat": "sap-functional",
+      "title": "SAP HR / HCM",
+      "subtitle": "Human Capital Management",
+      "short": "Manage hire-to-retire: organisation, personnel administration, time and payroll.",
+      "topics": ["Organisational management", "Personnel administration & infotypes", "Recruitment overview", "Time management", "Payroll concepts (India)", "Benefits overview", "Employee & manager self-service", "Reporting in HCM"],
+      "audience": "HR graduates and HR or payroll professionals."
+    },
+    {
+      "id": "sap-ps",
+      "cat": "sap-functional",
+      "title": "SAP PS",
+      "subtitle": "Project Systems",
+      "short": "Plan, budget and control projects end to end in SAP.",
+      "topics": ["Work breakdown structures & networks", "Project planning & scheduling", "Cost & budget planning", "Resource & material planning", "Project execution & confirmations", "Period-end closing & settlement", "Integration with FI/CO, MM & SD"],
+      "audience": "Project, planning and engineering professionals."
+    },
+    {
+      "id": "sap-scm",
+      "cat": "sap-functional",
+      "title": "SAP SCM",
+      "subtitle": "Supply Chain Management",
+      "short": "Connect planning and execution across the SAP supply chain.",
+      "topics": ["Supply-chain processes in SAP", "Demand & supply planning concepts", "Sales & operations planning", "Cross-module integration: MM, SD & PP", "Advanced planning concepts (APO / IBP overview)", "Logistics execution", "Supply-chain reporting & analytics"],
+      "audience": "Supply-chain, logistics and operations professionals."
+    },
+    {
+      "id": "sap-wm",
+      "cat": "sap-functional",
+      "title": "SAP WM / EWM",
+      "subtitle": "Warehouse Management",
+      "short": "Run warehouses on SAP: storage structure, putaway, picking and stock movements.",
+      "topics": ["Warehouse structure: storage types, sections & bins", "Transfer requirements & transfer orders", "Putaway & picking strategies", "Warehouse inventory", "Integration with IM, SD & PP", "Introduction to S/4HANA EWM"],
+      "audience": "Warehouse, stores and logistics professionals."
+    },
+
+    {
+      "id": "sap-abap",
+      "cat": "sap-technical",
+      "title": "SAP ABAP",
+      "subtitle": "Advanced Business Application Programming",
+      "short": "Build, extend and optimise SAP with ABAP, from classic reports to ABAP on HANA.",
+      "topics": ["ABAP Workbench & Data Dictionary", "Internal tables & modularisation", "Classical, interactive & ALV reports", "Module pool (dialog) programming", "SmartForms & Adobe Forms", "Enhancements: user exits & BAdIs", "Data migration: BDC & LSMW", "RFC, BAPI & IDoc basics", "Object-oriented ABAP", "ABAP on HANA & CDS views"],
+      "audience": "Computer science and IT graduates, and developers moving into SAP."
+    },
+    {
+      "id": "sap-basis",
+      "cat": "sap-technical",
+      "title": "SAP BASIS",
+      "subtitle": "System Administration",
+      "short": "Administer the technical backbone of SAP landscapes.",
+      "topics": ["SAP architecture & system landscape", "Installation & system copy concepts", "Client administration", "User & authorisation management", "Transport Management System (TMS)", "Background jobs & spool administration", "System monitoring & performance", "Kernel & support-package updates", "SAP HANA administration basics"],
+      "audience": "IT infrastructure, system and database administrators."
+    },
+    {
+      "id": "sap-fiori",
+      "cat": "sap-technical",
+      "title": "SAP Fiori",
+      "subtitle": "Modern SAP user experience",
+      "short": "Design and deliver modern SAP user experiences with Fiori and SAPUI5.",
+      "topics": ["Fiori design principles", "Fiori Launchpad configuration", "Transactional, analytical & fact-sheet apps", "SAPUI5 fundamentals", "OData services with SAP Gateway", "Fiori elements & CDS annotations", "Roles, catalogues & deployment"],
+      "audience": "Web developers and ABAP developers moving into SAP UX."
+    },
+    {
+      "id": "sap-solman",
+      "cat": "sap-technical",
+      "title": "SAP Solution Manager 7.2",
+      "subtitle": "Application lifecycle management",
+      "short": "Govern SAP implementations and operations with Solution Manager 7.2.",
+      "topics": ["Solution Manager 7.2 architecture", "Process management & solution documentation", "Implementation projects with SAP Activate", "Change Request Management (ChaRM)", "Test Suite", "IT Service Management", "Technical monitoring"],
+      "audience": "SAP consultants, BASIS administrators and project leads."
+    },
+
+    {
+      "id": "sap-s4hana",
+      "cat": "s4hana",
+      "title": "SAP S/4HANA",
+      "subtitle": "Next-generation ERP",
+      "short": "Move from R/3 core business processes to S/4HANA, and learn how it is implemented.",
+      "topics": ["R/3 core business processes", "SAP HANA in-memory fundamentals", "S/4HANA simplifications & Universal Journal", "Business Partner approach", "Industry-specific “New Dimension” modules", "Implementation with Solution Manager: prepare, design, realise, deploy, maintain", "Fiori-based user experience"],
+      "audience": "SAP consultants upgrading to S/4HANA, and graduates starting their SAP career on S/4HANA."
+    },
+
+    {
+      "id": "salesforce",
+      "cat": "crm",
+      "title": "Salesforce CRM",
+      "subtitle": "Admin & development",
+      "short": "Configure, automate and extend the Salesforce platform.",
+      "topics": ["CRM concepts & the Salesforce ecosystem", "Objects, fields & relationships", "Security: profiles, roles & sharing", "Process automation with Flow", "Reports & dashboards", "Sales Cloud & Service Cloud essentials", "Data management & import tools", "Introduction to Apex & Lightning components"],
+      "audience": "Graduates, freshers and professionals targeting CRM roles."
+    },
+
+    {
+      "id": "software-testing",
+      "cat": "testing",
+      "title": "Software Testing",
+      "subtitle": "Manual & automation",
+      "short": "Ship quality software with manual and automation testing, backed by a live project.",
+      "topics": ["SDLC, STLC & testing types", "Test planning & test-case design", "Defect life cycle & reporting", "Agile & Scrum testing", "SQL for testers", "Automation fundamentals with Selenium", "API testing basics", "Live project & experience letter"],
+      "audience": "Freshers and graduates from any stream who want to enter IT."
+    },
+
+    {
+      "id": "data-science",
+      "cat": "data",
+      "title": "Data Science",
+      "subtitle": "Python · Statistics · Machine learning",
+      "short": "Turn data into decisions with Python, statistics and machine learning.",
+      "topics": ["Python for data analysis", "NumPy & pandas", "Statistics & probability", "Data visualisation", "Machine learning: regression, classification & clustering", "Model evaluation & tuning", "SQL essentials", "Capstone project"],
+      "audience": "Analytically minded graduates and professionals moving into data roles."
+    },
+
+    {
+      "id": "java",
+      "cat": "programming",
+      "title": "Core & Advanced Java",
+      "subtitle": "Full-stack foundations",
+      "short": "Go from OOP fundamentals to front-end and web applications in Java.",
+      "topics": ["Java fundamentals & OOP", "Collections & generics", "Exception handling & file I/O", "Multithreading", "JDBC & databases", "Servlets & JSP", "Front-end basics: HTML, CSS & JavaScript", "Mini project"],
+      "audience": "Students and freshers building a programming career."
+    },
+    {
+      "id": "cpp",
+      "cat": "programming",
+      "title": "C++ Programming",
+      "subtitle": "Programming foundations",
+      "short": "Build rock-solid programming foundations with C++.",
+      "topics": ["Syntax, data types & control flow", "Functions & arrays", "Pointers & memory management", "OOP: classes, inheritance & polymorphism", "Templates & the STL", "File handling", "Problem solving & data-structure basics"],
+      "audience": "School and college students, and programming beginners."
+    },
+    {
+      "id": "dotnet",
+      "cat": "programming",
+      "title": ".NET Development",
+      "subtitle": "C# · ASP.NET Core",
+      "short": "Build applications with C# and the .NET platform.",
+      "topics": ["C# fundamentals & OOP", ".NET runtime & tooling", "Console & desktop applications", "ASP.NET Core MVC", "Entity Framework & SQL Server", "Building Web APIs", "Deployment basics"],
+      "audience": "Graduates and developers targeting Microsoft-stack roles."
+    },
+
+    {
+      "id": "account-finance",
+      "cat": "accounts",
+      "title": "Account & Finance",
+      "subtitle": "Practical accounting",
+      "short": "Practical accounting for business and finance roles.",
+      "topics": ["Accounting principles", "Journal, ledger & trial balance", "Final accounts", "GST & TDS basics", "Payroll accounting basics", "Bank reconciliation", "Financial statement analysis"],
+      "audience": "Commerce students, job seekers and small-business owners."
+    },
+    {
+      "id": "computerised-accounting",
+      "cat": "accounts",
+      "title": "Computerised Accounting",
+      "subtitle": "Accounting software",
+      "short": "Bookkeeping and compliance on accounting software.",
+      "topics": ["Company creation & masters", "Voucher entry", "Inventory accounting", "GST-compliant invoicing", "Bank reconciliation", "Reports & statutory basics"],
+      "audience": "Commerce students, accounts assistants and business owners."
+    },
+    {
+      "id": "typing",
+      "cat": "accounts",
+      "title": "Typing",
+      "subtitle": "Speed & accuracy",
+      "short": "Fast, accurate typing for office work.",
+      "topics": ["Touch-typing technique", "Speed & accuracy drills", "English typing practice", "Document formatting basics"],
+      "audience": "Students and job seekers preparing for office roles."
+    },
+    {
+      "id": "hardware-software",
+      "cat": "accounts",
+      "title": "Hardware & Software",
+      "subtitle": "Computer essentials",
+      "short": "Understand, assemble and maintain computers.",
+      "topics": ["Computer components", "PC assembly & BIOS", "Operating system installation", "Drivers & software setup", "Networking basics", "Troubleshooting & maintenance"],
+      "audience": "Students and anyone starting out in IT support."
+    },
+    {
+      "id": "digital-literacy",
+      "cat": "accounts",
+      "title": "Digital Literacy",
+      "subtitle": "Everyday computing",
+      "short": "Confident everyday computing for work and life.",
+      "topics": ["Computer & internet basics", "Email & online safety", "Office productivity tools", "Digital payments & e-services", "Cloud storage & collaboration"],
+      "audience": "Beginners of any age."
+    }
+  ],
+
+  "programmes": [
+    { "id": "corporate-training-programme", "icon": "building", "title": "Corporate training", "text": "Customised SAP and S/4HANA programmes that upskill company teams, scheduled around your business." },
+    { "id": "internship-project", "icon": "briefcase", "title": "Internship project", "text": "Freshers work on a live project and earn an experience letter that strengthens their first job application." },
+    { "id": "course-certification", "icon": "award", "title": "Course certification", "text": "Complete your programme and earn a Jarvees course certificate for your profile." },
+    { "id": "career-guidance", "icon": "compass", "title": "Career guidance", "text": "One-to-one counselling to pick the right track, plus resume and interview preparation when you are ready." }
+  ]
+}

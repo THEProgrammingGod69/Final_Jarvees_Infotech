@@ -1,0 +1,53 @@
+<header class="site-header" data-header>
+  <div class="container header__inner">
+    <a class="brand" href="{{base}}index.html" aria-label="Jarvees Infotech home">
+      <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg>
+      <span class="brand__text">
+        <span class="brand__name">Jarvees</span>
+        <span class="brand__sub">Infotech</span>
+      </span>
+    </a>
+
+    <nav class="nav" aria-label="Primary">
+      <ul class="nav__list" role="list">
+        <li><a class="nav__link" href="{{base}}index.html" data-nav="home">Home</a></li>
+        <li><a class="nav__link" href="{{base}}about.html" data-nav="about">About</a></li>
+        <li><a class="nav__link" href="{{base}}services.html" data-nav="services">Services</a></li>
+        <li><a class="nav__link" href="{{base}}academy.html" data-nav="academy">Academy</a></li>
+        <li><a class="nav__link" href="{{base}}courses.html" data-nav="courses">Courses</a></li>
+        <li><a class="nav__link" href="{{base}}contact.html" data-nav="contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <div class="header__actions">
+      <a class="btn btn--primary btn--sm magnetic header__cta" href="{{base}}contact.html">
+        Enquire now
+        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
+        <span class="menu-toggle__bar"></span>
+        <span class="menu-toggle__bar"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="mobile-nav" id="mobile-nav" data-mobile-nav hidden>
+  <div class="mobile-nav__inner">
+    <nav aria-label="Mobile">
+      <ol class="mobile-nav__list" role="list">
+        <li style="--i:0"><a href="{{base}}index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li style="--i:1"><a href="{{base}}about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li style="--i:2"><a href="{{base}}services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li style="--i:3"><a href="{{base}}academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li style="--i:4"><a href="{{base}}courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li style="--i:5"><a href="{{base}}contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
+      </ol>
+    </nav>
+    <div class="mobile-nav__foot">
+      <a href="tel:{{site.phones.0.e164}}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{site.phones.0.label}}</a>
+      <a href="mailto:{{site.email}}"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>{{site.email}}</a>
+      <a class="btn btn--primary" href="{{base}}contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    </div>
+  </div>
+</div>

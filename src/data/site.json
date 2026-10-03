@@ -1,0 +1,39 @@
+{
+  "name": "Jarvees Infotech",
+  "legalName": "Jarvees Infotech Private Limited",
+  "academy": "Jarvees Academy",
+  "tagline": "An Attempt to Achieve a Goal",
+  "url": "https://jarveesinfotech.com",
+  "founded": "2019",
+  "phones": [
+    {
+      "label": "+91 90225 84956",
+      "e164": "+919022584956"
+    },
+    {
+      "label": "+91 93075 90139",
+      "e164": "+919307590139"
+    }
+  ],
+  "whatsapp": "919022584956",
+  "email": "jarveesacademy.pune@gmail.com",
+  "address": {
+    "line1": "Row House 6, Rilicon Fremount Hills CHS",
+    "line2": "Near Abhinav School, Ambegaon Bk.",
+    "city": "Pune",
+    "region": "Maharashtra",
+    "postal": "411046",
+    "country": "IN"
+  },
+  "mapsQuery": "Rilicon Fremount Hills CHS, Ambegaon Budruk, Pune, Maharashtra 411046",
+  "mapsUrl": "https://www.google.com/maps/search/?api=1&query=Rilicon%20Fremount%20Hills%20CHS%2C%20Ambegaon%20Budruk%2C%20Pune%20411046",
+  "mapsEmbed": "https://maps.google.com/maps?q=Rilicon%20Fremount%20Hills%2C%20Ambegaon%20Budruk%2C%20Pune%20411046&z=15&output=embed",
+  "hours": "Open daily, 9 AM – 9 PM",
+  "facebook": "https://www.facebook.com/Jarveesacademypune",
+  "rating": {
+    "score": "4.5",
+    "count": "59",
+    "source": "Justdial",
+    "fill": "90%"
+  }
+}
