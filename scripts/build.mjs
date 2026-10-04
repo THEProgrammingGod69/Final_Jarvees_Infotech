@@ -278,6 +278,41 @@ async function runGenerators(str, ctx) {
   return out;
 }
 
+/**
+ * Pre-split headings marked `.split` into word spans at build time, so the
+ * word-by-word entrance needs no JavaScript and causes no layout shift.
+ */
+function splitHeadings(html) {
+  return html.replace(/<(h[1-6])(\s[^>]*)>([\s\S]*?)<\/\1>/g, (match, tag, attrs, inner) => {
+    const cls = attrs.match(/class="([^"]*)"/);
+    if (!cls || !/\bsplit\b/.test(cls[1])) return match;
+    let index = 0;
+    const words = inner
+      .split(/(<[^>]+>)/)
+      .map((part) =>
+        part.startsWith('<')
+          ? part
+          : part
+              .split(/(\s+)/)
+              .map((w) => (!w ? '' : /^\s+$/.test(w) ? ' ' : `<span class="w" aria-hidden="true"><span class="w__i" style="--wi:${index++}">${w}</span></span>`))
+              .join('')
+      )
+      .join('');
+    const label = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;');
+    const newAttrs = attrs.replace(/class="([^"]*)"/, (_m, c) => `class="${c} is-split"`);
+    return `<${tag}${newAttrs} aria-label="${label}">${words}</${tag}>`;
+  });
+}
+
+/** Conservative CSS minifier: comments, whitespace runs, spaces around { } ; */
+const minifyCss = (css) =>
+  css
+    .replace(/\/\*[\s\S]*?\*\//g, '')
+    .replace(/\s+/g, ' ')
+    .replace(/\s*([{};])\s*/g, '$1')
+    .replace(/;}/g, '}')
+    .trim();
+
 /** Single pass, so inserted raw HTML is never re-scanned for tags. */
 function interpolate(str, ctx) {
   return str.replace(/\{\{\{\s*([\w.]+)\s*\}\}\}|\{\{\s*([\w.]+)\s*\}\}/g, (_m, rawKey, key) => {
@@ -313,6 +348,8 @@ async function build() {
 
   await cp(path.join(SRC, 'assets'), path.join(OUT, 'assets'), { recursive: true });
   await cp(path.join(SRC, 'static'), OUT, { recursive: true });
+  const cssOut = path.join(OUT, 'assets', 'css', 'main.css');
+  await writeFile(cssOut, minifyCss(await readFile(cssOut, 'utf8')));
 
   const pageFiles = (await readDir(path.join(SRC, 'pages'))).filter((f) => f.endsWith('.html')).sort();
   const sitemap = [];
@@ -345,6 +382,7 @@ async function build() {
 
     // Mark the active navigation item in every menu.
     if (ctx.nav) html = html.replaceAll(`data-nav="${ctx.nav}"`, `data-nav="${ctx.nav}" aria-current="page"`);
+    html = splitHeadings(html);
 
     await writeFile(path.join(OUT, file), html);
     if (meta.sitemap !== false) sitemap.push({ loc: ctx.canonical, priority: slug === 'index' ? '1.0' : '0.8' });

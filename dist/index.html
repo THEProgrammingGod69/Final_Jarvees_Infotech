@@ -30,7 +30,7 @@
 
   <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=228fca0d">
+  <link rel="stylesheet" href="assets/css/main.css?v=7bcb8cb1">
 
   <script>
     /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
@@ -46,8 +46,7 @@
       } catch (e) { /* storage blocked: skip the intro */ }
     })(document);
   </script>
-  <script src="assets/vendor/lenis.min.js?v=b5cf15f0" defer></script>
-  <script src="assets/js/main.js?v=7e329ccb" defer></script>
+  <script src="assets/js/main.js?v=3ddf989e" defer></script>
   
   <script type="speculationrules">
     {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
@@ -135,7 +134,6 @@
   <div class="bg-layers" aria-hidden="true">
     <div class="bg-layers__aurora"></div>
     <div class="bg-layers__grid"></div>
-    <div class="bg-layers__noise"></div>
   </div>
 
   <header class="site-header" data-header>
@@ -197,8 +195,8 @@
 <section class="hero hero--home" aria-labelledby="hero-title">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span>ISO 9001 certified · Pune · Since 2019</p>
-      <h1 class="display split" id="hero-title">We engineer <em>SAP systems</em> and the people who run them.</h1>
+      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><span data-scramble>ISO 9001 certified · Pune · Since 2019</span></p>
+      <h1 class="display split is-split" id="hero-title" aria-label="We engineer SAP systems and the people who run them."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">We</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">engineer</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">systems</span></span></em> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">and</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">the</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">people</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:7">who</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:8">run</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:9">them.</span></span></h1>
       <p class="lead reveal" style="--d:260ms">Jarvees Infotech implements, migrates and supports SAP for growing businesses. Jarvees Academy turns graduates into job-ready SAP, Salesforce and data professionals, trained by working consultants on live projects.</p>
       <div class="hero__ctas reveal" style="--d:380ms">
         <a class="btn btn--primary btn--lg magnetic" href="services.html">Explore consulting <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
@@ -220,7 +218,7 @@
       </dl>
     </div>
 
-    <div class="hero__visual reveal reveal--scale" data-parallax style="--d:150ms">
+    <div class="hero__visual" data-parallax>
       <canvas class="hero__canvas" data-fx="globe" aria-hidden="true"></canvas>
       <div class="float-chip" style="top:7%;left:0;--depth:-26">
         <div class="float-chip__inner">
@@ -287,6 +285,28 @@
 </ul>
   </div>
 </div>
+<div class="marquee marquee--alt" aria-hidden="true">
+  <div class="marquee__track">
+    <ul class="marquee__group" role="list"><li class="marquee__item">Greenfield implementation</li>
+<li class="marquee__item">S/4HANA migration</li>
+<li class="marquee__item">Application support</li>
+<li class="marquee__item">Live projects</li>
+<li class="marquee__item">Placement assistance</li>
+<li class="marquee__item">Corporate training</li>
+<li class="marquee__item">Data &amp; cloud</li>
+<li class="marquee__item">Web design</li>
+</ul>
+    <ul class="marquee__group" role="list"><li class="marquee__item">Greenfield implementation</li>
+<li class="marquee__item">S/4HANA migration</li>
+<li class="marquee__item">Application support</li>
+<li class="marquee__item">Live projects</li>
+<li class="marquee__item">Placement assistance</li>
+<li class="marquee__item">Corporate training</li>
+<li class="marquee__item">Data &amp; cloud</li>
+<li class="marquee__item">Web design</li>
+</ul>
+  </div>
+</div>
 
 <!-- 01 · Two engines -->
 <section class="section" id="engines" aria-labelledby="engines-title">
@@ -294,7 +314,7 @@
     <div class="section-head section-head--split">
       <div>
         <span class="kicker reveal">01 / One company, two engines</span>
-        <h2 class="title split" id="engines-title">Consulting that delivers. <em>Training that launches careers.</em></h2>
+        <h2 class="title split is-split" id="engines-title" aria-label="Consulting that delivers. Training that launches careers."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Consulting</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">that</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">delivers.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">Training</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">that</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">launches</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">careers.</span></span></em></h2>
       </div>
       <p class="lead reveal">Jarvees Infotech Private Limited runs two arms under one roof. The consultants who deliver SAP projects for clients also teach in our classrooms, so learners pick up real-world skills and clients get consultants who keep sharpening theirs.</p>
     </div>
@@ -371,7 +391,7 @@
     <div class="section-head section-head--split">
       <div>
         <span class="kicker reveal">02 / Consulting capabilities</span>
-        <h2 class="title split" id="cap-title">Full-lifecycle SAP, built on <em>best practice.</em></h2>
+        <h2 class="title split is-split" id="cap-title" aria-label="Full-lifecycle SAP, built on best practice."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Full-lifecycle</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">SAP,</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">built</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">on</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">best</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">practice.</span></span></em></h2>
       </div>
       <div class="stack reveal">
         <p class="lead">We configure SAP the way it was designed to run. Less custom code means faster go-lives, painless upgrades and a lower cost of ownership.</p>
@@ -419,7 +439,7 @@
   <div class="container">
     <div class="section-head section-head--center">
       <span class="kicker reveal">03 / How we deliver</span>
-      <h2 class="title split" id="method-title">Five phases. <em>Zero guesswork.</em></h2>
+      <h2 class="title split is-split" id="method-title" aria-label="Five phases. Zero guesswork."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Five</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">phases.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">Zero</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">guesswork.</span></span></em></h2>
       <p class="lead reveal">Every engagement follows a proven SAP implementation methodology, governed with Solution Manager from preparation to maintenance.</p>
     </div>
     <div class="steps">
@@ -469,7 +489,7 @@
   <div class="container split-panel">
     <div class="split-panel__copy">
       <span class="kicker reveal">04 / Jarvees Academy</span>
-      <h2 class="title split" id="academy-title">Learn from consultants who <em>do this for a living.</em></h2>
+      <h2 class="title split is-split" id="academy-title" aria-label="Learn from consultants who do this for a living."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Learn</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">from</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">consultants</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">who</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">do</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">this</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">for</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:7">a</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:8">living.</span></span></em></h2>
       <p class="lead reveal">Instructor-led SAP, Salesforce, testing, data science and programming courses with live projects, structured notes and placement assistance built in.</p>
       <ul class="feature-list reveal" role="list">
         <li><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Live project experience</li>
@@ -544,7 +564,7 @@
   <div class="container">
     <div class="section-head">
       <span class="kicker reveal">05 / Why Jarvees</span>
-      <h2 class="title split" id="why-title">Built differently, <em>on purpose.</em></h2>
+      <h2 class="title split is-split" id="why-title" aria-label="Built differently, on purpose."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Built</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">differently,</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">on</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">purpose.</span></span></em></h2>
     </div>
 
     <div class="bento" data-stagger="80">
@@ -596,7 +616,7 @@
     <div class="section-head section-head--split">
       <div>
         <span class="kicker reveal">06 / Reputation</span>
-        <h2 class="title split" id="rep-title">Rated highly by learners <em>across Pune.</em></h2>
+        <h2 class="title split is-split" id="rep-title" aria-label="Rated highly by learners across Pune."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Rated</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">highly</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">by</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">learners</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">across</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">Pune.</span></span></em></h2>
       </div>
       <p class="lead reveal">Our public rating, and the things learners value most about training with Jarvees.</p>
     </div>
@@ -646,7 +666,7 @@
       <div class="cta__glow" aria-hidden="true"></div>
       <div class="cta__content">
         <span class="kicker">Next step</span>
-        <h2 class="title cta__title split" id="cta-title">Your next SAP milestone <em>starts here.</em></h2>
+        <h2 class="title cta__title split is-split" id="cta-title" aria-label="Your next SAP milestone starts here."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">next</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">milestone</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">starts</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">here.</span></span></em></h2>
         <p class="lead">Planning an SAP project or choosing a course? Talk to the team today. We reply every day between 9 AM and 9 PM.</p>
         <div class="cta__actions">
           <a class="btn btn--primary btn--lg magnetic" href="contact.html">Start a conversation <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>

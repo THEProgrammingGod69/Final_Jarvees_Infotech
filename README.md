@@ -6,14 +6,17 @@ A fast, animated, multi-page website for **Jarvees Infotech Pvt. Ltd.** (SAP con
 - **26-course catalogue** with track filters, live search, shareable URLs and an accessible details dialog
 - **Enquiry form** that hands off to WhatsApp or email with the message pre-filled (no backend needed)
 - **Motion:**
-  - home-page intro
+  - home-page intro and word-by-word hero headlines (pure CSS, start at first paint)
   - interactive 3D dotted globe and constellation backgrounds (canvas)
-  - split-text headline reveals and scroll reveals
-  - magnetic buttons, cursor aura and pointer-tracked card glow
-  - smooth scrolling
+  - scroll reveals, decoding labels, icons popping in, gradient stat bars
+  - scroll-linked parallax (CSS scroll timelines), twin marquees
+  - magnetic buttons, click ripples, gliding nav pill, cursor aura, pointer-tracked card glow
   - page-to-page view transitions
 - **Built for speed:**
-  - no framework, about 15 KB of gzipped JavaScript per page
+  - no framework, about 10 KB of gzipped JavaScript per page and native scrolling
+  - only `transform`/`opacity` are animated; headings are split into words at build time
+  - canvases batch their drawing, cap pixel density, pause off screen, in background tabs and while scrolling, and run at 30 fps on low-power devices
+  - looping animations pause when their section is off screen; CSS is minified at build time
   - self-hosted fonts and no third-party requests (apart from the map embed on the contact page)
 - **Accessible:**
   - semantic HTML, skip link, keyboard-friendly menus and dialog, visible focus states
@@ -41,7 +44,7 @@ src/
     site.json     Company details: address, phones, email, hours, rating
     courses.json  Course catalogue, tracks and programmes
     services.json Consulting services (also used by the enquiry form)
-  assets/         CSS, JS, fonts, images, vendored Lenis
+  assets/         CSS, JS, fonts, images
   static/         Copied to the site root (favicon, manifest, .htaccess)
 scripts/
   build.mjs       Zero-dependency static site builder
@@ -85,4 +88,3 @@ The form validates the input in the browser, then opens **WhatsApp** (to +91 902
 ## Credits
 
 - Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded), [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono), all under the SIL Open Font License
-- Smooth scrolling: [Lenis](https://github.com/darkroomengineering/lenis) by darkroom.engineering, MIT License (`src/assets/vendor/LENIS-LICENSE.txt`)

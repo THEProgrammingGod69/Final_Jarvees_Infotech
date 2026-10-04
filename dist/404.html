@@ -30,7 +30,7 @@
 
   <link rel="preload" href="/assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="/assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="/assets/css/main.css?v=228fca0d">
+  <link rel="stylesheet" href="/assets/css/main.css?v=7bcb8cb1">
 
   <script>
     /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
@@ -46,8 +46,7 @@
       } catch (e) { /* storage blocked: skip the intro */ }
     })(document);
   </script>
-  <script src="/assets/vendor/lenis.min.js?v=b5cf15f0" defer></script>
-  <script src="/assets/js/main.js?v=7e329ccb" defer></script>
+  <script src="/assets/js/main.js?v=3ddf989e" defer></script>
   
   <script type="speculationrules">
     {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
@@ -135,7 +134,6 @@
   <div class="bg-layers" aria-hidden="true">
     <div class="bg-layers__aurora"></div>
     <div class="bg-layers__grid"></div>
-    <div class="bg-layers__noise"></div>
   </div>
 
   <header class="site-header" data-header>
@@ -199,7 +197,7 @@
   <div class="container nf__inner">
     <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span>Error 404 · Signal lost</p>
     <p class="nf__code reveal" data-text="404" aria-hidden="true">404</p>
-    <h1 class="title split" id="page-title">This page drifted <em>out of orbit.</em></h1>
+    <h1 class="title split is-split" id="page-title" aria-label="This page drifted out of orbit."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">This</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">page</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">drifted</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">out</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">of</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">orbit.</span></span></em></h1>
     <p class="lead reveal">The link may be broken or the page may have moved. Let's get you back on course.</p>
     <div class="nf__links reveal">
       <a class="btn btn--primary magnetic" href="/index.html">Back to home <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>

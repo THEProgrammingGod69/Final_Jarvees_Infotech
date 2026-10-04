@@ -30,7 +30,7 @@
 
   <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=228fca0d">
+  <link rel="stylesheet" href="assets/css/main.css?v=7bcb8cb1">
 
   <script>
     /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
@@ -46,8 +46,7 @@
       } catch (e) { /* storage blocked: skip the intro */ }
     })(document);
   </script>
-  <script src="assets/vendor/lenis.min.js?v=b5cf15f0" defer></script>
-  <script src="assets/js/main.js?v=7e329ccb" defer></script>
+  <script src="assets/js/main.js?v=3ddf989e" defer></script>
   <script src="assets/js/courses.js?v=e23bce2e" defer></script>
   <script type="speculationrules">
     {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
@@ -135,7 +134,6 @@
   <div class="bg-layers" aria-hidden="true">
     <div class="bg-layers__aurora"></div>
     <div class="bg-layers__grid"></div>
-    <div class="bg-layers__noise"></div>
   </div>
 
   <header class="site-header" data-header>
@@ -199,7 +197,7 @@
   <div class="container hero__grid">
     <div class="hero__copy">
       <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
-      <h1 class="display split" id="page-title">26 courses. <em>One standard: job-ready.</em></h1>
+      <h1 class="display split is-split" id="page-title" aria-label="26 courses. One standard: job-ready."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">26</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">courses.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">One</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">standard:</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">job-ready.</span></span></em></h1>
       <p class="lead reveal" style="--d:240ms">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
     </div>
     <aside class="hud reveal" style="--d:320ms" aria-label="Catalogue summary">
@@ -1141,7 +1139,7 @@
     <div class="section-head section-head--split">
       <div>
         <span class="kicker reveal">Programmes &amp; add-ons</span>
-        <h2 class="title split" id="programmes-title">Go further than <em>the classroom.</em></h2>
+        <h2 class="title split is-split" id="programmes-title" aria-label="Go further than the classroom."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Go</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">further</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">than</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">the</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">classroom.</span></span></em></h2>
       </div>
       <p class="lead reveal">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
     </div>
@@ -1177,7 +1175,7 @@
       <div class="cta__glow" aria-hidden="true"></div>
       <div class="cta__content">
         <span class="kicker">Need advice?</span>
-        <h2 class="title cta__title split" id="cta-title">Not sure which course <em>fits you best?</em></h2>
+        <h2 class="title cta__title split is-split" id="cta-title" aria-label="Not sure which course fits you best?"><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Not</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">sure</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">which</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">course</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">fits</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">you</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">best?</span></span></em></h2>
         <p class="lead">Tell us about your background and goals. A counsellor will recommend the right track, batch and mode for you.</p>
         <div class="cta__actions">
           <a class="btn btn--primary btn--lg magnetic" href="contact.html?interest=career-guidance">Get course advice <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
@@ -1205,7 +1203,7 @@
       <svg class="i" aria-hidden="true"><use href="#i-x"/></svg>
     </button>
   </div>
-  <div class="dialog__body" data-dialog-body data-lenis-prevent></div>
+  <div class="dialog__body" data-dialog-body></div>
   <div class="dialog__foot">
     <a class="btn btn--ghost" href="https://wa.me/919022584956" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
     <a class="btn btn--primary" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>

@@ -30,7 +30,7 @@
 
   <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=228fca0d">
+  <link rel="stylesheet" href="assets/css/main.css?v=7bcb8cb1">
 
   <script>
     /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
@@ -46,8 +46,7 @@
       } catch (e) { /* storage blocked: skip the intro */ }
     })(document);
   </script>
-  <script src="assets/vendor/lenis.min.js?v=b5cf15f0" defer></script>
-  <script src="assets/js/main.js?v=7e329ccb" defer></script>
+  <script src="assets/js/main.js?v=3ddf989e" defer></script>
   <script src="assets/js/contact.js?v=15566f7e" defer></script>
   <script type="speculationrules">
     {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
@@ -135,7 +134,6 @@
   <div class="bg-layers" aria-hidden="true">
     <div class="bg-layers__aurora"></div>
     <div class="bg-layers__grid"></div>
-    <div class="bg-layers__noise"></div>
   </div>
 
   <header class="site-header" data-header>
@@ -199,7 +197,7 @@
   <div class="container hero__grid">
     <div class="hero__copy">
       <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
-      <h1 class="display split" id="page-title">Let's talk about <em>your next move.</em></h1>
+      <h1 class="display split is-split" id="page-title" aria-label="Let's talk about your next move."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Let's</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">talk</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">about</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">next</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">move.</span></span></em></h1>
       <p class="lead reveal" style="--d:240ms">Planning an SAP project or choosing a course? Send us a message and the team will get back to you. We are available every day from 9 AM to 9 PM.</p>
     </div>
     <aside class="hud reveal" style="--d:320ms" aria-label="Ways to reach us">
@@ -330,7 +328,7 @@
   <div class="container">
     <div class="section-head section-head--center">
       <span class="kicker reveal">Good to know</span>
-      <h2 class="title split" id="faq-title">Before you <em>reach out.</em></h2>
+      <h2 class="title split is-split" id="faq-title" aria-label="Before you reach out."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Before</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">you</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">reach</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">out.</span></span></em></h2>
     </div>
     <div class="faq" data-stagger="60">
       <details class="faq__item">

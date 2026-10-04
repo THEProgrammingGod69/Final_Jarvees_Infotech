@@ -30,7 +30,7 @@
 
   <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=228fca0d">
+  <link rel="stylesheet" href="assets/css/main.css?v=7bcb8cb1">
 
   <script>
     /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
@@ -46,8 +46,7 @@
       } catch (e) { /* storage blocked: skip the intro */ }
     })(document);
   </script>
-  <script src="assets/vendor/lenis.min.js?v=b5cf15f0" defer></script>
-  <script src="assets/js/main.js?v=7e329ccb" defer></script>
+  <script src="assets/js/main.js?v=3ddf989e" defer></script>
   
   <script type="speculationrules">
     {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
@@ -135,7 +134,6 @@
   <div class="bg-layers" aria-hidden="true">
     <div class="bg-layers__aurora"></div>
     <div class="bg-layers__grid"></div>
-    <div class="bg-layers__noise"></div>
   </div>
 
   <header class="site-header" data-header>
@@ -199,7 +197,7 @@
   <div class="container">
     <div class="hero__copy">
       <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacy</span></nav>
-      <h1 class="display split" id="page-title">Privacy, <em>in plain words.</em></h1>
+      <h1 class="display split is-split" id="page-title" aria-label="Privacy, in plain words."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Privacy,</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">in</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">plain</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">words.</span></span></em></h1>
       <p class="lead reveal" style="--d:240ms">This notice explains what happens to your information when you use the Jarvees Infotech website.</p>
     </div>
   </div>
@@ -238,7 +236,7 @@
       <div class="cta__glow" aria-hidden="true"></div>
       <div class="cta__content">
         <span class="kicker">Questions?</span>
-        <h2 class="title cta__title split" id="cta-title">We are happy <em>to help.</em></h2>
+        <h2 class="title cta__title split is-split" id="cta-title" aria-label="We are happy to help."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">We</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">are</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">happy</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">to</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">help.</span></span></em></h2>
         <p class="lead">If you have any question about this notice or your information, contact us any day between 9 AM and 9 PM.</p>
         <div class="cta__actions">
           <a class="btn btn--primary btn--lg magnetic" href="contact.html">Contact us <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>

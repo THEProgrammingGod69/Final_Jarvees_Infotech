@@ -10,7 +10,7 @@
 <section class="hero hero--home" aria-labelledby="hero-title">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span>ISO 9001 certified · Pune · Since {{site.founded}}</p>
+      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><span data-scramble>ISO 9001 certified · Pune · Since {{site.founded}}</span></p>
       <h1 class="display split" id="hero-title">We engineer <em>SAP systems</em> and the people who run them.</h1>
       <p class="lead reveal" style="--d:260ms">Jarvees Infotech implements, migrates and supports SAP for growing businesses. Jarvees Academy turns graduates into job-ready SAP, Salesforce and data professionals, trained by working consultants on live projects.</p>
       <div class="hero__ctas reveal" style="--d:380ms">
@@ -33,7 +33,7 @@
       </dl>
     </div>
 
-    <div class="hero__visual reveal reveal--scale" data-parallax style="--d:150ms">
+    <div class="hero__visual" data-parallax>
       <canvas class="hero__canvas" data-fx="globe" aria-hidden="true"></canvas>
       <div class="float-chip" style="top:7%;left:0;--depth:-26">
         <div class="float-chip__inner">
@@ -68,6 +68,12 @@
   <div class="marquee__track">
     <ul class="marquee__group" role="list">{{> marquee-items}}</ul>
     <ul class="marquee__group" role="list" aria-hidden="true">{{> marquee-items}}</ul>
+  </div>
+</div>
+<div class="marquee marquee--alt" aria-hidden="true">
+  <div class="marquee__track">
+    <ul class="marquee__group" role="list">{{> marquee-alt-items}}</ul>
+    <ul class="marquee__group" role="list">{{> marquee-alt-items}}</ul>
   </div>
 </div>
 
