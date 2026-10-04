@@ -7,8 +7,8 @@
   <meta name="description" content="How the Jarvees Infotech website handles your information: no tracking, no stored form data, enquiries sent only through WhatsApp or email at your choice.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jarveesinfotech.com/privacy.html">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,28 +28,22 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=b54a62af">
+  <link rel="stylesheet" href="assets/css/main.css?v=ab9c21de">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
-  <script src="assets/js/main.js?v=3ddf989e" defer></script>
+  <script src="assets/js/main.js?v=683a7565" defer></script>
   
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://jarveesinfotech.com/#organization","name":"Jarvees Infotech","legalName":"Jarvees Infotech Private Limited","url":"https://jarveesinfotech.com","logo":"https://jarveesinfotech.com/assets/img/icon-512.png","slogan":"An Attempt to Achieve a Goal","foundingDate":"2019","email":"jarveesacademy.pune@gmail.com","telephone":["+919022584956","+919307590139"],"address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"sameAs":["https://www.facebook.com/Jarveesacademypune"],"subOrganization":{"@type":"EducationalOrganization","@id":"https://jarveesinfotech.com/#academy","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"telephone":"+919022584956"}}]}</script>
 </head>
@@ -57,24 +51,18 @@
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6ead0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#9a7533"/>
-    </linearGradient>
-    <linearGradient id="g-edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9d9b2" stop-opacity=".75"/>
-      <stop offset=".55" stop-color="#e9d9b2" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#4f8cff" stop-opacity=".45"/>
+      <stop offset="0" stop-color="#ecd29a"/>
+      <stop offset=".55" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8823f"/>
     </linearGradient>
   </defs>
 
-  <!-- Brand mark: Fibonacci spiral on a black tile -->
+  <!-- Brand mark: the Jarvees spiral on an ink tile -->
   <symbol id="mark" viewBox="0 0 64 64">
-    <rect x="1" y="1" width="62" height="62" rx="16" fill="#06080f"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#g-edge)"/>
-    <path class="mark__spiral" d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="13" cy="20.24" r="2.6" fill="#e9d9b2"/>
-    <circle cx="40.6" cy="27.2" r="2.4" fill="#e0393f"/>
+    <rect width="64" height="64" rx="12" fill="#15140f"/>
+    <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="13" cy="20.24" r="2.6" fill="#ecd29a"/>
+    <circle cx="40.6" cy="27.2" r="2.4" fill="#d6423e"/>
   </symbol>
 
   <!-- Icons (24×24, stroked via CSS unless noted) -->
@@ -131,11 +119,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
-
   <header class="site-header" data-header>
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="Jarvees Infotech home">
@@ -158,10 +141,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm magnetic header__cta" href="contact.html">
-        Enquire now
-        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-      </a>
+      <a class="btn btn--sm header__cta" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -174,18 +154,18 @@
   <div class="mobile-nav__inner">
     <nav aria-label="Mobile">
       <ol class="mobile-nav__list" role="list">
-        <li style="--i:0"><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
-        <li style="--i:1"><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
-        <li style="--i:2"><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
-        <li style="--i:3"><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
-        <li style="--i:4"><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
-        <li style="--i:5"><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
+        <li><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-nav__foot">
       <a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a>
       <a href="mailto:jarveesacademy.pune@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>jarveesacademy.pune@gmail.com</a>
-      <a class="btn btn--primary" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -193,61 +173,61 @@
 
   <main id="main" tabindex="-1">
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacy</span></nav>
-      <h1 class="display split is-split" id="page-title" aria-label="Privacy, in plain words."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Privacy,</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">in</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">plain</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">words.</span></span></em></h1>
-      <p class="lead reveal" style="--d:240ms">This notice explains what happens to your information when you use the Jarvees Infotech website.</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Privacy</span></nav>
+      <h1 class="display display--page" id="page-title">Privacy, <em>in plain words.</em></h1>
+      <p class="lead">This notice explains what happens to your information when you use the Jarvees Infotech website.</p>
     </div>
   </div>
 </section>
 
-<section class="section section--flush-top">
+<section class="section section--flush">
   <div class="container">
-    <div class="card prose reveal">
-      <h2>What we collect</h2>
-      <p>This website does not use cookies, analytics or advertising trackers, and it has no user accounts. Fonts and scripts are served from our own website.</p>
+    <div class="sh">
+      <p class="label">Privacy notice</p>
+      <div class="prose">
+        <h2>What we collect</h2>
+        <p>This website does not use cookies, analytics or advertising trackers, and it has no user accounts. Fonts and scripts are served from our own website.</p>
 
-      <h2>The enquiry form</h2>
-      <p>When you use the enquiry form, your browser assembles your message on your own device. Nothing is sent to or stored on our web server. You then choose how to send it:</p>
-      <ul>
-        <li><strong>WhatsApp:</strong> the message opens in WhatsApp, addressed to our business number, and is only delivered when you press send.</li>
-        <li><strong>Email:</strong> the message opens in your email app, addressed to jarveesacademy.pune@gmail.com, and is only delivered when you press send.</li>
-      </ul>
-      <p>We use the details you send only to reply to your enquiry and to share information about the course or service you asked about. We do not sell or rent personal information.</p>
-
-      <h2>Third-party services</h2>
-      <p>The contact page embeds a Google Maps view of our office, and links open WhatsApp, Facebook or Google Maps. Those services apply their own privacy policies when you use them.</p>
-
-      <h2>Your choices</h2>
-      <p>You can ask us to correct or delete the details you have shared with us at any time by calling +91 90225 84956 or emailing <a href="mailto:jarveesacademy.pune@gmail.com">jarveesacademy.pune@gmail.com</a>.</p>
-
-      <h2>Contact</h2>
-      <p>Jarvees Infotech Private Limited, Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune 411046, Maharashtra, India.</p>
-    </div>
-  </div>
-</section>
-
-<section class="section section--cta" aria-labelledby="cta-title">
-  <div class="container">
-    <div class="cta reveal reveal--scale">
-      <div class="cta__floor" aria-hidden="true"><div class="cta__plane"></div></div>
-      <div class="cta__glow" aria-hidden="true"></div>
-      <div class="cta__content">
-        <span class="kicker">Questions?</span>
-        <h2 class="title cta__title split is-split" id="cta-title" aria-label="We are happy to help."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">We</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">are</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">happy</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">to</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">help.</span></span></em></h2>
-        <p class="lead">If you have any question about this notice or your information, contact us any day between 9 AM and 9 PM.</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="contact.html">Contact us <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="index.html">Back to home</a>
-        </div>
-        <ul class="cta__contact" role="list">
-          <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
-          <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
-          <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
+        <h2>The enquiry form</h2>
+        <p>When you use the enquiry form, your browser assembles your message on your own device. Nothing is sent to or stored on our web server. You then choose how to send it:</p>
+        <ul>
+          <li><strong>WhatsApp:</strong> the message opens in WhatsApp, addressed to our business number, and is only delivered when you press send.</li>
+          <li><strong>Email:</strong> the message opens in your email app, addressed to jarveesacademy.pune@gmail.com, and is only delivered when you press send.</li>
         </ul>
+        <p>We use the details you send only to reply to your enquiry and to share information about the course or service you asked about. We do not sell or rent personal information.</p>
+
+        <h2>Third-party services</h2>
+        <p>The contact page embeds a Google Maps view of our office, and links open WhatsApp, Facebook or Google Maps. Those services apply their own privacy policies when you use them.</p>
+
+        <h2>Your choices</h2>
+        <p>You can ask us to correct or delete the details you have shared with us at any time by calling +91 90225 84956 or emailing <a href="mailto:jarveesacademy.pune@gmail.com">jarveesacademy.pune@gmail.com</a>.</p>
+
+        <h2>Contact</h2>
+        <p>Jarvees Infotech Private Limited, Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune 411046, Maharashtra, India.</p>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="cta" aria-labelledby="cta-title">
+  <div class="container">
+    <div class="cta__inner">
+    <p class="label">Questions?</p>
+    <div class="cta__body">
+      <h2 class="cta__title rv" id="cta-title">We are happy <em>to help.</em></h2>
+      <p class="cta__text rv">If you have any question about this notice or your information, contact us any day between 9 AM and 9 PM.</p>
+      <div class="actions rv">
+        <a class="btn btn--light btn--lg" href="contact.html">Contact us <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line-light btn--lg" href="index.html">Back to home</a>
+      </div>
+      <ul class="cta__contact" role="list">
+        <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
+        <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
+        <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -269,7 +249,7 @@
         <p class="footer__tagline">“An Attempt to Achieve a Goal”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since 2019</li>
         </ul>
       </div>
@@ -313,43 +293,20 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Jarvees Infotech Private Limited. All rights reserved.</p>
+      <p>© 2026 Jarvees Infotech Private Limited. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>
   </div>
 </footer>
 
-  <div class="scroll-progress" aria-hidden="true" data-progress></div>
-
-<a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
+  <a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
   <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   <span class="fab__label">Chat with us</span>
 </a>
-
-<div class="cursor" aria-hidden="true" data-cursor></div>
-
-<div class="intro" aria-hidden="true">
-  <div class="intro__core">
-    <svg class="intro__mark" viewBox="0 0 64 64">
-      <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" pathLength="1" fill="none" stroke="url(#g-gold)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="40.6" cy="27.2" r="2.2" fill="#e0393f"/>
-    </svg>
-    <p class="intro__word"><span>J</span><span>A</span><span>R</span><span>V</span><span>E</span><span>E</span><span>S</span></p>
-    <p class="intro__meta">Infotech · Academy · Pune</p>
-  </div>
-</div>
 
 </body>
 </html>

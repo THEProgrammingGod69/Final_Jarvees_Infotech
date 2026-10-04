@@ -12,7 +12,7 @@
         <p class="footer__tagline">“{{site.tagline}}”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since {{site.founded}}</li>
         </ul>
       </div>
@@ -56,18 +56,10 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>{{year}}</span> {{site.legalName}}. All rights reserved.</p>
+      <p>© {{year}} {{site.legalName}}. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>

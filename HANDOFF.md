@@ -3,21 +3,24 @@
 Paste this file into a new chat to continue the work. It is self-contained.
 
 ## Project
-- **Repo:** `THEProgrammingGod69/Final_Jarvees_Infotech`, branch `claude/festive-gates-u5ikcq`. No PR has been opened yet.
-- **What it is:** a static, multi-page, dark/futuristic website for **Jarvees Infotech Pvt. Ltd.** (SAP consulting, Pune) and its training arm, **Jarvees Academy**.
+- **Repo:** `THEProgrammingGod69/Final_Jarvees_Infotech`. No PR has been opened yet.
+  - `claude/premium-redesign` (**current**): the premium editorial redesign. Same content, new design system, much faster.
+  - `claude/festive-gates-u5ikcq`: the earlier dark "futuristic" design, plus course pages and the test suite (the redesign branch is built on top of it).
+- **Why the redesign:** the client found the dark design glitchy, slow and generic. Keep this direction; do not reintroduce canvases, glows, looping animations or pointer effects.
+- **What it is:** a static, multi-page, premium editorial website for **Jarvees Infotech Pvt. Ltd.** (SAP consulting, Pune) and its training arm, **Jarvees Academy**.
 - **Stack:** plain HTML/CSS/JS with no dependencies. `scripts/build.mjs` builds `src/` into `dist/`, and `dist/` is committed.
 - **Commands:** `npm start` (build and serve at http://localhost:5173), `npm run build`, `npm run images` (regenerates the OG image and icons; needs Playwright).
 
 ## Structure
 - `src/pages/*.html`: index, about, services, academy, courses, contact, privacy, 404. Each file starts with JSON front matter in `<!--meta {...} -->` (title, description, nav, scripts, cta).
 - `src/templates/course.html`: rendered once per course into `dist/course/<id>.html` (syllabus, details, enrolment, FAQ built from the data, related courses, Course + BreadcrumbList JSON-LD).
-- `src/partials/`: layout, header, footer, cta, sprite (SVG icons and the spiral `#mark` logo), steps, stars, marquee items.
+- `src/partials/`: layout, header, footer, cta, sprite (SVG icons and the spiral `#mark` logo), steps, stars, overlays (WhatsApp button).
 - `src/data/site.json`: contact details, address, rating. `courses.json`: 8 tracks, 26 courses and the programmes. `services.json`: the consulting services.
-- `src/assets/css/main.css`: design tokens at the top. The "Motion layer v2" section holds the newer animations.
-- `src/assets/js/main.js`: core interactions and the globe/network canvases. `courses.js`: filters, search, dialog, deep links. `contact.js`: form validation and the WhatsApp/email hand-off.
+- `src/assets/css/main.css`: design tokens at the top (paper, ink, rule, gold, red). Ledger-style section heads (`.sh`), hairline grids (`.cells`), ink bands (`.section--ink`), entrances (`.rv`).
+- `src/assets/js/main.js` (~2 KB gzipped): header hairline, mobile menu, one-off entrances. `courses.js`: filters, search, quick-view dialog, deep links. `contact.js`: form validation and the WhatsApp/email hand-off.
+- `scripts/lib/spiral.mjs`: the golden-spiral drawing (the signature visual), inserted with `{{@spiral}}`, `{{@spiral draw}}` or `{{@spiral hero}}`.
 - **Build features:**
   - `{{> partial}}`, `{{@generator}}`, `{{var}}` template tags
-  - `.split` headings pre-split into words at build time
   - CSS minified, and asset URLs get `?v=hash`
   - sitemap and robots files generated
 - **Deploy configs:** `netlify.toml`, `vercel.json`, `src/static/.htaccess` (Hostinger/cPanel).
@@ -31,14 +34,12 @@ Paste this file into a new chat to continue the work. It is self-contained.
 - The client's sites (jarveesinfotech.com, jarveesacademy.com) can't be reached from the cloud sandbox, and jarveesacademy.com doesn't resolve. Don't link to it.
 
 ## Current state
-- **Performance pass done:**
-  - Lenis removed, native scrolling
-  - hero entrances are pure CSS
-  - canvases batched, DPR-capped, paused off screen and while scrolling, 30 fps on low-power devices
-  - blur kept on the scrolled header only
-  - looping animations pause when their section is off screen
-- **Measured result (4× CPU throttle):** home LCP 2224 → 272 ms, idle main-thread load 18.6% → 4.4%.
-- **Tests:** `npm test` runs the static checker (`scripts/check.mjs`) and 24 Playwright browser tests (`scripts/test.mjs`). All pass.
+- **Design:** editorial and architectural. Warm paper (#f4f0e8), ink (#15140f), hairline rules, gold and red accents taken from the logo. Newsreader display type (instanced at the 72 pt optical size) with Instrument Sans.
+- **Performance (4× CPU throttle, before → after the redesign):**
+  - idle main thread: home 20.3% → 1.6%, courses and contact about 15% → 0.1%
+  - worst frame while scrolling: 83 ms → 17 ms, with no dropped frames
+  - core JS 9.2 → 1.7 KB gzipped; CSS 15.4 → 9.1 KB; fonts 112 → 74 KB; social image 298 → 52 KB
+- **Tests:** `npm test` builds, runs the static checker and 26 Playwright tests. One test fails if any page runs an infinite animation or contains a canvas.
 
 ## Open items and ideas
 - Add real photos and the original vector logo when the client sends them. The spiral mark is currently redrawn as SVG.
@@ -49,4 +50,5 @@ Paste this file into a new chat to continue the work. It is self-contained.
 ## Working conventions
 - Edit files in `src/`, run `npm run build`, then commit both `src/` and `dist/`.
 - Verify in the browser before pushing: Playwright and Chromium are available in the cloud environment.
-- Animate only `transform` and `opacity`, and respect `prefers-reduced-motion`.
+- Animate only `transform` and `opacity`, once per element, and respect `prefers-reduced-motion`. No looping animations.
+- Run `npm test` before pushing.

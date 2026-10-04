@@ -7,8 +7,8 @@
   <meta name="description" content="Jarvees Academy courses: SAP FICO, MM, SD, ABAP, BASIS, Fiori, S/4HANA, Salesforce, testing, data science, Java and .NET. Online and classroom batches in Pune.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jarveesinfotech.com/courses.html">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,28 +28,22 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=b54a62af">
+  <link rel="stylesheet" href="assets/css/main.css?v=ab9c21de">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
-  <script src="assets/js/main.js?v=3ddf989e" defer></script>
-  <script src="assets/js/courses.js?v=644cd810" defer></script>
+  <script src="assets/js/main.js?v=683a7565" defer></script>
+  <script src="assets/js/courses.js?v=fb2e87e8" defer></script>
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://jarveesinfotech.com/#organization","name":"Jarvees Infotech","legalName":"Jarvees Infotech Private Limited","url":"https://jarveesinfotech.com","logo":"https://jarveesinfotech.com/assets/img/icon-512.png","slogan":"An Attempt to Achieve a Goal","foundingDate":"2019","email":"jarveesacademy.pune@gmail.com","telephone":["+919022584956","+919307590139"],"address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"sameAs":["https://www.facebook.com/Jarveesacademypune"],"subOrganization":{"@type":"EducationalOrganization","@id":"https://jarveesinfotech.com/#academy","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"telephone":"+919022584956"}},{"@type":"ItemList","name":"Jarvees Academy courses","itemListElement":[{"@type":"ListItem","position":1,"url":"https://jarveesinfotech.com/course/sap-fico.html"},{"@type":"ListItem","position":2,"url":"https://jarveesinfotech.com/course/sap-mm.html"},{"@type":"ListItem","position":3,"url":"https://jarveesinfotech.com/course/sap-sd.html"},{"@type":"ListItem","position":4,"url":"https://jarveesinfotech.com/course/sap-pp.html"},{"@type":"ListItem","position":5,"url":"https://jarveesinfotech.com/course/sap-pm.html"},{"@type":"ListItem","position":6,"url":"https://jarveesinfotech.com/course/sap-qm.html"},{"@type":"ListItem","position":7,"url":"https://jarveesinfotech.com/course/sap-hcm.html"},{"@type":"ListItem","position":8,"url":"https://jarveesinfotech.com/course/sap-ps.html"},{"@type":"ListItem","position":9,"url":"https://jarveesinfotech.com/course/sap-scm.html"},{"@type":"ListItem","position":10,"url":"https://jarveesinfotech.com/course/sap-wm.html"},{"@type":"ListItem","position":11,"url":"https://jarveesinfotech.com/course/sap-abap.html"},{"@type":"ListItem","position":12,"url":"https://jarveesinfotech.com/course/sap-basis.html"},{"@type":"ListItem","position":13,"url":"https://jarveesinfotech.com/course/sap-fiori.html"},{"@type":"ListItem","position":14,"url":"https://jarveesinfotech.com/course/sap-solman.html"},{"@type":"ListItem","position":15,"url":"https://jarveesinfotech.com/course/sap-s4hana.html"},{"@type":"ListItem","position":16,"url":"https://jarveesinfotech.com/course/salesforce.html"},{"@type":"ListItem","position":17,"url":"https://jarveesinfotech.com/course/software-testing.html"},{"@type":"ListItem","position":18,"url":"https://jarveesinfotech.com/course/data-science.html"},{"@type":"ListItem","position":19,"url":"https://jarveesinfotech.com/course/java.html"},{"@type":"ListItem","position":20,"url":"https://jarveesinfotech.com/course/cpp.html"},{"@type":"ListItem","position":21,"url":"https://jarveesinfotech.com/course/dotnet.html"},{"@type":"ListItem","position":22,"url":"https://jarveesinfotech.com/course/account-finance.html"},{"@type":"ListItem","position":23,"url":"https://jarveesinfotech.com/course/computerised-accounting.html"},{"@type":"ListItem","position":24,"url":"https://jarveesinfotech.com/course/typing.html"},{"@type":"ListItem","position":25,"url":"https://jarveesinfotech.com/course/hardware-software.html"},{"@type":"ListItem","position":26,"url":"https://jarveesinfotech.com/course/digital-literacy.html"}]}]}</script>
 </head>
@@ -57,24 +51,18 @@
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6ead0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#9a7533"/>
-    </linearGradient>
-    <linearGradient id="g-edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9d9b2" stop-opacity=".75"/>
-      <stop offset=".55" stop-color="#e9d9b2" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#4f8cff" stop-opacity=".45"/>
+      <stop offset="0" stop-color="#ecd29a"/>
+      <stop offset=".55" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8823f"/>
     </linearGradient>
   </defs>
 
-  <!-- Brand mark: Fibonacci spiral on a black tile -->
+  <!-- Brand mark: the Jarvees spiral on an ink tile -->
   <symbol id="mark" viewBox="0 0 64 64">
-    <rect x="1" y="1" width="62" height="62" rx="16" fill="#06080f"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#g-edge)"/>
-    <path class="mark__spiral" d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="13" cy="20.24" r="2.6" fill="#e9d9b2"/>
-    <circle cx="40.6" cy="27.2" r="2.4" fill="#e0393f"/>
+    <rect width="64" height="64" rx="12" fill="#15140f"/>
+    <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="13" cy="20.24" r="2.6" fill="#ecd29a"/>
+    <circle cx="40.6" cy="27.2" r="2.4" fill="#d6423e"/>
   </symbol>
 
   <!-- Icons (24×24, stroked via CSS unless noted) -->
@@ -131,11 +119,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
-
   <header class="site-header" data-header>
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="Jarvees Infotech home">
@@ -158,10 +141,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm magnetic header__cta" href="contact.html">
-        Enquire now
-        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-      </a>
+      <a class="btn btn--sm header__cta" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -174,18 +154,18 @@
   <div class="mobile-nav__inner">
     <nav aria-label="Mobile">
       <ol class="mobile-nav__list" role="list">
-        <li style="--i:0"><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
-        <li style="--i:1"><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
-        <li style="--i:2"><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
-        <li style="--i:3"><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
-        <li style="--i:4"><a href="courses.html" data-nav="courses" aria-current="page"><span class="mobile-nav__idx">05</span>Courses</a></li>
-        <li style="--i:5"><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
+        <li><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li><a href="courses.html" data-nav="courses" aria-current="page"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-nav__foot">
       <a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a>
       <a href="mailto:jarveesacademy.pune@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>jarveesacademy.pune@gmail.com</a>
-      <a class="btn btn--primary" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -193,25 +173,25 @@
 
   <main id="main" tabindex="-1">
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
-      <h1 class="display split is-split" id="page-title" aria-label="26 courses. One standard: job-ready."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">26</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">courses.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">One</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">standard:</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">job-ready.</span></span></em></h1>
-      <p class="lead reveal" style="--d:240ms">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
+      <h1 class="display display--page" id="page-title">26 courses. <em>One standard: job-ready.</em></h1>
+      <p class="lead">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
     </div>
-    <aside class="hud reveal" style="--d:320ms" aria-label="Catalogue summary">
-      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
-      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Catalogue</p>
-      <div class="hud__row"><span>Courses</span><b>26</b></div>
-      <div class="hud__row"><span>Tracks</span><b>8</b></div>
-      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
-      <div class="hud__row"><span>Included</span><b>Projects · Notes · Certificate</b></div>
+    <aside class="sheet" aria-label="Catalogue summary">
+      <p class="sheet__title label">Catalogue <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg></p>
+      <dl>
+        <div><dt>Courses</dt><dd>26</dd></div>
+        <div><dt>Tracks</dt><dd>8</dd></div>
+        <div><dt>Modes</dt><dd>Online · Classroom</dd></div>
+        <div><dt>Included</dt><dd>Projects · Notes · Certificate</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
 
-<section class="section section--flush-top catalog" aria-labelledby="catalog-title">
+<section class="section section--flush catalog" aria-labelledby="catalog-title">
   <div class="container">
     <h2 class="sr-only" id="catalog-title">Course catalogue</h2>
     <div class="catalog__bar" role="search">
@@ -238,10 +218,10 @@
 
     <div class="course-grid" data-course-grid>
       
-<article class="course card spot reveal" id="sap-fico" data-course data-cat="sap-functional" data-search="sap fico finance &amp; controlling run record-to-report in sap, from the general ledger and payables to cost centres and profitability. sap functional enterprise structure &amp; global settings general ledger accounting accounts payable &amp; receivable asset accounting bank accounting &amp; reconciliation cost centre &amp; profit centre accounting internal orders &amp; product costing basics integration with mm &amp; sd s/4hana universal journal &amp; business partner" style="--d:0ms">
+<article class="course" id="sap-fico" data-course data-cat="sap-functional" data-search="sap fico finance &amp; controlling run record-to-report in sap, from the general ledger and payables to cost centres and profitability. sap functional enterprise structure &amp; global settings general ledger accounting accounts payable &amp; receivable asset accounting bank accounting &amp; reconciliation cost centre &amp; profit centre accounting internal orders &amp; product costing basics integration with mm &amp; sd s/4hana universal journal &amp; business partner">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP FICO</h3>
   <p class="course__sub">Finance &amp; Controlling</p>
@@ -266,17 +246,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-fico.html">Full SAP FICO course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-fico.html">Full SAP FICO course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-mm" data-course data-cat="sap-functional" data-search="sap mm materials management master procure-to-pay: purchasing, inventory and invoice verification on sap. sap functional organisational structure for procurement material &amp; supplier master data purchase requisitions, rfqs &amp; purchase orders info records, source lists &amp; release strategy inventory management &amp; goods movements physical inventory logistics invoice verification valuation &amp; account determination integration with fi, sd &amp; pp" style="--d:70ms">
+<article class="course" id="sap-mm" data-course data-cat="sap-functional" data-search="sap mm materials management master procure-to-pay: purchasing, inventory and invoice verification on sap. sap functional organisational structure for procurement material &amp; supplier master data purchase requisitions, rfqs &amp; purchase orders info records, source lists &amp; release strategy inventory management &amp; goods movements physical inventory logistics invoice verification valuation &amp; account determination integration with fi, sd &amp; pp">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP MM</h3>
   <p class="course__sub">Materials Management</p>
@@ -301,17 +281,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-mm.html">Full SAP MM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-mm.html">Full SAP MM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-sd" data-course data-cat="sap-functional" data-search="sap sd sales &amp; distribution own order-to-cash: sales orders, pricing, shipping and billing in sap. sap functional enterprise structure for sales customer master &amp; business partner sales documents &amp; item categories pricing procedure &amp; condition technique availability check &amp; delivery scheduling shipping &amp; picking billing &amp; revenue account determination credit management integration with mm &amp; fi" style="--d:140ms">
+<article class="course" id="sap-sd" data-course data-cat="sap-functional" data-search="sap sd sales &amp; distribution own order-to-cash: sales orders, pricing, shipping and billing in sap. sap functional enterprise structure for sales customer master &amp; business partner sales documents &amp; item categories pricing procedure &amp; condition technique availability check &amp; delivery scheduling shipping &amp; picking billing &amp; revenue account determination credit management integration with mm &amp; fi">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP SD</h3>
   <p class="course__sub">Sales &amp; Distribution</p>
@@ -336,17 +316,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-sd.html">Full SAP SD course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-sd.html">Full SAP SD course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-pp" data-course data-cat="sap-functional" data-search="sap pp production planning plan and execute manufacturing with boms, routings, mrp and production orders. sap functional material master, bom &amp; work centres routings &amp; master recipes demand management &amp; planning strategies mrp run &amp; evaluation production order lifecycle capacity planning repetitive &amp; process manufacturing overview integration with mm, qm &amp; co" style="--d:0ms">
+<article class="course" id="sap-pp" data-course data-cat="sap-functional" data-search="sap pp production planning plan and execute manufacturing with boms, routings, mrp and production orders. sap functional material master, bom &amp; work centres routings &amp; master recipes demand management &amp; planning strategies mrp run &amp; evaluation production order lifecycle capacity planning repetitive &amp; process manufacturing overview integration with mm, qm &amp; co">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP PP</h3>
   <p class="course__sub">Production Planning</p>
@@ -371,17 +351,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-pp.html">Full SAP PP course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-pp.html">Full SAP PP course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-pm" data-course data-cat="sap-functional" data-search="sap pm plant maintenance keep assets productive with equipment records, notifications, work orders and preventive plans. sap functional functional locations &amp; equipment maintenance notifications maintenance orders &amp; execution breakdown &amp; corrective maintenance preventive maintenance plans &amp; scheduling spare parts &amp; material integration calibration &amp; refurbishment overview maintenance reporting &amp; cost settlement" style="--d:70ms">
+<article class="course" id="sap-pm" data-course data-cat="sap-functional" data-search="sap pm plant maintenance keep assets productive with equipment records, notifications, work orders and preventive plans. sap functional functional locations &amp; equipment maintenance notifications maintenance orders &amp; execution breakdown &amp; corrective maintenance preventive maintenance plans &amp; scheduling spare parts &amp; material integration calibration &amp; refurbishment overview maintenance reporting &amp; cost settlement">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP PM</h3>
   <p class="course__sub">Plant Maintenance</p>
@@ -406,17 +386,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-pm.html">Full SAP PM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-pm.html">Full SAP PM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-qm" data-course data-cat="sap-functional" data-search="sap qm quality management build quality into procurement, production and delivery with sap qm. sap functional inspection characteristics, methods &amp; plans inspection types &amp; inspection lots sampling procedures &amp; dynamic modification results recording &amp; usage decisions quality notifications quality certificates integration with mm, pp &amp; sd" style="--d:140ms">
+<article class="course" id="sap-qm" data-course data-cat="sap-functional" data-search="sap qm quality management build quality into procurement, production and delivery with sap qm. sap functional inspection characteristics, methods &amp; plans inspection types &amp; inspection lots sampling procedures &amp; dynamic modification results recording &amp; usage decisions quality notifications quality certificates integration with mm, pp &amp; sd">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP QM</h3>
   <p class="course__sub">Quality Management</p>
@@ -441,17 +421,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-qm.html">Full SAP QM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-qm.html">Full SAP QM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-hcm" data-course data-cat="sap-functional" data-search="sap hr / hcm human capital management manage hire-to-retire: organisation, personnel administration, time and payroll. sap functional organisational management personnel administration &amp; infotypes recruitment overview time management payroll concepts (india) benefits overview employee &amp; manager self-service reporting in hcm" style="--d:0ms">
+<article class="course" id="sap-hcm" data-course data-cat="sap-functional" data-search="sap hr / hcm human capital management manage hire-to-retire: organisation, personnel administration, time and payroll. sap functional organisational management personnel administration &amp; infotypes recruitment overview time management payroll concepts (india) benefits overview employee &amp; manager self-service reporting in hcm">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP HR / HCM</h3>
   <p class="course__sub">Human Capital Management</p>
@@ -476,17 +456,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-hcm.html">Full SAP HR / HCM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-hcm.html">Full SAP HR / HCM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-ps" data-course data-cat="sap-functional" data-search="sap ps project systems plan, budget and control projects end to end in sap. sap functional work breakdown structures &amp; networks project planning &amp; scheduling cost &amp; budget planning resource &amp; material planning project execution &amp; confirmations period-end closing &amp; settlement integration with fi/co, mm &amp; sd" style="--d:70ms">
+<article class="course" id="sap-ps" data-course data-cat="sap-functional" data-search="sap ps project systems plan, budget and control projects end to end in sap. sap functional work breakdown structures &amp; networks project planning &amp; scheduling cost &amp; budget planning resource &amp; material planning project execution &amp; confirmations period-end closing &amp; settlement integration with fi/co, mm &amp; sd">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP PS</h3>
   <p class="course__sub">Project Systems</p>
@@ -511,17 +491,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-ps.html">Full SAP PS course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-ps.html">Full SAP PS course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-scm" data-course data-cat="sap-functional" data-search="sap scm supply chain management connect planning and execution across the sap supply chain. sap functional supply-chain processes in sap demand &amp; supply planning concepts sales &amp; operations planning cross-module integration: mm, sd &amp; pp advanced planning concepts (apo / ibp overview) logistics execution supply-chain reporting &amp; analytics" style="--d:140ms">
+<article class="course" id="sap-scm" data-course data-cat="sap-functional" data-search="sap scm supply chain management connect planning and execution across the sap supply chain. sap functional supply-chain processes in sap demand &amp; supply planning concepts sales &amp; operations planning cross-module integration: mm, sd &amp; pp advanced planning concepts (apo / ibp overview) logistics execution supply-chain reporting &amp; analytics">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP SCM</h3>
   <p class="course__sub">Supply Chain Management</p>
@@ -546,17 +526,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-scm.html">Full SAP SCM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-scm.html">Full SAP SCM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-wm" data-course data-cat="sap-functional" data-search="sap wm / ewm warehouse management run warehouses on sap: storage structure, putaway, picking and stock movements. sap functional warehouse structure: storage types, sections &amp; bins transfer requirements &amp; transfer orders putaway &amp; picking strategies warehouse inventory integration with im, sd &amp; pp introduction to s/4hana ewm" style="--d:0ms">
+<article class="course" id="sap-wm" data-course data-cat="sap-functional" data-search="sap wm / ewm warehouse management run warehouses on sap: storage structure, putaway, picking and stock movements. sap functional warehouse structure: storage types, sections &amp; bins transfer requirements &amp; transfer orders putaway &amp; picking strategies warehouse inventory integration with im, sd &amp; pp introduction to s/4hana ewm">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP WM / EWM</h3>
   <p class="course__sub">Warehouse Management</p>
@@ -581,17 +561,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-wm.html">Full SAP WM / EWM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-wm.html">Full SAP WM / EWM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-abap" data-course data-cat="sap-technical" data-search="sap abap advanced business application programming build, extend and optimise sap with abap, from classic reports to abap on hana. sap technical abap workbench &amp; data dictionary internal tables &amp; modularisation classical, interactive &amp; alv reports module pool (dialog) programming smartforms &amp; adobe forms enhancements: user exits &amp; badis data migration: bdc &amp; lsmw rfc, bapi &amp; idoc basics object-oriented abap abap on hana &amp; cds views" style="--d:70ms">
+<article class="course" id="sap-abap" data-course data-cat="sap-technical" data-search="sap abap advanced business application programming build, extend and optimise sap with abap, from classic reports to abap on hana. sap technical abap workbench &amp; data dictionary internal tables &amp; modularisation classical, interactive &amp; alv reports module pool (dialog) programming smartforms &amp; adobe forms enhancements: user exits &amp; badis data migration: bdc &amp; lsmw rfc, bapi &amp; idoc basics object-oriented abap abap on hana &amp; cds views">
   <div class="course__top">
     <span class="course__cat">SAP Technical</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-code"/></svg>
   </div>
   <h3 class="course__title">SAP ABAP</h3>
   <p class="course__sub">Advanced Business Application Programming</p>
@@ -616,17 +596,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-abap.html">Full SAP ABAP course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-abap.html">Full SAP ABAP course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-basis" data-course data-cat="sap-technical" data-search="sap basis system administration administer the technical backbone of sap landscapes. sap technical sap architecture &amp; system landscape installation &amp; system copy concepts client administration user &amp; authorisation management transport management system (tms) background jobs &amp; spool administration system monitoring &amp; performance kernel &amp; support-package updates sap hana administration basics" style="--d:140ms">
+<article class="course" id="sap-basis" data-course data-cat="sap-technical" data-search="sap basis system administration administer the technical backbone of sap landscapes. sap technical sap architecture &amp; system landscape installation &amp; system copy concepts client administration user &amp; authorisation management transport management system (tms) background jobs &amp; spool administration system monitoring &amp; performance kernel &amp; support-package updates sap hana administration basics">
   <div class="course__top">
     <span class="course__cat">SAP Technical</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-code"/></svg>
   </div>
   <h3 class="course__title">SAP BASIS</h3>
   <p class="course__sub">System Administration</p>
@@ -651,17 +631,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-basis.html">Full SAP BASIS course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-basis.html">Full SAP BASIS course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-fiori" data-course data-cat="sap-technical" data-search="sap fiori modern sap user experience design and deliver modern sap user experiences with fiori and sapui5. sap technical fiori design principles fiori launchpad configuration transactional, analytical &amp; fact-sheet apps sapui5 fundamentals odata services with sap gateway fiori elements &amp; cds annotations roles, catalogues &amp; deployment" style="--d:0ms">
+<article class="course" id="sap-fiori" data-course data-cat="sap-technical" data-search="sap fiori modern sap user experience design and deliver modern sap user experiences with fiori and sapui5. sap technical fiori design principles fiori launchpad configuration transactional, analytical &amp; fact-sheet apps sapui5 fundamentals odata services with sap gateway fiori elements &amp; cds annotations roles, catalogues &amp; deployment">
   <div class="course__top">
     <span class="course__cat">SAP Technical</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-code"/></svg>
   </div>
   <h3 class="course__title">SAP Fiori</h3>
   <p class="course__sub">Modern SAP user experience</p>
@@ -686,17 +666,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-fiori.html">Full SAP Fiori course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-fiori.html">Full SAP Fiori course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-solman" data-course data-cat="sap-technical" data-search="sap solution manager 7.2 application lifecycle management govern sap implementations and operations with solution manager 7.2. sap technical solution manager 7.2 architecture process management &amp; solution documentation implementation projects with sap activate change request management (charm) test suite it service management technical monitoring" style="--d:70ms">
+<article class="course" id="sap-solman" data-course data-cat="sap-technical" data-search="sap solution manager 7.2 application lifecycle management govern sap implementations and operations with solution manager 7.2. sap technical solution manager 7.2 architecture process management &amp; solution documentation implementation projects with sap activate change request management (charm) test suite it service management technical monitoring">
   <div class="course__top">
     <span class="course__cat">SAP Technical</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-code"/></svg>
   </div>
   <h3 class="course__title">SAP Solution Manager 7.2</h3>
   <p class="course__sub">Application lifecycle management</p>
@@ -721,17 +701,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-solman.html">Full SAP Solution Manager 7.2 course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-solman.html">Full SAP Solution Manager 7.2 course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="sap-s4hana" data-course data-cat="s4hana" data-search="sap s/4hana next-generation erp move from r/3 core business processes to s/4hana, and learn how it is implemented. sap s/4hana r/3 core business processes sap hana in-memory fundamentals s/4hana simplifications &amp; universal journal business partner approach industry-specific “new dimension” modules implementation with solution manager: prepare, design, realise, deploy, maintain fiori-based user experience" style="--d:140ms">
+<article class="course" id="sap-s4hana" data-course data-cat="s4hana" data-search="sap s/4hana next-generation erp move from r/3 core business processes to s/4hana, and learn how it is implemented. sap s/4hana r/3 core business processes sap hana in-memory fundamentals s/4hana simplifications &amp; universal journal business partner approach industry-specific “new dimension” modules implementation with solution manager: prepare, design, realise, deploy, maintain fiori-based user experience">
   <div class="course__top">
     <span class="course__cat">SAP S/4HANA</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-zap"/></svg>
   </div>
   <h3 class="course__title">SAP S/4HANA</h3>
   <p class="course__sub">Next-generation ERP</p>
@@ -756,17 +736,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/sap-s4hana.html">Full SAP S/4HANA course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/sap-s4hana.html">Full SAP S/4HANA course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="salesforce" data-course data-cat="crm" data-search="salesforce crm admin &amp; development configure, automate and extend the salesforce platform. salesforce crm crm concepts &amp; the salesforce ecosystem objects, fields &amp; relationships security: profiles, roles &amp; sharing process automation with flow reports &amp; dashboards sales cloud &amp; service cloud essentials data management &amp; import tools introduction to apex &amp; lightning components" style="--d:0ms">
+<article class="course" id="salesforce" data-course data-cat="crm" data-search="salesforce crm admin &amp; development configure, automate and extend the salesforce platform. salesforce crm crm concepts &amp; the salesforce ecosystem objects, fields &amp; relationships security: profiles, roles &amp; sharing process automation with flow reports &amp; dashboards sales cloud &amp; service cloud essentials data management &amp; import tools introduction to apex &amp; lightning components">
   <div class="course__top">
     <span class="course__cat">Salesforce CRM</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-cloud"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-cloud"/></svg>
   </div>
   <h3 class="course__title">Salesforce CRM</h3>
   <p class="course__sub">Admin &amp; development</p>
@@ -791,17 +771,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/salesforce.html">Full Salesforce CRM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/salesforce.html">Full Salesforce CRM course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="software-testing" data-course data-cat="testing" data-search="software testing manual &amp; automation ship quality software with manual and automation testing, backed by a live project. software testing sdlc, stlc &amp; testing types test planning &amp; test-case design defect life cycle &amp; reporting agile &amp; scrum testing sql for testers automation fundamentals with selenium api testing basics live project &amp; experience letter" style="--d:70ms">
+<article class="course" id="software-testing" data-course data-cat="testing" data-search="software testing manual &amp; automation ship quality software with manual and automation testing, backed by a live project. software testing sdlc, stlc &amp; testing types test planning &amp; test-case design defect life cycle &amp; reporting agile &amp; scrum testing sql for testers automation fundamentals with selenium api testing basics live project &amp; experience letter">
   <div class="course__top">
     <span class="course__cat">Software Testing</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-flask"/></svg>
   </div>
   <h3 class="course__title">Software Testing</h3>
   <p class="course__sub">Manual &amp; automation</p>
@@ -826,17 +806,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Live project</li><li class="tag">Experience letter</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project</li><li class="tag">Experience letter</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/software-testing.html">Full Software Testing course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/software-testing.html">Full Software Testing course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="data-science" data-course data-cat="data" data-search="data science python · statistics · machine learning turn data into decisions with python, statistics and machine learning. data science python for data analysis numpy &amp; pandas statistics &amp; probability data visualisation machine learning: regression, classification &amp; clustering model evaluation &amp; tuning sql essentials capstone project" style="--d:140ms">
+<article class="course" id="data-science" data-course data-cat="data" data-search="data science python · statistics · machine learning turn data into decisions with python, statistics and machine learning. data science python for data analysis numpy &amp; pandas statistics &amp; probability data visualisation machine learning: regression, classification &amp; clustering model evaluation &amp; tuning sql essentials capstone project">
   <div class="course__top">
     <span class="course__cat">Data Science</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-chart"/></svg>
   </div>
   <h3 class="course__title">Data Science</h3>
   <p class="course__sub">Python · Statistics · Machine learning</p>
@@ -861,17 +841,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Capstone project</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Capstone project</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/data-science.html">Full Data Science course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/data-science.html">Full Data Science course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="java" data-course data-cat="programming" data-search="core &amp; advanced java full-stack foundations go from oop fundamentals to front-end and web applications in java. programming java fundamentals &amp; oop collections &amp; generics exception handling &amp; file i/o multithreading jdbc &amp; databases servlets &amp; jsp front-end basics: html, css &amp; javascript mini project" style="--d:0ms">
+<article class="course" id="java" data-course data-cat="programming" data-search="core &amp; advanced java full-stack foundations go from oop fundamentals to front-end and web applications in java. programming java fundamentals &amp; oop collections &amp; generics exception handling &amp; file i/o multithreading jdbc &amp; databases servlets &amp; jsp front-end basics: html, css &amp; javascript mini project">
   <div class="course__top">
     <span class="course__cat">Programming</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg>
   </div>
   <h3 class="course__title">Core &amp; Advanced Java</h3>
   <p class="course__sub">Full-stack foundations</p>
@@ -896,17 +876,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/java.html">Full Core &amp; Advanced Java course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/java.html">Full Core &amp; Advanced Java course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="cpp" data-course data-cat="programming" data-search="c++ programming programming foundations build rock-solid programming foundations with c++. programming syntax, data types &amp; control flow functions &amp; arrays pointers &amp; memory management oop: classes, inheritance &amp; polymorphism templates &amp; the stl file handling problem solving &amp; data-structure basics" style="--d:70ms">
+<article class="course" id="cpp" data-course data-cat="programming" data-search="c++ programming programming foundations build rock-solid programming foundations with c++. programming syntax, data types &amp; control flow functions &amp; arrays pointers &amp; memory management oop: classes, inheritance &amp; polymorphism templates &amp; the stl file handling problem solving &amp; data-structure basics">
   <div class="course__top">
     <span class="course__cat">Programming</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg>
   </div>
   <h3 class="course__title">C++ Programming</h3>
   <p class="course__sub">Programming foundations</p>
@@ -931,17 +911,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/cpp.html">Full C++ Programming course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/cpp.html">Full C++ Programming course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="dotnet" data-course data-cat="programming" data-search=".net development c# · asp.net core build applications with c# and the .net platform. programming c# fundamentals &amp; oop .net runtime &amp; tooling console &amp; desktop applications asp.net core mvc entity framework &amp; sql server building web apis deployment basics" style="--d:140ms">
+<article class="course" id="dotnet" data-course data-cat="programming" data-search=".net development c# · asp.net core build applications with c# and the .net platform. programming c# fundamentals &amp; oop .net runtime &amp; tooling console &amp; desktop applications asp.net core mvc entity framework &amp; sql server building web apis deployment basics">
   <div class="course__top">
     <span class="course__cat">Programming</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg>
   </div>
   <h3 class="course__title">.NET Development</h3>
   <p class="course__sub">C# · ASP.NET Core</p>
@@ -966,17 +946,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Hands-on projects</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">Placement assistance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/dotnet.html">Full .NET Development course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/dotnet.html">Full .NET Development course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="account-finance" data-course data-cat="accounts" data-search="account &amp; finance practical accounting practical accounting for business and finance roles. accounts &amp; office accounting principles journal, ledger &amp; trial balance final accounts gst &amp; tds basics payroll accounting basics bank reconciliation financial statement analysis" style="--d:0ms">
+<article class="course" id="account-finance" data-course data-cat="accounts" data-search="account &amp; finance practical accounting practical accounting for business and finance roles. accounts &amp; office accounting principles journal, ledger &amp; trial balance final accounts gst &amp; tds basics payroll accounting basics bank reconciliation financial statement analysis">
   <div class="course__top">
     <span class="course__cat">Accounts &amp; Office</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>
   </div>
   <h3 class="course__title">Account &amp; Finance</h3>
   <p class="course__sub">Practical accounting</p>
@@ -1001,17 +981,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/account-finance.html">Full Account &amp; Finance course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/account-finance.html">Full Account &amp; Finance course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="computerised-accounting" data-course data-cat="accounts" data-search="computerised accounting accounting software bookkeeping and compliance on accounting software. accounts &amp; office company creation &amp; masters voucher entry inventory accounting gst-compliant invoicing bank reconciliation reports &amp; statutory basics" style="--d:70ms">
+<article class="course" id="computerised-accounting" data-course data-cat="accounts" data-search="computerised accounting accounting software bookkeeping and compliance on accounting software. accounts &amp; office company creation &amp; masters voucher entry inventory accounting gst-compliant invoicing bank reconciliation reports &amp; statutory basics">
   <div class="course__top">
     <span class="course__cat">Accounts &amp; Office</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>
   </div>
   <h3 class="course__title">Computerised Accounting</h3>
   <p class="course__sub">Accounting software</p>
@@ -1036,17 +1016,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/computerised-accounting.html">Full Computerised Accounting course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/computerised-accounting.html">Full Computerised Accounting course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="typing" data-course data-cat="accounts" data-search="typing speed &amp; accuracy fast, accurate typing for office work. accounts &amp; office touch-typing technique speed &amp; accuracy drills english typing practice document formatting basics" style="--d:140ms">
+<article class="course" id="typing" data-course data-cat="accounts" data-search="typing speed &amp; accuracy fast, accurate typing for office work. accounts &amp; office touch-typing technique speed &amp; accuracy drills english typing practice document formatting basics">
   <div class="course__top">
     <span class="course__cat">Accounts &amp; Office</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>
   </div>
   <h3 class="course__title">Typing</h3>
   <p class="course__sub">Speed &amp; accuracy</p>
@@ -1071,17 +1051,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/typing.html">Full Typing course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/typing.html">Full Typing course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="hardware-software" data-course data-cat="accounts" data-search="hardware &amp; software computer essentials understand, assemble and maintain computers. accounts &amp; office computer components pc assembly &amp; bios operating system installation drivers &amp; software setup networking basics troubleshooting &amp; maintenance" style="--d:0ms">
+<article class="course" id="hardware-software" data-course data-cat="accounts" data-search="hardware &amp; software computer essentials understand, assemble and maintain computers. accounts &amp; office computer components pc assembly &amp; bios operating system installation drivers &amp; software setup networking basics troubleshooting &amp; maintenance">
   <div class="course__top">
     <span class="course__cat">Accounts &amp; Office</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>
   </div>
   <h3 class="course__title">Hardware &amp; Software</h3>
   <p class="course__sub">Computer essentials</p>
@@ -1106,17 +1086,17 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/hardware-software.html">Full Hardware &amp; Software course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/hardware-software.html">Full Hardware &amp; Software course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
 
-<article class="course card spot reveal" id="digital-literacy" data-course data-cat="accounts" data-search="digital literacy everyday computing confident everyday computing for work and life. accounts &amp; office computer &amp; internet basics email &amp; online safety office productivity tools digital payments &amp; e-services cloud storage &amp; collaboration" style="--d:70ms">
+<article class="course" id="digital-literacy" data-course data-cat="accounts" data-search="digital literacy everyday computing confident everyday computing for work and life. accounts &amp; office computer &amp; internet basics email &amp; online safety office productivity tools digital payments &amp; e-services cloud storage &amp; collaboration">
   <div class="course__top">
     <span class="course__cat">Accounts &amp; Office</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>
   </div>
   <h3 class="course__title">Digital Literacy</h3>
   <p class="course__sub">Everyday computing</p>
@@ -1141,53 +1121,53 @@
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Practical sessions</li><li class="tag">Course certificate</li><li class="tag">Career guidance</li></ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="course/digital-literacy.html">Full Digital Literacy course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
+    <p class="dialog__more"><a class="link" href="course/digital-literacy.html">Full Digital Literacy course page <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a></p>
   </div>
 </article>
     </div>
 
     <div class="empty" data-course-empty hidden>
-      <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></span>
+      <svg class="i cell__icon" aria-hidden="true"><use href="#i-search"/></svg>
       <h2 class="h3">No courses match that search</h2>
       <p>Try a different keyword or track, or ask us directly. We regularly run custom and corporate programmes.</p>
-      <div class="hero__ctas">
-        <button class="btn btn--ghost" type="button" data-course-reset>Clear filters</button>
-        <a class="btn btn--primary" href="contact.html">Ask the team <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <div class="actions">
+        <button class="btn btn--line" type="button" data-course-reset>Clear filters</button>
+        <a class="btn" href="contact.html">Ask the team <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="programmes" aria-labelledby="programmes-title">
+<section class="section section--tint" id="programmes" aria-labelledby="programmes-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">Programmes &amp; add-ons</span>
-        <h2 class="title split is-split" id="programmes-title" aria-label="Go further than the classroom."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Go</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">further</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">than</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">the</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">classroom.</span></span></em></h2>
+    <header class="sh">
+      <p class="label">Programmes &amp; add-ons</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="programmes-title">Go further than <em>the classroom.</em></h2>
+        <p class="lead rv">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
       </div>
-      <p class="lead reveal">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
-    </div>
-    <div class="grid grid--4">
-      <article class="card spot program reveal" style="--d:0ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg></span>
+    </header>
+    <div class="cells cells--4" data-stagger="80">
+      <article class="cell">
+  <div class="cell__head"><span class="cell__num">01</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-building"/></svg></div>
   <h3 class="h3">Corporate training</h3>
   <p>Customised SAP and S/4HANA programmes that upskill company teams, scheduled around your business.</p>
 </article>
-<article class="card spot program reveal" style="--d:80ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+<article class="cell">
+  <div class="cell__head"><span class="cell__num">02</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
   <h3 class="h3">Internship project</h3>
   <p>Freshers work on a live project and earn an experience letter that strengthens their first job application.</p>
 </article>
-<article class="card spot program reveal" style="--d:160ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
+<article class="cell">
+  <div class="cell__head"><span class="cell__num">03</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-award"/></svg></div>
   <h3 class="h3">Course certification</h3>
   <p>Complete your programme and earn a Jarvees course certificate for your profile.</p>
 </article>
-<article class="card spot program reveal" style="--d:240ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-compass"/></svg></span>
+<article class="cell">
+  <div class="cell__head"><span class="cell__num">04</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-compass"/></svg></div>
   <h3 class="h3">Career guidance</h3>
   <p>One-to-one counselling to pick the right track, plus resume and interview preparation when you are ready.</p>
 </article>
@@ -1195,25 +1175,23 @@
   </div>
 </section>
 
-<section class="section section--cta" aria-labelledby="cta-title">
+<section class="cta" aria-labelledby="cta-title">
   <div class="container">
-    <div class="cta reveal reveal--scale">
-      <div class="cta__floor" aria-hidden="true"><div class="cta__plane"></div></div>
-      <div class="cta__glow" aria-hidden="true"></div>
-      <div class="cta__content">
-        <span class="kicker">Need advice?</span>
-        <h2 class="title cta__title split is-split" id="cta-title" aria-label="Not sure which course fits you best?"><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Not</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">sure</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">which</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">course</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">fits</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">you</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">best?</span></span></em></h2>
-        <p class="lead">Tell us about your background and goals. A counsellor will recommend the right track, batch and mode for you.</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="contact.html?interest=career-guidance">Get course advice <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="academy.html">Visit the academy</a>
-        </div>
-        <ul class="cta__contact" role="list">
-          <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
-          <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
-          <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
-        </ul>
+    <div class="cta__inner">
+    <p class="label">Need advice?</p>
+    <div class="cta__body">
+      <h2 class="cta__title rv" id="cta-title">Not sure which course <em>fits you best?</em></h2>
+      <p class="cta__text rv">Tell us about your background and goals. A counsellor will recommend the right track, batch and mode for you.</p>
+      <div class="actions rv">
+        <a class="btn btn--light btn--lg" href="contact.html?interest=career-guidance">Get course advice <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line-light btn--lg" href="academy.html">Visit the academy</a>
       </div>
+      <ul class="cta__contact" role="list">
+        <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
+        <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
+        <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -1232,8 +1210,8 @@
   </div>
   <div class="dialog__body" data-dialog-body></div>
   <div class="dialog__foot">
-    <a class="btn btn--ghost" href="https://wa.me/919022584956" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
-    <a class="btn btn--primary" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a class="btn btn--line" href="https://wa.me/919022584956" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+    <a class="btn" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
   </div>
 </dialog>
 
@@ -1253,7 +1231,7 @@
         <p class="footer__tagline">“An Attempt to Achieve a Goal”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since 2019</li>
         </ul>
       </div>
@@ -1297,43 +1275,20 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Jarvees Infotech Private Limited. All rights reserved.</p>
+      <p>© 2026 Jarvees Infotech Private Limited. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>
   </div>
 </footer>
 
-  <div class="scroll-progress" aria-hidden="true" data-progress></div>
-
-<a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
+  <a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
   <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   <span class="fab__label">Chat with us</span>
 </a>
-
-<div class="cursor" aria-hidden="true" data-cursor></div>
-
-<div class="intro" aria-hidden="true">
-  <div class="intro__core">
-    <svg class="intro__mark" viewBox="0 0 64 64">
-      <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" pathLength="1" fill="none" stroke="url(#g-gold)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="40.6" cy="27.2" r="2.2" fill="#e0393f"/>
-    </svg>
-    <p class="intro__word"><span>J</span><span>A</span><span>R</span><span>V</span><span>E</span><span>E</span><span>S</span></p>
-    <p class="intro__meta">Infotech · Academy · Pune</p>
-  </div>
-</div>
 
 </body>
 </html>

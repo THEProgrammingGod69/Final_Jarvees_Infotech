@@ -7,8 +7,8 @@
   <meta name="description" content="{{description}}">
   <meta name="robots" content="{{robots}}">
   <link rel="canonical" href="{{canonical}}">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,39 +28,28 @@
   <link rel="apple-touch-icon" href="{{base}}assets/img/apple-touch-icon.png">
   <link rel="manifest" href="{{base}}site.webmanifest">
 
-  <link rel="preload" href="{{base}}assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="{{base}}assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="{{base}}assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="{{@asset assets/css/main.css}}">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
   <script src="{{@asset assets/js/main.js}}" defer></script>
   {{@pageScripts}}
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   {{@jsonLd}}
 </head>
 <body class="{{bodyClass}}" id="top">
   {{> sprite}}
   <a class="skip-link" href="#main">Skip to content</a>
-
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
 
   {{> header}}
 

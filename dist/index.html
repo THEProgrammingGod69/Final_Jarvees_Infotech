@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en-IN" class="no-js" data-intro>
+<html lang="en-IN" class="no-js">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -7,8 +7,8 @@
   <meta name="description" content="ISO 9001 certified SAP consulting company in Pune and parent of Jarvees Academy, offering SAP, S/4HANA, Salesforce, testing and data science training.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jarveesinfotech.com/">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,28 +28,22 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=b54a62af">
+  <link rel="stylesheet" href="assets/css/main.css?v=ab9c21de">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
-  <script src="assets/js/main.js?v=3ddf989e" defer></script>
+  <script src="assets/js/main.js?v=683a7565" defer></script>
   
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://jarveesinfotech.com/#organization","name":"Jarvees Infotech","legalName":"Jarvees Infotech Private Limited","url":"https://jarveesinfotech.com","logo":"https://jarveesinfotech.com/assets/img/icon-512.png","slogan":"An Attempt to Achieve a Goal","foundingDate":"2019","email":"jarveesacademy.pune@gmail.com","telephone":["+919022584956","+919307590139"],"address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"sameAs":["https://www.facebook.com/Jarveesacademypune"],"subOrganization":{"@type":"EducationalOrganization","@id":"https://jarveesinfotech.com/#academy","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"telephone":"+919022584956"}}]}</script>
 </head>
@@ -57,24 +51,18 @@
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6ead0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#9a7533"/>
-    </linearGradient>
-    <linearGradient id="g-edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9d9b2" stop-opacity=".75"/>
-      <stop offset=".55" stop-color="#e9d9b2" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#4f8cff" stop-opacity=".45"/>
+      <stop offset="0" stop-color="#ecd29a"/>
+      <stop offset=".55" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8823f"/>
     </linearGradient>
   </defs>
 
-  <!-- Brand mark: Fibonacci spiral on a black tile -->
+  <!-- Brand mark: the Jarvees spiral on an ink tile -->
   <symbol id="mark" viewBox="0 0 64 64">
-    <rect x="1" y="1" width="62" height="62" rx="16" fill="#06080f"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#g-edge)"/>
-    <path class="mark__spiral" d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="13" cy="20.24" r="2.6" fill="#e9d9b2"/>
-    <circle cx="40.6" cy="27.2" r="2.4" fill="#e0393f"/>
+    <rect width="64" height="64" rx="12" fill="#15140f"/>
+    <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="13" cy="20.24" r="2.6" fill="#ecd29a"/>
+    <circle cx="40.6" cy="27.2" r="2.4" fill="#d6423e"/>
   </symbol>
 
   <!-- Icons (24×24, stroked via CSS unless noted) -->
@@ -131,11 +119,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
-
   <header class="site-header" data-header>
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="Jarvees Infotech home">
@@ -158,10 +141,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm magnetic header__cta" href="contact.html">
-        Enquire now
-        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-      </a>
+      <a class="btn btn--sm header__cta" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -174,18 +154,18 @@
   <div class="mobile-nav__inner">
     <nav aria-label="Mobile">
       <ol class="mobile-nav__list" role="list">
-        <li style="--i:0"><a href="index.html" data-nav="home" aria-current="page"><span class="mobile-nav__idx">01</span>Home</a></li>
-        <li style="--i:1"><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
-        <li style="--i:2"><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
-        <li style="--i:3"><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
-        <li style="--i:4"><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
-        <li style="--i:5"><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
+        <li><a href="index.html" data-nav="home" aria-current="page"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li><a href="contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-nav__foot">
       <a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a>
       <a href="mailto:jarveesacademy.pune@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>jarveesacademy.pune@gmail.com</a>
-      <a class="btn btn--primary" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -195,14 +175,14 @@
 <section class="hero hero--home" aria-labelledby="hero-title">
   <div class="container hero__grid">
     <div class="hero__copy">
-      <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span><span data-scramble>ISO 9001 certified · Pune · Since 2019</span></p>
-      <h1 class="display split is-split" id="hero-title" aria-label="We engineer SAP systems and the people who run them."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">We</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">engineer</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">systems</span></span></em> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">and</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">the</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">people</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:7">who</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:8">run</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:9">them.</span></span></h1>
-      <p class="lead reveal" style="--d:260ms">Jarvees Infotech implements, migrates and supports SAP for growing businesses. Jarvees Academy turns graduates into job-ready SAP, Salesforce and data professionals, trained by working consultants on live projects.</p>
-      <div class="hero__ctas reveal" style="--d:380ms">
-        <a class="btn btn--primary btn--lg magnetic" href="services.html">Explore consulting <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn btn--ghost btn--lg magnetic" href="courses.html">Browse 26 courses</a>
+      <p class="label label--dot">ISO 9001 certified · Pune · Since 2019</p>
+      <h1 class="display" id="hero-title">We engineer <em>SAP systems</em> and the people who run them.</h1>
+      <p class="lead">Jarvees Infotech implements, migrates and supports SAP for growing businesses. Jarvees Academy turns graduates into job-ready SAP, Salesforce and data professionals, trained by working consultants on live projects.</p>
+      <div class="actions">
+        <a class="btn btn--lg" href="services.html">Explore consulting <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line btn--lg" href="courses.html">Browse 26 courses</a>
       </div>
-      <dl class="hero__meta reveal" style="--d:500ms">
+      <dl class="hero__meta">
         <div>
           <dt>Justdial rating · 59 reviews</dt>
           <dd><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>4.5 / 5</dd>
@@ -218,138 +198,82 @@
       </dl>
     </div>
 
-    <div class="hero__visual" data-parallax>
-      <canvas class="hero__canvas" data-fx="globe" aria-hidden="true"></canvas>
-      <div class="float-chip" style="top:7%;left:0;--depth:-26">
-        <div class="float-chip__inner">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></span>
-          <span><strong>SAP S/4HANA</strong><small>Implementation</small></span>
-        </div>
-      </div>
-      <div class="float-chip" style="top:24%;right:-3%;--depth:20;--delay:-2.5s">
-        <div class="float-chip__inner">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
-          <span><strong>FICO · MM · SD</strong><small>Functional</small></span>
-        </div>
-      </div>
-      <div class="float-chip" style="bottom:22%;left:-5%;--depth:32;--delay:-4.5s">
-        <div class="float-chip__inner">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
-          <span><strong>ABAP · Fiori</strong><small>Technical</small></span>
-        </div>
-      </div>
-      <div class="float-chip" style="bottom:5%;right:6%;--depth:-18;--delay:-1.2s">
-        <div class="float-chip__inner">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg></span>
-          <span><strong>Placement assistance</strong><small>Every eligible learner</small></span>
-        </div>
-      </div>
-    </div>
+    <figure class="figure">
+      <svg class="spiral spiral--draw" viewBox="-1 -1 649.21 402" aria-hidden="true" focusable="false">
+  <g class="spiral__grid"><rect class="spiral__sq" x="0" y="0" width="400" height="400" style="--i:0"/><rect class="spiral__sq" x="400" y="0" width="247.21" height="247.21" style="--i:1"/><rect class="spiral__sq" x="494.43" y="247.21" width="152.79" height="152.79" style="--i:2"/><rect class="spiral__sq" x="400" y="305.57" width="94.43" height="94.43" style="--i:3"/><rect class="spiral__sq" x="400" y="247.21" width="58.36" height="58.36" style="--i:4"/><rect class="spiral__sq" x="458.36" y="247.21" width="36.07" height="36.07" style="--i:5"/><rect class="spiral__sq" x="472.14" y="283.28" width="22.29" height="22.29" style="--i:6"/><rect class="spiral__sq" x="458.36" y="291.8" width="13.78" height="13.78" style="--i:7"/><rect class="spiral__sq" x="458.36" y="283.28" width="8.51" height="8.51" style="--i:8"/><rect class="spiral__sq" x="466.87" y="283.28" width="5.26" height="5.26" style="--i:9"/></g>
+  <path class="spiral__arc" d="M0 400 A400 400 0 0 1 400 0 A247.21 247.21 0 0 1 647.21 247.21 A152.79 152.79 0 0 1 494.43 400 A94.43 94.43 0 0 1 400 305.57 A58.36 58.36 0 0 1 458.36 247.21 A36.07 36.07 0 0 1 494.43 283.28 A22.29 22.29 0 0 1 472.14 305.57 A13.78 13.78 0 0 1 458.36 291.8 A8.51 8.51 0 0 1 466.87 283.28 A5.26 5.26 0 0 1 472.14 288.54" pathLength="1"/>
+  <circle class="spiral__eye" cx="469.5" cy="290.17" r="7.2"/>
+  <g><text class="spiral__tag" x="372" y="372" font-size="18" text-anchor="end">01</text><text class="spiral__tag" x="417.3" y="229.91" font-size="18" text-anchor="start">02</text><text class="spiral__tag" x="505.23" y="276.01" font-size="18" text-anchor="start">03</text><text class="spiral__tag" x="483.63" y="334.37" font-size="18" text-anchor="end">04</text></g>
+</svg>
+      <figcaption>
+        <ol class="legend" role="list">
+          <li><span class="legend__num">01</span><strong>SAP S/4HANA</strong><small>Implementation</small></li>
+          <li><span class="legend__num">02</span><strong>FICO · MM · SD</strong><small>Functional</small></li>
+          <li><span class="legend__num">03</span><strong>ABAP · Fiori</strong><small>Technical</small></li>
+          <li><span class="legend__num">04</span><strong>Placement assistance</strong><small>Every eligible learner</small></li>
+        </ol>
+      </figcaption>
+    </figure>
   </div>
-  <a class="scroll-cue" href="#engines" aria-label="Scroll to content"><span class="scroll-cue__mouse" aria-hidden="true"></span>Scroll</a>
 </section>
 
-<div class="marquee" aria-label="Technologies and modules we work with">
-  <div class="marquee__track">
-    <ul class="marquee__group" role="list"><li class="marquee__item">SAP S/4HANA</li>
-<li class="marquee__item">FICO</li>
-<li class="marquee__item">MM</li>
-<li class="marquee__item">SD</li>
-<li class="marquee__item">PP</li>
-<li class="marquee__item">ABAP</li>
-<li class="marquee__item">BASIS</li>
-<li class="marquee__item">Fiori</li>
-<li class="marquee__item">Solution Manager</li>
-<li class="marquee__item">Salesforce</li>
-<li class="marquee__item">Data Science</li>
-<li class="marquee__item">Cloud</li>
-<li class="marquee__item">Software Testing</li>
-<li class="marquee__item">Java</li>
-<li class="marquee__item">.NET</li>
-</ul>
-    <ul class="marquee__group" role="list" aria-hidden="true"><li class="marquee__item">SAP S/4HANA</li>
-<li class="marquee__item">FICO</li>
-<li class="marquee__item">MM</li>
-<li class="marquee__item">SD</li>
-<li class="marquee__item">PP</li>
-<li class="marquee__item">ABAP</li>
-<li class="marquee__item">BASIS</li>
-<li class="marquee__item">Fiori</li>
-<li class="marquee__item">Solution Manager</li>
-<li class="marquee__item">Salesforce</li>
-<li class="marquee__item">Data Science</li>
-<li class="marquee__item">Cloud</li>
-<li class="marquee__item">Software Testing</li>
-<li class="marquee__item">Java</li>
-<li class="marquee__item">.NET</li>
-</ul>
-  </div>
-</div>
-<div class="marquee marquee--alt" aria-hidden="true">
-  <div class="marquee__track">
-    <ul class="marquee__group" role="list"><li class="marquee__item">Greenfield implementation</li>
-<li class="marquee__item">S/4HANA migration</li>
-<li class="marquee__item">Application support</li>
-<li class="marquee__item">Live projects</li>
-<li class="marquee__item">Placement assistance</li>
-<li class="marquee__item">Corporate training</li>
-<li class="marquee__item">Data &amp; cloud</li>
-<li class="marquee__item">Web design</li>
-</ul>
-    <ul class="marquee__group" role="list"><li class="marquee__item">Greenfield implementation</li>
-<li class="marquee__item">S/4HANA migration</li>
-<li class="marquee__item">Application support</li>
-<li class="marquee__item">Live projects</li>
-<li class="marquee__item">Placement assistance</li>
-<li class="marquee__item">Corporate training</li>
-<li class="marquee__item">Data &amp; cloud</li>
-<li class="marquee__item">Web design</li>
-</ul>
+<div class="index-strip">
+  <div class="container">
+    <div class="index-strip__row">
+      <p class="label">Technologies and modules we work with</p>
+      <ul role="list">
+        <li>SAP S/4HANA</li><li>FICO</li><li>MM</li><li>SD</li><li>PP</li><li>ABAP</li><li>BASIS</li><li>Fiori</li><li>Solution Manager</li><li>Salesforce</li><li>Data Science</li><li>Cloud</li><li>Software Testing</li><li>Java</li><li>.NET</li>
+      </ul>
+    </div>
+    <div class="index-strip__row">
+      <p class="label">What we do</p>
+      <ul role="list">
+        <li>Greenfield implementation</li><li>S/4HANA migration</li><li>Application support</li><li>Live projects</li><li>Placement assistance</li><li>Corporate training</li><li>Data &amp; cloud</li><li>Web design</li>
+      </ul>
+    </div>
   </div>
 </div>
 
 <!-- 01 · Two engines -->
 <section class="section" id="engines" aria-labelledby="engines-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">01 / One company, two engines</span>
-        <h2 class="title split is-split" id="engines-title" aria-label="Consulting that delivers. Training that launches careers."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Consulting</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">that</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">delivers.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">Training</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">that</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">launches</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">careers.</span></span></em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">01</span>One company, two engines</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="engines-title">Consulting that delivers. <em>Training that launches careers.</em></h2>
+        <p class="lead rv">Jarvees Infotech Private Limited runs two arms under one roof. The consultants who deliver SAP projects for clients also teach in our classrooms, so learners pick up real-world skills and clients get consultants who keep sharpening theirs.</p>
       </div>
-      <p class="lead reveal">Jarvees Infotech Private Limited runs two arms under one roof. The consultants who deliver SAP projects for clients also teach in our classrooms, so learners pick up real-world skills and clients get consultants who keep sharpening theirs.</p>
-    </div>
+    </header>
 
-    <div class="arms">
-      <article class="arm arm--infotech reveal" data-tilt="4">
-        <span class="arm__orb" aria-hidden="true"></span>
-        <span class="arm__idx">Arm 01 · Jarvees Infotech</span>
+    <div class="arms rv">
+      <article class="arm">
+        <p class="arm__idx">Arm 01 · Jarvees Infotech</p>
         <h3 class="arm__title">ERP &amp; SAP consulting</h3>
         <p class="arm__sub">Implementation, migration and IT projects, delivered on SAP best practice with minimal customisation and at reasonable prices.</p>
-        <ul class="arm__list" role="list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>SAP greenfield implementation, migration and support</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Custom enhancement, testing and end-user documentation</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Corporate training and S/4HANA skill development</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Data science, cloud computing and web design services</span></li>
+        <ul class="ticks" role="list">
+          <li>SAP greenfield implementation, migration and support</li>
+          <li>Custom enhancement, testing and end-user documentation</li>
+          <li>Corporate training and S/4HANA skill development</li>
+          <li>Data science, cloud computing and web design services</li>
         </ul>
         <div class="arm__foot">
-          <a class="link-arrow" href="services.html">Consulting services <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="link" href="services.html">Consulting services <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
           <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg>For businesses</span>
         </div>
       </article>
 
-      <article class="arm arm--academy reveal" data-tilt="4" style="--d:120ms">
-        <span class="arm__orb" aria-hidden="true"></span>
-        <span class="arm__idx">Arm 02 · Jarvees Academy</span>
+      <article class="arm arm--ink">
+        <p class="arm__idx">Arm 02 · Jarvees Academy</p>
         <h3 class="arm__title">Training &amp; placement</h3>
         <p class="arm__sub">Consultant-led courses with live projects, internships and 100% placement assistance, online or in the classroom.</p>
-        <ul class="arm__list" role="list">
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>SAP functional, technical and S/4HANA modules</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Salesforce CRM, software testing and data science</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Java, C++, .NET, accounting and finance</span></li>
-          <li><svg class="i" aria-hidden="true"><use href="#i-check"/></svg><span>Academic projects for BE, BTech, MCA and BCA students</span></li>
+        <ul class="ticks" role="list">
+          <li>SAP functional, technical and S/4HANA modules</li>
+          <li>Salesforce CRM, software testing and data science</li>
+          <li>Java, C++, .NET, accounting and finance</li>
+          <li>Academic projects for BE, BTech, MCA and BCA students</li>
         </ul>
         <div class="arm__foot">
-          <a class="link-arrow" href="academy.html">Explore the academy <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="link" href="academy.html">Explore the academy <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
           <span class="tag"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>For learners</span>
         </div>
       </article>
@@ -358,75 +282,73 @@
 </section>
 
 <!-- Numbers -->
-<section class="section section--tight section--flush-top" aria-label="Jarvees in numbers">
+<section class="section section--tight section--flush" aria-label="Jarvees in numbers">
   <div class="container">
-    <div class="stats reveal">
-      <div class="stat">
-        <span class="stat__num"><span data-count="2019" data-from="2000">2019</span></span>
-        <span class="stat__label">Founded in Pune</span>
+    <div class="facts" data-stagger="80">
+      <div class="fact">
+        <span class="fact__num">2019</span>
+        <span class="fact__label">Founded in Pune</span>
       </div>
-      <div class="stat">
-        <span class="stat__num"><span data-count="26">26</span></span>
-        <span class="stat__label">Courses across 8 learning tracks</span>
+      <div class="fact">
+        <span class="fact__num">26</span>
+        <span class="fact__label">Courses across 8 learning tracks</span>
       </div>
-      <div class="stat">
-        <span class="stat__num"><span data-count="10">10</span><small>+ yrs</small></span>
-        <span class="stat__label">Industry experience behind every trainer</span>
+      <div class="fact">
+        <span class="fact__num">10<small>+ yrs</small></span>
+        <span class="fact__label">Industry experience behind every trainer</span>
       </div>
-      <div class="stat">
-        <span class="stat__num"><span data-count="4.5" data-decimals="1">4.5</span><small>/5</small></span>
-        <span class="stat__label">Justdial rating from 59 reviews</span>
+      <div class="fact">
+        <span class="fact__num">4.5<small>/5</small></span>
+        <span class="fact__label">Justdial rating from 59 reviews</span>
       </div>
-      <div class="stat">
-        <span class="stat__num"><span data-count="100">100</span><small>%</small></span>
-        <span class="stat__label">Placement assistance for eligible learners</span>
+      <div class="fact">
+        <span class="fact__num">100<small>%</small></span>
+        <span class="fact__label">Placement assistance for eligible learners</span>
       </div>
     </div>
   </div>
 </section>
 
 <!-- 02 · Capabilities -->
-<section class="section" id="capabilities" aria-labelledby="cap-title">
+<section class="section section--tint" id="capabilities" aria-labelledby="cap-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">02 / Consulting capabilities</span>
-        <h2 class="title split is-split" id="cap-title" aria-label="Full-lifecycle SAP, built on best practice."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Full-lifecycle</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">SAP,</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">built</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">on</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">best</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">practice.</span></span></em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">02</span>Consulting capabilities</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="cap-title">Full-lifecycle SAP, built on <em>best practice.</em></h2>
+        <p class="lead rv">We configure SAP the way it was designed to run. Less custom code means faster go-lives, painless upgrades and a lower cost of ownership.</p>
+        <a class="link rv" href="services.html">All consulting services <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
       </div>
-      <div class="stack reveal">
-        <p class="lead">We configure SAP the way it was designed to run. Less custom code means faster go-lives, painless upgrades and a lower cost of ownership.</p>
-        <a class="link-arrow" href="services.html">All consulting services <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-      </div>
-    </div>
+    </header>
 
-    <div class="grid grid--3" data-stagger="90">
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span><span class="cap__num">01</span></div>
+    <div class="cells" data-stagger="70">
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">01</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-layers"/></svg></div>
         <h3 class="h3">Greenfield implementation</h3>
         <p>Stand up SAP S/4HANA from scratch on SAP best practice, with minimal customisation so you go live sooner and upgrade more easily.</p>
       </article>
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-migrate"/></svg></span><span class="cap__num">02</span></div>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">02</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-migrate"/></svg></div>
         <h3 class="h3">Migration</h3>
         <p>Move from legacy ERP or older SAP releases to S/4HANA with structured data migration, reconciliation and validation.</p>
       </article>
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-lifebuoy"/></svg></span><span class="cap__num">03</span></div>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">03</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-lifebuoy"/></svg></div>
         <h3 class="h3">Application support</h3>
         <p>Keep production stable after go-live with responsive functional and technical support from consultants who know your system.</p>
       </article>
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span><span class="cap__num">04</span></div>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">04</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-code"/></svg></div>
         <h3 class="h3">Custom enhancement</h3>
         <p>Extend standard SAP only where it adds real value: reports, forms, interfaces and Fiori apps built to last.</p>
       </article>
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></span><span class="cap__num">05</span></div>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">05</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-flask"/></svg></div>
         <h3 class="h3">Testing</h3>
         <p>Unit, integration and user-acceptance testing that takes the risk out of every release.</p>
       </article>
-      <article class="card spot cap">
-        <div class="cap__head"><span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-file"/></svg></span><span class="cap__num">06</span></div>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">06</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-file"/></svg></div>
         <h3 class="h3">End-user documentation</h3>
         <p>Clear process guides and training material that your teams will actually use on day one.</p>
       </article>
@@ -435,174 +357,182 @@
 </section>
 
 <!-- 03 · Method -->
-<section class="section" id="method" aria-labelledby="method-title">
+<section class="section section--ink" id="method" aria-labelledby="method-title">
   <div class="container">
-    <div class="section-head section-head--center">
-      <span class="kicker reveal">03 / How we deliver</span>
-      <h2 class="title split is-split" id="method-title" aria-label="Five phases. Zero guesswork."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Five</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">phases.</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">Zero</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">guesswork.</span></span></em></h2>
-      <p class="lead reveal">Every engagement follows a proven SAP implementation methodology, governed with Solution Manager from preparation to maintenance.</p>
-    </div>
-    <div class="steps">
-  <span class="steps__track" aria-hidden="true"></span>
-  <article class="step reveal" style="--n:0;--d:0ms">
+    <header class="sh">
+      <p class="label"><span class="label__num">03</span>How we deliver</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="method-title">Five phases. <em>Zero guesswork.</em></h2>
+        <p class="lead rv">Every engagement follows a proven SAP implementation methodology, governed with Solution Manager from preparation to maintenance.</p>
+      </div>
+    </header>
+    <ol class="steps" role="list" data-stagger="90">
+  <li class="step">
     <span class="step__dot">01</span>
     <span class="step__phase">Phase one</span>
     <h3 class="h3">Prepare</h3>
     <p class="step__text">Scope, project charter, team and landscape set-up, with Solution Manager in place from day one.</p>
-    <div class="step__tags"><span class="pill">Charter</span><span class="pill">Landscape</span></div>
-  </article>
-  <article class="step reveal" style="--n:1;--d:120ms">
+    <div class="step__tags"><span class="tag">Charter</span><span class="tag">Landscape</span></div>
+  </li>
+  <li class="step">
     <span class="step__dot">02</span>
     <span class="step__phase">Phase two</span>
     <h3 class="h3">Design</h3>
     <p class="step__text">Fit-to-standard workshops map your processes onto SAP best practice and surface the real gaps.</p>
-    <div class="step__tags"><span class="pill">Workshops</span><span class="pill">Blueprint</span></div>
-  </article>
-  <article class="step reveal" style="--n:2;--d:240ms">
+    <div class="step__tags"><span class="tag">Workshops</span><span class="tag">Blueprint</span></div>
+  </li>
+  <li class="step">
     <span class="step__dot">03</span>
     <span class="step__phase">Phase three</span>
     <h3 class="h3">Realise</h3>
     <p class="step__text">Configuration, essential enhancements, data migration, and unit and integration testing.</p>
-    <div class="step__tags"><span class="pill">Build</span><span class="pill">Test</span></div>
-  </article>
-  <article class="step reveal" style="--n:3;--d:360ms">
+    <div class="step__tags"><span class="tag">Build</span><span class="tag">Test</span></div>
+  </li>
+  <li class="step">
     <span class="step__dot">04</span>
     <span class="step__phase">Phase four</span>
     <h3 class="h3">Deploy</h3>
     <p class="step__text">User-acceptance testing, end-user training and documentation, cut-over and go-live.</p>
-    <div class="step__tags"><span class="pill">UAT</span><span class="pill">Go-live</span></div>
-  </article>
-  <article class="step reveal" style="--n:4;--d:480ms">
+    <div class="step__tags"><span class="tag">UAT</span><span class="tag">Go-live</span></div>
+  </li>
+  <li class="step">
     <span class="step__dot">05</span>
     <span class="step__phase">Phase five</span>
     <h3 class="h3">Maintain</h3>
     <p class="step__text">Hypercare and application support that keep the system healthy and improving.</p>
-    <div class="step__tags"><span class="pill">Support</span><span class="pill">Optimise</span></div>
-  </article>
-</div>
+    <div class="step__tags"><span class="tag">Support</span><span class="tag">Optimise</span></div>
+  </li>
+</ol>
 
   </div>
 </section>
 
 <!-- 04 · Academy -->
 <section class="section" id="academy" aria-labelledby="academy-title">
-  <div class="container split-panel">
-    <div class="split-panel__copy">
-      <span class="kicker reveal">04 / Jarvees Academy</span>
-      <h2 class="title split is-split" id="academy-title" aria-label="Learn from consultants who do this for a living."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Learn</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">from</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">consultants</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">who</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">do</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">this</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:6">for</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:7">a</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:8">living.</span></span></em></h2>
-      <p class="lead reveal">Instructor-led SAP, Salesforce, testing, data science and programming courses with live projects, structured notes and placement assistance built in.</p>
-      <ul class="feature-list reveal" role="list">
-        <li><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Live project experience</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Trainers with 10+ years in industry</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg>Online &amp; classroom batches</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Customised batches &amp; timings</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-book"/></svg>Structured training notes</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>Internships with experience letter</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-target"/></svg>100% placement assistance</li>
-        <li><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>Academic projects for BE, BTech, MCA &amp; BCA</li>
-      </ul>
-      <div class="hero__ctas reveal">
-        <a class="btn btn--primary magnetic" href="academy.html">Discover the academy <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn btn--ghost magnetic" href="contact.html?interest=career-guidance">Talk to a counsellor</a>
+  <div class="container">
+    <header class="sh">
+      <p class="label"><span class="label__num">04</span>Jarvees Academy</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="academy-title">Learn from consultants who <em>do this for a living.</em></h2>
       </div>
-    </div>
-    <div class="cat-tiles" data-stagger="70">
-      <a class="cat-tile card spot" href="courses.html?cat=sap-functional" style="--d:0ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">SAP Functional</span><span class="cat-tile__blurb">Business-process modules for IT and non-IT graduates.</span></span>
-  <span class="cat-tile__count">10 courses</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+    </header>
+    <div class="split">
+      <div class="stack">
+        <p class="lead rv">Instructor-led SAP, Salesforce, testing, data science and programming courses with live projects, structured notes and placement assistance built in.</p>
+        <ul class="features rv" role="list">
+          <li><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Live project experience</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-users"/></svg>Trainers with 10+ years in industry</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg>Online &amp; classroom batches</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Customised batches &amp; timings</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-book"/></svg>Structured training notes</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>Internships with experience letter</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-target"/></svg>100% placement assistance</li>
+          <li><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>Academic projects for BE, BTech, MCA &amp; BCA</li>
+        </ul>
+        <div class="actions rv">
+          <a class="btn" href="academy.html">Discover the academy <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+          <a class="btn btn--line" href="contact.html?interest=career-guidance">Talk to a counsellor</a>
+        </div>
+      </div>
+      <div class="tracks tracks--compact rv">
+        <a class="track" href="courses.html?cat=sap-functional">
+  <span class="track__name">SAP Functional</span>
+  <span class="track__blurb">Business-process modules for IT and non-IT graduates.</span>
+  <span class="track__count">10 courses</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=sap-technical" style="--d:60ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-code"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">SAP Technical</span><span class="cat-tile__blurb">Development and system-administration tracks.</span></span>
-  <span class="cat-tile__count">4 courses</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=sap-technical">
+  <span class="track__name">SAP Technical</span>
+  <span class="track__blurb">Development and system-administration tracks.</span>
+  <span class="track__count">4 courses</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=s4hana" style="--d:120ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-zap"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">SAP S/4HANA</span><span class="cat-tile__blurb">The next-generation SAP suite, end to end.</span></span>
-  <span class="cat-tile__count">1 course</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=s4hana">
+  <span class="track__name">SAP S/4HANA</span>
+  <span class="track__blurb">The next-generation SAP suite, end to end.</span>
+  <span class="track__count">1 course</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=crm" style="--d:180ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-cloud"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">Salesforce CRM</span><span class="cat-tile__blurb">Admin and development on the Salesforce platform.</span></span>
-  <span class="cat-tile__count">1 course</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=crm">
+  <span class="track__name">Salesforce CRM</span>
+  <span class="track__blurb">Admin and development on the Salesforce platform.</span>
+  <span class="track__count">1 course</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=testing" style="--d:240ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-flask"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">Software Testing</span><span class="cat-tile__blurb">Manual and automation testing with a live project.</span></span>
-  <span class="cat-tile__count">1 course</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=testing">
+  <span class="track__name">Software Testing</span>
+  <span class="track__blurb">Manual and automation testing with a live project.</span>
+  <span class="track__count">1 course</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=data" style="--d:300ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-chart"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">Data Science</span><span class="cat-tile__blurb">Python, statistics and machine learning.</span></span>
-  <span class="cat-tile__count">1 course</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=data">
+  <span class="track__name">Data Science</span>
+  <span class="track__blurb">Python, statistics and machine learning.</span>
+  <span class="track__count">1 course</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=programming" style="--d:360ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-terminal"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">Programming</span><span class="cat-tile__blurb">Java, C++ and .NET foundations.</span></span>
-  <span class="cat-tile__count">3 courses</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=programming">
+  <span class="track__name">Programming</span>
+  <span class="track__blurb">Java, C++ and .NET foundations.</span>
+  <span class="track__count">3 courses</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
-<a class="cat-tile card spot" href="courses.html?cat=accounts" style="--d:420ms">
-  <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
-  <span class="cat-tile__body"><span class="cat-tile__name">Accounts &amp; Office</span><span class="cat-tile__blurb">Accounting, finance and essential office skills.</span></span>
-  <span class="cat-tile__count">5 courses</span>
-  <svg class="i cat-tile__arrow" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
+<a class="track" href="courses.html?cat=accounts">
+  <span class="track__name">Accounts &amp; Office</span>
+  <span class="track__blurb">Accounting, finance and essential office skills.</span>
+  <span class="track__count">5 courses</span>
+  <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
 </a>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- 05 · Why Jarvees -->
-<section class="section" id="why" aria-labelledby="why-title">
+<section class="section section--tint" id="why" aria-labelledby="why-title">
   <div class="container">
-    <div class="section-head">
-      <span class="kicker reveal">05 / Why Jarvees</span>
-      <h2 class="title split is-split" id="why-title" aria-label="Built differently, on purpose."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Built</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">differently,</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">on</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">purpose.</span></span></em></h2>
-    </div>
+    <header class="sh">
+      <p class="label"><span class="label__num">05</span>Why Jarvees</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="why-title">Built differently, <em>on purpose.</em></h2>
+      </div>
+    </header>
 
-    <div class="bento" data-stagger="80">
-      <article class="card spot bento__item bento__item--lg">
-        <div class="bento__visual" aria-hidden="true">
-          <svg viewBox="0 0 200 200">
-            <circle class="orbit-ring" cx="100" cy="100" r="96"/>
-            <circle class="orbit-ring orbit-ring--2" cx="100" cy="100" r="70"/>
-            <circle cx="100" cy="100" r="44" fill="none" stroke="rgba(233,217,178,.18)"/>
-            <use href="#mark" x="76" y="76" width="48" height="48"/>
-          </svg>
+    <div class="cells why" data-stagger="70">
+      <article class="cell cell--feature">
+        <svg class="spiral" viewBox="-1 -1 649.21 402" aria-hidden="true" focusable="false">
+  <g class="spiral__grid"><rect class="spiral__sq" x="0" y="0" width="400" height="400" style="--i:0"/><rect class="spiral__sq" x="400" y="0" width="247.21" height="247.21" style="--i:1"/><rect class="spiral__sq" x="494.43" y="247.21" width="152.79" height="152.79" style="--i:2"/><rect class="spiral__sq" x="400" y="305.57" width="94.43" height="94.43" style="--i:3"/><rect class="spiral__sq" x="400" y="247.21" width="58.36" height="58.36" style="--i:4"/><rect class="spiral__sq" x="458.36" y="247.21" width="36.07" height="36.07" style="--i:5"/><rect class="spiral__sq" x="472.14" y="283.28" width="22.29" height="22.29" style="--i:6"/><rect class="spiral__sq" x="458.36" y="291.8" width="13.78" height="13.78" style="--i:7"/><rect class="spiral__sq" x="458.36" y="283.28" width="8.51" height="8.51" style="--i:8"/><rect class="spiral__sq" x="466.87" y="283.28" width="5.26" height="5.26" style="--i:9"/></g>
+  <path class="spiral__arc" d="M0 400 A400 400 0 0 1 400 0 A247.21 247.21 0 0 1 647.21 247.21 A152.79 152.79 0 0 1 494.43 400 A94.43 94.43 0 0 1 400 305.57 A58.36 58.36 0 0 1 458.36 247.21 A36.07 36.07 0 0 1 494.43 283.28 A22.29 22.29 0 0 1 472.14 305.57 A13.78 13.78 0 0 1 458.36 291.8 A8.51 8.51 0 0 1 466.87 283.28 A5.26 5.26 0 0 1 472.14 288.54" pathLength="1"/>
+  <circle class="spiral__eye" cx="469.5" cy="290.17" r="7.2"/>
+</svg>
+        <div class="stack">
+          <span class="cell__num">01</span>
+          <h3 class="h2">Best practice, <em>minimal customisation.</em></h3>
+          <p>We configure SAP the way it was designed to run. That keeps projects lean, upgrades painless and pricing reasonable, and it is exactly how we teach.</p>
         </div>
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg></span>
-        <h3 class="title">Best practice, <em>minimal customisation.</em></h3>
-        <p>We configure SAP the way it was designed to run. That keeps projects lean, upgrades painless and pricing reasonable, and it is exactly how we teach.</p>
       </article>
-      <article class="card spot bento__item">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">02</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-users"/></svg></div>
         <h3 class="h3">Consultant-led training</h3>
         <p>Every trainer is a working consultant with at least 10 years of industry experience.</p>
       </article>
-      <article class="card spot bento__item">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">03</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-award"/></svg></div>
         <h3 class="h3">ISO 9001 certified</h3>
         <p>Documented, audited quality processes across consulting and training.</p>
       </article>
-      <article class="card spot bento__item">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">04</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-shield"/></svg></div>
         <h3 class="h3">Government skill development</h3>
         <p>Part of a Government skill development programme that builds job-ready talent.</p>
       </article>
-      <article class="card spot bento__item">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-infinity"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">05</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-infinity"/></svg></div>
         <h3 class="h3">Always current</h3>
         <p>Regular industry and academia interaction keeps every curriculum in step with S/4HANA and cloud releases.</p>
       </article>
-      <article class="card spot bento__item">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">06</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-calendar"/></svg></div>
         <h3 class="h3">Flexible by design</h3>
         <p>Customised batches and timings, online or in the classroom, built around students and working professionals.</p>
       </article>
@@ -613,18 +543,18 @@
 <!-- 06 · Reputation -->
 <section class="section" id="reputation" aria-labelledby="rep-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">06 / Reputation</span>
-        <h2 class="title split is-split" id="rep-title" aria-label="Rated highly by learners across Pune."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Rated</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">highly</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">by</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">learners</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">across</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">Pune.</span></span></em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">06</span>Reputation</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="rep-title">Rated highly by learners <em>across Pune.</em></h2>
+        <p class="lead rv">Our public rating, and the things learners value most about training with Jarvees.</p>
       </div>
-      <p class="lead reveal">Our public rating, and the things learners value most about training with Jarvees.</p>
-    </div>
+    </header>
 
     <div class="rep">
-      <div class="card rep__score reveal">
-        <span class="kicker">Justdial rating</span>
-        <div class="rep__big"><span data-count="4.5" data-decimals="1">4.5</span><small>/ 5</small></div>
+      <div class="rep__score rv">
+        <p class="label">Justdial rating</p>
+        <div class="rep__big">4.5<small>/ 5</small></div>
         <div class="stars" style="--fill:90%" role="img" aria-label="Rated 4.5 out of 5">
   <svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg><svg class="i" aria-hidden="true"><use href="#i-star"/></svg>
   <span class="stars__fill" aria-hidden="true"><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg><svg class="i"><use href="#i-star"/></svg></span>
@@ -632,52 +562,44 @@
 
         <p class="muted">Based on 59 public ratings on Justdial, plus a verified business listing on Sulekha.</p>
       </div>
-      <div class="rep__themes" data-stagger="100">
-        <article class="card spot theme">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg></span>
-          <div>
-            <h3 class="h3">Trainers who go beyond the syllabus</h3>
-            <p>Reviewers praise consultants who bring real project scenarios into class instead of sticking to exam topics.</p>
-          </div>
+      <div class="rows" data-stagger="90">
+        <article class="row">
+          <span class="row__num">01</span>
+          <h3 class="h3">Trainers who go beyond the syllabus</h3>
+          <p>Reviewers praise consultants who bring real project scenarios into class instead of sticking to exam topics.</p>
         </article>
-        <article class="card spot theme">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-eye"/></svg></span>
-          <div>
-            <h3 class="h3">Concepts explained clearly</h3>
-            <p>Learners highlight patient, step-by-step explanations, from SAP MM configuration to cross-module integration.</p>
-          </div>
+        <article class="row">
+          <span class="row__num">02</span>
+          <h3 class="h3">Concepts explained clearly</h3>
+          <p>Learners highlight patient, step-by-step explanations, from SAP MM configuration to cross-module integration.</p>
         </article>
-        <article class="card spot theme">
-          <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
-          <div>
-            <h3 class="h3">Real project exposure</h3>
-            <p>Live projects and internships give freshers practical experience they can talk about with confidence in interviews.</p>
-          </div>
+        <article class="row">
+          <span class="row__num">03</span>
+          <h3 class="h3">Real project exposure</h3>
+          <p>Live projects and internships give freshers practical experience they can talk about with confidence in interviews.</p>
         </article>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--cta" aria-labelledby="cta-title">
+<section class="cta" aria-labelledby="cta-title">
   <div class="container">
-    <div class="cta reveal reveal--scale">
-      <div class="cta__floor" aria-hidden="true"><div class="cta__plane"></div></div>
-      <div class="cta__glow" aria-hidden="true"></div>
-      <div class="cta__content">
-        <span class="kicker">Next step</span>
-        <h2 class="title cta__title split is-split" id="cta-title" aria-label="Your next SAP milestone starts here."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">next</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">milestone</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">starts</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">here.</span></span></em></h2>
-        <p class="lead">Planning an SAP project or choosing a course? Talk to the team today. We reply every day between 9 AM and 9 PM.</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="contact.html">Start a conversation <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="courses.html">Browse courses</a>
-        </div>
-        <ul class="cta__contact" role="list">
-          <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
-          <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
-          <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
-        </ul>
+    <div class="cta__inner">
+    <p class="label">Next step</p>
+    <div class="cta__body">
+      <h2 class="cta__title rv" id="cta-title">Your next SAP milestone <em>starts here.</em></h2>
+      <p class="cta__text rv">Planning an SAP project or choosing a course? Talk to the team today. We reply every day between 9 AM and 9 PM.</p>
+      <div class="actions rv">
+        <a class="btn btn--light btn--lg" href="contact.html">Start a conversation <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line-light btn--lg" href="courses.html">Browse courses</a>
       </div>
+      <ul class="cta__contact" role="list">
+        <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
+        <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
+        <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -699,7 +621,7 @@
         <p class="footer__tagline">“An Attempt to Achieve a Goal”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since 2019</li>
         </ul>
       </div>
@@ -743,43 +665,20 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Jarvees Infotech Private Limited. All rights reserved.</p>
+      <p>© 2026 Jarvees Infotech Private Limited. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>
   </div>
 </footer>
 
-  <div class="scroll-progress" aria-hidden="true" data-progress></div>
-
-<a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
+  <a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
   <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   <span class="fab__label">Chat with us</span>
 </a>
-
-<div class="cursor" aria-hidden="true" data-cursor></div>
-
-<div class="intro" aria-hidden="true">
-  <div class="intro__core">
-    <svg class="intro__mark" viewBox="0 0 64 64">
-      <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" pathLength="1" fill="none" stroke="url(#g-gold)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="40.6" cy="27.2" r="2.2" fill="#e0393f"/>
-    </svg>
-    <p class="intro__word"><span>J</span><span>A</span><span>R</span><span>V</span><span>E</span><span>E</span><span>S</span></p>
-    <p class="intro__meta">Infotech · Academy · Pune</p>
-  </div>
-</div>
 
 </body>
 </html>

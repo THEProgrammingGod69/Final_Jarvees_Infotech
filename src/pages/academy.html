@@ -16,77 +16,77 @@
 }
 -->
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Academy</span></nav>
-      <h1 class="display split" id="page-title">Learn SAP from consultants <em>who do it for a living.</em></h1>
-      <p class="lead reveal" style="--d:240ms">Instructor-led SAP, Salesforce, testing, data science and programming courses, online or in the classroom, with live projects, internships and 100% placement assistance.</p>
-      <div class="hero__ctas reveal" style="--d:360ms">
-        <a class="btn btn--primary btn--lg magnetic" href="courses.html">Browse courses <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn btn--ghost btn--lg magnetic" href="contact.html?interest=career-guidance">Talk to a counsellor</a>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Academy</span></nav>
+      <h1 class="display display--page" id="page-title">Learn SAP from consultants <em>who do it for a living.</em></h1>
+      <p class="lead">Instructor-led SAP, Salesforce, testing, data science and programming courses, online or in the classroom, with live projects, internships and 100% placement assistance.</p>
+      <div class="actions">
+        <a class="btn btn--lg" href="courses.html">Browse courses <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line btn--lg" href="contact.html?interest=career-guidance">Talk to a counsellor</a>
       </div>
     </div>
-    <aside class="hud reveal" style="--d:320ms" aria-label="Academy snapshot">
-      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
-      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Academy snapshot</p>
-      <div class="hud__row"><span>Courses</span><b>{{@courseCount}}</b></div>
-      <div class="hud__row"><span>Learning tracks</span><b>{{@categoryCount}}</b></div>
-      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
-      <div class="hud__row"><span>Trainers</span><b>10+ yrs industry</b></div>
-      <div class="hud__row"><span>Rating</span><b>{{site.rating.score}} / 5 · {{site.rating.source}}</b></div>
+    <aside class="sheet" aria-label="Academy snapshot">
+      <p class="sheet__title label">Academy snapshot <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg></p>
+      <dl>
+        <div><dt>Courses</dt><dd>{{@courseCount}}</dd></div>
+        <div><dt>Learning tracks</dt><dd>{{@categoryCount}}</dd></div>
+        <div><dt>Modes</dt><dd>Online · Classroom</dd></div>
+        <div><dt>Trainers</dt><dd>10+ yrs industry</dd></div>
+        <div><dt>Rating</dt><dd>{{site.rating.score}} / 5 · {{site.rating.source}}</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
 
 <!-- 01 · Learning model -->
-<section class="section" id="model" aria-labelledby="model-title">
+<section class="section section--flush" id="model" aria-labelledby="model-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">01 / The learning model</span>
-        <h2 class="title split" id="model-title">Everything you need to <em>get hired.</em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">01</span>The learning model</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="model-title">Everything you need to <em>get hired.</em></h2>
+        <p class="lead rv">Skills, projects and support in one package, built by people who hire and work with SAP professionals every day.</p>
       </div>
-      <p class="lead reveal">Skills, projects and support in one package, built by people who hire and work with SAP professionals every day.</p>
-    </div>
-    <div class="features-grid" data-stagger="70">
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
+    </header>
+    <div class="cells cells--4" data-stagger="60">
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">01</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-users"/></svg></div>
         <h3 class="h3">Working-consultant trainers</h3>
         <p>Learn from consultants with at least 10 years of industry experience.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">02</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-briefcase"/></svg></div>
         <h3 class="h3">Live projects</h3>
         <p>Apply every concept on a live project, not just in slides.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">03</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-laptop"/></svg></div>
         <h3 class="h3">Online &amp; classroom</h3>
         <p>Join from anywhere or learn in person, whichever suits you.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">04</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-calendar"/></svg></div>
         <h3 class="h3">Customised batches</h3>
         <p>Batches and timings tailored for students and working professionals.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">05</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-book"/></svg></div>
         <h3 class="h3">Structured notes</h3>
         <p>High-quality, structured training notes you can revise from long after class.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">06</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-award"/></svg></div>
         <h3 class="h3">Internship &amp; experience letter</h3>
         <p>Freshers can earn an experience letter through an internship project.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-target"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">07</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-target"/></svg></div>
         <h3 class="h3">Placement assistance</h3>
         <p>100% placement assistance with career advice after your training.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">08</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-cap"/></svg></div>
         <h3 class="h3">Academic projects</h3>
         <p>Project guidance for BE, BTech, MCA and BCA students.</p>
       </article>
@@ -95,85 +95,87 @@
 </section>
 
 <!-- 02 · Audience -->
-<section class="section section--tight" id="who" aria-labelledby="who-title">
-  <div class="container two-col">
-    <div class="stack">
-      <span class="kicker reveal">02 / Who it's for</span>
-      <h2 class="title split" id="who-title">Built for every <em>starting point.</em></h2>
-      <p class="lead reveal">Whether you are switching careers, starting your first job or upskilling a team, there is a track for you.</p>
-    </div>
-    <ul class="audience reveal" role="list">
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>IT &amp; non-IT graduates</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg>Freshers</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Professionals moving into SAP</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>Commerce &amp; finance graduates</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-cpu"/></svg>Engineers</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg>BE, BTech, MCA &amp; BCA students</li>
-      <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg>Companies upskilling teams</li>
-    </ul>
+<section class="section section--tint" id="who" aria-labelledby="who-title">
+  <div class="container">
+    <header class="sh">
+      <p class="label"><span class="label__num">02</span>Who it's for</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="who-title">Built for every <em>starting point.</em></h2>
+        <p class="lead rv">Whether you are switching careers, starting your first job or upskilling a team, there is a track for you.</p>
+        <ul class="audience rv" role="list">
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-cap"/></svg>IT &amp; non-IT graduates</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-sparkles"/></svg>Freshers</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-briefcase"/></svg>Professionals moving into SAP</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg>Commerce &amp; finance graduates</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-cpu"/></svg>Engineers</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-book"/></svg>BE, BTech, MCA &amp; BCA students</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-building"/></svg>Companies upskilling teams</li>
+        </ul>
+      </div>
+    </header>
   </div>
 </section>
 
 <!-- 03 · Programmes -->
 <section class="section" id="programmes" aria-labelledby="programmes-title">
   <div class="container">
-    <div class="section-head">
-      <span class="kicker reveal">03 / Programmes</span>
-      <h2 class="title split" id="programmes-title">More than a course: <em>a launchpad.</em></h2>
-    </div>
-    <div class="grid grid--4">
+    <header class="sh">
+      <p class="label"><span class="label__num">03</span>Programmes</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="programmes-title">More than a course: <em>a launchpad.</em></h2>
+      </div>
+    </header>
+    <div class="cells cells--4" data-stagger="80">
       {{@programmeCards}}
     </div>
   </div>
 </section>
 
 <!-- 04 · Placement journey -->
-<section class="section" id="placement" aria-labelledby="placement-title">
-  <div class="container two-col">
-    <div class="stack split-panel__copy">
-      <span class="kicker reveal">04 / Placement assistance</span>
-      <h2 class="title split" id="placement-title">From first class <em>to first offer.</em></h2>
-      <p class="lead reveal">A clear, step-by-step journey, so you always know what happens next.</p>
-      <div class="note reveal">
-        <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-shield"/></svg></span>
-        <div>
+<section class="section section--flush" id="placement" aria-labelledby="placement-title">
+  <div class="container">
+    <header class="sh">
+      <p class="label"><span class="label__num">04</span>Placement assistance</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="placement-title">From first class <em>to first offer.</em></h2>
+        <p class="lead rv">A clear, step-by-step journey, so you always know what happens next.</p>
+      </div>
+    </header>
+    <div class="split">
+      <div class="stack">
+        <div class="note rv">
           <h3 class="h3">Placement assistance, explained</h3>
           <p>We support every eligible learner through the job search with profile building, interview preparation and openings from our industry network. We don't sell job guarantees. We help you become someone companies want to hire.</p>
         </div>
-      </div>
-      <div class="note reveal">
-        <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
-        <div>
+        <div class="note rv">
           <h3 class="h3">Transparent fees</h3>
           <p>Fees depend on the course and the mode you choose. Ask for the current fee and batch schedule and you will get a clear breakdown before you enrol.</p>
         </div>
       </div>
+      <ol class="journey" role="list" data-stagger="70">
+        <li class="journey__step"><span class="journey__num">01</span><div><h3 class="h3">Counselling &amp; track selection</h3><p>We understand your background and goals, then recommend the right course and batch.</p></div></li>
+        <li class="journey__step"><span class="journey__num">02</span><div><h3 class="h3">Consultant-led training</h3><p>Learn each concept in instructor-led sessions backed by structured notes.</p></div></li>
+        <li class="journey__step"><span class="journey__num">03</span><div><h3 class="h3">Live project</h3><p>Apply what you learn on a live project that mirrors real client work.</p></div></li>
+        <li class="journey__step"><span class="journey__num">04</span><div><h3 class="h3">Resume &amp; interview preparation</h3><p>Build a resume around your project and practise with mock interviews.</p></div></li>
+        <li class="journey__step"><span class="journey__num">05</span><div><h3 class="h3">Placement assistance</h3><p>Get support with openings and interviews through our industry network.</p></div></li>
+        <li class="journey__step"><span class="journey__num">06</span><div><h3 class="h3">Continuous upskilling</h3><p>Keep growing after placement with career advice and curriculum updates.</p></div></li>
+      </ol>
     </div>
-    <ol class="journey" role="list" data-stagger="90">
-      <li class="card spot journey__step"><span class="journey__num">01</span><div><h3 class="h3">Counselling &amp; track selection</h3><p>We understand your background and goals, then recommend the right course and batch.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">02</span><div><h3 class="h3">Consultant-led training</h3><p>Learn each concept in instructor-led sessions backed by structured notes.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">03</span><div><h3 class="h3">Live project</h3><p>Apply what you learn on a live project that mirrors real client work.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">04</span><div><h3 class="h3">Resume &amp; interview preparation</h3><p>Build a resume around your project and practise with mock interviews.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">05</span><div><h3 class="h3">Placement assistance</h3><p>Get support with openings and interviews through our industry network.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">06</span><div><h3 class="h3">Continuous upskilling</h3><p>Keep growing after placement with career advice and curriculum updates.</p></div></li>
-    </ol>
   </div>
 </section>
 
 <!-- 05 · Tracks -->
-<section class="section" id="tracks" aria-labelledby="tracks-title">
+<section class="section section--tint" id="tracks" aria-labelledby="tracks-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">05 / Learning tracks</span>
-        <h2 class="title split" id="tracks-title">{{@categoryCount}} tracks, <em>{{@courseCount}} courses.</em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">05</span>Learning tracks</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="tracks-title">{{@categoryCount}} tracks, <em>{{@courseCount}} courses.</em></h2>
+        <p class="lead rv">Start with a track, then open any course to see what you'll learn, who it's for and what's included.</p>
+        <a class="link rv" href="courses.html">Full course catalogue <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
       </div>
-      <div class="stack reveal">
-        <p class="lead">Start with a track, then open any course to see what you'll learn, who it's for and what's included.</p>
-        <a class="link-arrow" href="courses.html">Full course catalogue <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-      </div>
-    </div>
-    <div class="cat-tiles cat-tiles--wide" data-stagger="60">
+    </header>
+    <div class="tracks rv">
       {{@categoryTiles}}
     </div>
   </div>
@@ -182,38 +184,40 @@
 <!-- 06 · FAQ -->
 <section class="section" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <div class="section-head section-head--center">
-      <span class="kicker reveal">06 / FAQ</span>
-      <h2 class="title split" id="faq-title">Questions learners <em>ask us most.</em></h2>
-    </div>
-    <div class="faq" data-stagger="60">
+    <header class="sh">
+      <p class="label"><span class="label__num">06</span>FAQ</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="faq-title">Questions learners <em>ask us most.</em></h2>
+      </div>
+    </header>
+    <div class="faq offset">
       <details class="faq__item">
         <summary class="faq__q">Do you offer online classes?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Yes. Every course runs in both online and classroom modes, and batches and timings can be customised for students and working professionals.</p></div></div>
+        <div class="faq__a"><p>Yes. Every course runs in both online and classroom modes, and batches and timings can be customised for students and working professionals.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Who are the trainers?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Working consultants with at least 10 years of industry experience, who bring real project scenarios into every session.</p></div></div>
+        <div class="faq__a"><p>Working consultants with at least 10 years of industry experience, who bring real project scenarios into every session.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Do I need an IT background to learn SAP?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>No. SAP functional modules such as FICO, MM, SD and HCM are open to IT and non-IT graduates. Technical tracks such as ABAP and BASIS suit learners with a computing background.</p></div></div>
+        <div class="faq__a"><p>No. SAP functional modules such as FICO, MM, SD and HCM are open to IT and non-IT graduates. Technical tracks such as ABAP and BASIS suit learners with a computing background.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Do you provide placement assistance?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Yes, 100% placement assistance for eligible learners: career advice, resume and interview preparation, and support with openings. We assist with placement; we do not sell job guarantees.</p></div></div>
+        <div class="faq__a"><p>Yes, 100% placement assistance for eligible learners: career advice, resume and interview preparation, and support with openings. We assist with placement; we do not sell job guarantees.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Will I get an experience letter?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Freshers who complete an internship project receive an experience letter. It is offered with programmes such as software testing; ask our counsellors which courses include it.</p></div></div>
+        <div class="faq__a"><p>Freshers who complete an internship project receive an experience letter. It is offered with programmes such as software testing; ask our counsellors which courses include it.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Do you help with academic projects?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Yes. We guide BE, BTech, MCA and BCA students on their academic projects.</p></div></div>
+        <div class="faq__a"><p>Yes. We guide BE, BTech, MCA and BCA students on their academic projects.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">How much do the courses cost?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Fees depend on the course and the mode you choose. <a class="link-arrow" href="contact.html">Contact us</a> for the current fee and batch schedule, and we will share a clear breakdown before you enrol.</p></div></div>
+        <div class="faq__a"><p>Fees depend on the course and the mode you choose. <a href="contact.html">Contact us</a> for the current fee and batch schedule, and we will share a clear breakdown before you enrol.</p></div>
       </details>
     </div>
   </div>

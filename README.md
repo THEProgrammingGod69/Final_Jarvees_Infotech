@@ -6,23 +6,18 @@ A fast, animated, multi-page website for **Jarvees Infotech Pvt. Ltd.** (SAP con
 - **26-course catalogue** with track filters, live search, shareable URLs and an accessible quick-view dialog
 - **A page per course** (`course/<id>.html`) generated from the catalogue data, with syllabus, FAQ, related courses and `Course` structured data
 - **Enquiry form** that hands off to WhatsApp or email with the message pre-filled (no backend needed)
-- **Motion:**
-  - home-page intro and word-by-word hero headlines (pure CSS, start at first paint)
-  - interactive 3D dotted globe and constellation backgrounds (canvas)
-  - scroll reveals, decoding labels, icons popping in, gradient stat bars
-  - scroll-linked parallax (CSS scroll timelines), twin marquees
-  - magnetic buttons, click ripples, gliding nav pill, cursor aura, pointer-tracked card glow
-  - page-to-page view transitions
+- **Design:** editorial and architectural. Warm paper, ink type and hairline rules, with the golden spiral from the Jarvees mark as the one signature visual: a construction drawing generated at build time (`scripts/lib/spiral.mjs`)
+- **Type:** Newsreader (display, cut to its headline optical size) and Instrument Sans, both self-hosted
+- **Motion, kept quiet on purpose:** the hero spiral draws itself once; sections fade up once as they arrive; hover states change colour or nudge an arrow. No loops, canvases, blur or pointer-driven effects
 - **Built for speed:**
-  - no framework, about 10 KB of gzipped JavaScript per page and native scrolling
-  - only `transform`/`opacity` are animated; headings are split into words at build time
-  - canvases batch their drawing, cap pixel density, pause off screen, in background tabs and while scrolling, and run at 30 fps on low-power devices
-  - looping animations pause when their section is off screen; CSS is minified at build time
+  - no framework: about 2 KB of gzipped core JavaScript and 9 KB of gzipped CSS
+  - nothing runs while the page is idle, and scrolling stays at a steady 60 fps
+  - only `transform`/`opacity` are animated, and only once per element
   - self-hosted fonts and no third-party requests (apart from the map embed on the contact page)
 - **Accessible:**
   - semantic HTML, skip link, keyboard-friendly menus and dialog, visible focus states
   - full `prefers-reduced-motion` support
-  - content still renders without JavaScript
+  - content renders without JavaScript (and appears anyway if the script fails to load)
 
 ## Quick start
 
@@ -56,6 +51,7 @@ scripts/
   check.mjs       Static checks for dist/ (zero dependencies)
   test.mjs        Browser tests with Playwright
   render-images.mjs  Regenerates the social card and app icons (needs Playwright)
+  lib/            Shared helpers: spiral drawing, Playwright loader
 dist/             The built website. This is the folder you deploy.
 ```
 
@@ -69,8 +65,9 @@ dist/             The built website. This is the folder you deploy.
 | Page copy | `src/pages/*.html` |
 | Header, footer, closing call-to-action | `src/partials/*.html` |
 | Colours, typography, layout | `src/assets/css/main.css` (design tokens are at the top) |
+| The spiral drawing | `scripts/lib/spiral.mjs`, inserted with `{{@spiral}}`, `{{@spiral draw}}` or `{{@spiral hero}}` |
 
-Run `npm run build` after editing and commit the updated `dist/`.
+Run `npm run build` after editing (or `npm test` to build and verify) and commit the updated `dist/`.
 
 ## Deployment
 
@@ -93,4 +90,4 @@ The form validates the input in the browser, then opens **WhatsApp** (to +91 902
 
 ## Credits
 
-- Fonts: [Unbounded](https://fonts.google.com/specimen/Unbounded), [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans) and [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono), all under the SIL Open Font License
+- Fonts: [Newsreader](https://fonts.google.com/specimen/Newsreader) (instanced at its 72 pt optical size) and [Instrument Sans](https://fonts.google.com/specimen/Instrument+Sans), both under the SIL Open Font License

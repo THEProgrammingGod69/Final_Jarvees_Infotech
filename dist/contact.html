@@ -7,8 +7,8 @@
   <meta name="description" content="Contact Jarvees Infotech and Jarvees Academy in Ambegaon Bk., Pune. Call +91 90225 84956, WhatsApp us or send an enquiry about SAP consulting or courses.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jarveesinfotech.com/contact.html">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,28 +28,22 @@
   <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
   <link rel="manifest" href="site.webmanifest">
 
-  <link rel="preload" href="assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/css/main.css?v=b54a62af">
+  <link rel="stylesheet" href="assets/css/main.css?v=ab9c21de">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
-  <script src="assets/js/main.js?v=3ddf989e" defer></script>
+  <script src="assets/js/main.js?v=683a7565" defer></script>
   <script src="assets/js/contact.js?v=15566f7e" defer></script>
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://jarveesinfotech.com/#organization","name":"Jarvees Infotech","legalName":"Jarvees Infotech Private Limited","url":"https://jarveesinfotech.com","logo":"https://jarveesinfotech.com/assets/img/icon-512.png","slogan":"An Attempt to Achieve a Goal","foundingDate":"2019","email":"jarveesacademy.pune@gmail.com","telephone":["+919022584956","+919307590139"],"address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"sameAs":["https://www.facebook.com/Jarveesacademypune"],"subOrganization":{"@type":"EducationalOrganization","@id":"https://jarveesinfotech.com/#academy","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"telephone":"+919022584956"}}]}</script>
 </head>
@@ -57,24 +51,18 @@
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6ead0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#9a7533"/>
-    </linearGradient>
-    <linearGradient id="g-edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9d9b2" stop-opacity=".75"/>
-      <stop offset=".55" stop-color="#e9d9b2" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#4f8cff" stop-opacity=".45"/>
+      <stop offset="0" stop-color="#ecd29a"/>
+      <stop offset=".55" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8823f"/>
     </linearGradient>
   </defs>
 
-  <!-- Brand mark: Fibonacci spiral on a black tile -->
+  <!-- Brand mark: the Jarvees spiral on an ink tile -->
   <symbol id="mark" viewBox="0 0 64 64">
-    <rect x="1" y="1" width="62" height="62" rx="16" fill="#06080f"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#g-edge)"/>
-    <path class="mark__spiral" d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="13" cy="20.24" r="2.6" fill="#e9d9b2"/>
-    <circle cx="40.6" cy="27.2" r="2.4" fill="#e0393f"/>
+    <rect width="64" height="64" rx="12" fill="#15140f"/>
+    <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="13" cy="20.24" r="2.6" fill="#ecd29a"/>
+    <circle cx="40.6" cy="27.2" r="2.4" fill="#d6423e"/>
   </symbol>
 
   <!-- Icons (24×24, stroked via CSS unless noted) -->
@@ -131,11 +119,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
-
   <header class="site-header" data-header>
   <div class="container header__inner">
     <a class="brand" href="index.html" aria-label="Jarvees Infotech home">
@@ -158,10 +141,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm magnetic header__cta" href="contact.html">
-        Enquire now
-        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-      </a>
+      <a class="btn btn--sm header__cta" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -174,18 +154,18 @@
   <div class="mobile-nav__inner">
     <nav aria-label="Mobile">
       <ol class="mobile-nav__list" role="list">
-        <li style="--i:0"><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
-        <li style="--i:1"><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
-        <li style="--i:2"><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
-        <li style="--i:3"><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
-        <li style="--i:4"><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
-        <li style="--i:5"><a href="contact.html" data-nav="contact" aria-current="page"><span class="mobile-nav__idx">06</span>Contact</a></li>
+        <li><a href="index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li><a href="about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li><a href="services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li><a href="academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li><a href="courses.html" data-nav="courses"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li><a href="contact.html" data-nav="contact" aria-current="page"><span class="mobile-nav__idx">06</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-nav__foot">
       <a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a>
       <a href="mailto:jarveesacademy.pune@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>jarveesacademy.pune@gmail.com</a>
-      <a class="btn btn--primary" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn" href="contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -193,29 +173,29 @@
 
   <main id="main" tabindex="-1">
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
-      <h1 class="display split is-split" id="page-title" aria-label="Let's talk about your next move."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Let's</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">talk</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">about</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">next</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">move.</span></span></em></h1>
-      <p class="lead reveal" style="--d:240ms">Planning an SAP project or choosing a course? Send us a message and the team will get back to you. We are available every day from 9 AM to 9 PM.</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Contact</span></nav>
+      <h1 class="display display--page" id="page-title">Let's talk about <em>your next move.</em></h1>
+      <p class="lead">Planning an SAP project or choosing a course? Send us a message and the team will get back to you. We are available every day from 9 AM to 9 PM.</p>
     </div>
-    <aside class="hud reveal" style="--d:320ms" aria-label="Ways to reach us">
-      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
-      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Channels online</p>
-      <div class="hud__row"><span>Hours</span><b>Daily · 9 AM – 9 PM</b></div>
-      <div class="hud__row"><span>WhatsApp</span><b>Instant chat</b></div>
-      <div class="hud__row"><span>Phone</span><b>2 direct lines</b></div>
-      <div class="hud__row"><span>Office</span><b>Ambegaon Bk., Pune</b></div>
+    <aside class="sheet" aria-label="Ways to reach us">
+      <p class="sheet__title label">Channels online <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg></p>
+      <dl>
+        <div><dt>Hours</dt><dd>Daily · 9 AM – 9 PM</dd></div>
+        <div><dt>WhatsApp</dt><dd>Instant chat</dd></div>
+        <div><dt>Phone</dt><dd>2 direct lines</dd></div>
+        <div><dt>Office</dt><dd>Ambegaon Bk., Pune</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
 
-<section class="section section--flush-top" id="enquiry" aria-labelledby="form-title">
+<section class="section section--flush" id="enquiry" aria-labelledby="form-title">
   <div class="container contact-grid">
-    <div class="card form-panel reveal">
-      <span class="kicker">Send an enquiry</span>
-      <h2 class="title form-panel__title" id="form-title">Tell us what <em>you need.</em></h2>
+    <div class="form-panel">
+      <p class="label">Send an enquiry</p>
+      <h2 class="h2" id="form-title">Tell us what <em>you need.</em></h2>
       <form class="form" data-enquiry-form data-whatsapp="919022584956" data-email="jarveesacademy.pune@gmail.com" novalidate>
         <div class="form__row">
           <div class="field">
@@ -256,7 +236,7 @@
         </div>
         <div class="form__actions">
           <button class="btn btn--whatsapp btn--lg" type="submit" name="via" value="whatsapp"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Send on WhatsApp</button>
-          <button class="btn btn--ghost btn--lg" type="submit" name="via" value="email"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Send by email</button>
+          <button class="btn btn--line btn--lg" type="submit" name="via" value="email"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>Send by email</button>
         </div>
         <p class="form__fine">Your message goes straight to our team through WhatsApp or your email app. This website does not store your details. <a href="privacy.html">Privacy</a></p>
         <div class="form__status" role="status" tabindex="-1" data-form-status>
@@ -267,89 +247,91 @@
       </form>
     </div>
 
-    <div class="info-stack" data-stagger="80">
-      <div class="card spot info-card">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-pin"/></svg></span>
-        <div>
+    <div class="info-list" data-stagger="70">
+      <div class="info">
+        <svg class="i" aria-hidden="true"><use href="#i-pin"/></svg>
+        <div class="info__body">
           <h3>Visit</h3>
-          <address><p>Row House 6, Rilicon Fremount Hills CHS,<br>Near Abhinav School, Ambegaon Bk.,<br>Pune 411046, Maharashtra</p></address>
-          <a class="link-arrow" href="https://www.google.com/maps/search/?api=1&amp;query=Rilicon%20Fremount%20Hills%20CHS%2C%20Ambegaon%20Budruk%2C%20Pune%20411046" target="_blank" rel="noopener">Get directions <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <address>Row House 6, Rilicon Fremount Hills CHS,<br>Near Abhinav School, Ambegaon Bk.,<br>Pune 411046, Maharashtra</address>
+          <a class="link" href="https://www.google.com/maps/search/?api=1&amp;query=Rilicon%20Fremount%20Hills%20CHS%2C%20Ambegaon%20Budruk%2C%20Pune%20411046" target="_blank" rel="noopener">Get directions <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
       </div>
-      <div class="card spot info-card">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg></span>
-        <div>
+      <div class="info">
+        <svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>
+        <div class="info__body">
           <h3>Call</h3>
           <a href="tel:+919022584956">+91 90225 84956</a>
           <a href="tel:+919307590139">+91 93075 90139</a>
         </div>
       </div>
-      <div class="card spot info-card">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg></span>
-        <div>
+      <div class="info">
+        <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
+        <div class="info__body">
           <h3>WhatsApp</h3>
           <a href="https://wa.me/919022584956" target="_blank" rel="noopener">+91 90225 84956</a>
         </div>
       </div>
-      <div class="card spot info-card">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg></span>
-        <div>
+      <div class="info">
+        <svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>
+        <div class="info__body">
           <h3>Email</h3>
           <a href="mailto:jarveesacademy.pune@gmail.com">jarveesacademy.pune@gmail.com</a>
         </div>
       </div>
-      <div class="card spot info-card">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg></span>
-        <div>
+      <div class="info">
+        <svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>
+        <div class="info__body">
           <h3>Hours</h3>
           <p>Open daily, 9 AM – 9 PM</p>
-          <a class="link-arrow" href="https://www.facebook.com/Jarveesacademypune" target="_blank" rel="noopener">Follow on Facebook <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+          <a class="link" href="https://www.facebook.com/Jarveesacademypune" target="_blank" rel="noopener">Follow on Facebook <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section section--tight" id="map" aria-labelledby="map-title">
+<section class="section" id="map" aria-labelledby="map-title">
   <div class="container">
     <h2 class="sr-only" id="map-title">Find us on the map</h2>
-    <div class="map reveal">
+    <div class="map rv">
       <iframe src="https://maps.google.com/maps?q=Rilicon%20Fremount%20Hills%2C%20Ambegaon%20Budruk%2C%20Pune%20411046&amp;z=15&amp;output=embed" title="Map showing the Jarvees Infotech office in Ambegaon Bk., Pune" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe>
       <div class="map__overlay">
-        <span class="kicker">Head office</span>
+        <p class="label">Head office</p>
         <p>Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune 411046</p>
-        <a class="btn btn--primary btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Rilicon%20Fremount%20Hills%20CHS%2C%20Ambegaon%20Budruk%2C%20Pune%20411046" target="_blank" rel="noopener">Open in Google Maps <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+        <a class="btn btn--sm" href="https://www.google.com/maps/search/?api=1&amp;query=Rilicon%20Fremount%20Hills%20CHS%2C%20Ambegaon%20Budruk%2C%20Pune%20411046" target="_blank" rel="noopener">Open in Google Maps <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="faq" aria-labelledby="faq-title">
+<section class="section section--flush" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <div class="section-head section-head--center">
-      <span class="kicker reveal">Good to know</span>
-      <h2 class="title split is-split" id="faq-title" aria-label="Before you reach out."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Before</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">you</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">reach</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">out.</span></span></em></h2>
-    </div>
-    <div class="faq" data-stagger="60">
+    <header class="sh">
+      <p class="label">Good to know</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="faq-title">Before you <em>reach out.</em></h2>
+      </div>
+    </header>
+    <div class="faq offset">
       <details class="faq__item">
         <summary class="faq__q">When will I hear back?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>We respond every day between 9 AM and 9 PM. WhatsApp is usually the quickest way to reach the team.</p></div></div>
+        <div class="faq__a"><p>We respond every day between 9 AM and 9 PM. WhatsApp is usually the quickest way to reach the team.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Can I visit the office?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Yes. We are at Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune. Call ahead so the right person is available to meet you.</p></div></div>
+        <div class="faq__a"><p>Yes. We are at Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune. Call ahead so the right person is available to meet you.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">Do you work with companies outside Pune?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Yes. Consulting and corporate training can be delivered online, so we can work with teams wherever they are.</p></div></div>
+        <div class="faq__a"><p>Yes. Consulting and corporate training can be delivered online, so we can work with teams wherever they are.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">What should a project enquiry include?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>A short description of your business, your current system and what you want to achieve. We will take it from there.</p></div></div>
+        <div class="faq__a"><p>A short description of your business, your current system and what you want to achieve. We will take it from there.</p></div>
       </details>
       <details class="faq__item">
         <summary class="faq__q">How do I find out course fees and batch dates?<span class="faq__icon" aria-hidden="true"></span></summary>
-        <div class="faq__a"><div><p>Choose the course in the form above and send it. We will reply with the current fee, the next batch dates and the available modes.</p></div></div>
+        <div class="faq__a"><p>Choose the course in the form above and send it. We will reply with the current fee, the next batch dates and the available modes.</p></div>
       </details>
     </div>
   </div>
@@ -371,7 +353,7 @@
         <p class="footer__tagline">“An Attempt to Achieve a Goal”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since 2019</li>
         </ul>
       </div>
@@ -415,43 +397,20 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Jarvees Infotech Private Limited. All rights reserved.</p>
+      <p>© 2026 Jarvees Infotech Private Limited. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>
   </div>
 </footer>
 
-  <div class="scroll-progress" aria-hidden="true" data-progress></div>
-
-<a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
+  <a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
   <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   <span class="fab__label">Chat with us</span>
 </a>
-
-<div class="cursor" aria-hidden="true" data-cursor></div>
-
-<div class="intro" aria-hidden="true">
-  <div class="intro__core">
-    <svg class="intro__mark" viewBox="0 0 64 64">
-      <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" pathLength="1" fill="none" stroke="url(#g-gold)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="40.6" cy="27.2" r="2.2" fill="#e0393f"/>
-    </svg>
-    <p class="intro__word"><span>J</span><span>A</span><span>R</span><span>V</span><span>E</span><span>E</span><span>S</span></p>
-    <p class="intro__meta">Infotech · Academy · Pune</p>
-  </div>
-</div>
 
 </body>
 </html>

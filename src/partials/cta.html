@@ -1,22 +1,20 @@
-<section class="section section--cta" aria-labelledby="cta-title">
+<section class="cta" aria-labelledby="cta-title">
   <div class="container">
-    <div class="cta reveal reveal--scale">
-      <div class="cta__floor" aria-hidden="true"><div class="cta__plane"></div></div>
-      <div class="cta__glow" aria-hidden="true"></div>
-      <div class="cta__content">
-        <span class="kicker">{{cta.kicker}}</span>
-        <h2 class="title cta__title split" id="cta-title">{{{cta.title}}}</h2>
-        <p class="lead">{{cta.text}}</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="{{base}}{{cta.primaryHref}}">{{cta.primaryLabel}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="{{base}}{{cta.secondaryHref}}">{{cta.secondaryLabel}}</a>
-        </div>
-        <ul class="cta__contact" role="list">
-          <li><a href="tel:{{site.phones.0.e164}}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{site.phones.0.label}}</a></li>
-          <li><a href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
-          <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>{{site.hours}}</span></li>
-        </ul>
+    <div class="cta__inner">
+    <p class="label">{{cta.kicker}}</p>
+    <div class="cta__body">
+      <h2 class="cta__title rv" id="cta-title">{{{cta.title}}}</h2>
+      <p class="cta__text rv">{{cta.text}}</p>
+      <div class="actions rv">
+        <a class="btn btn--light btn--lg" href="{{base}}{{cta.primaryHref}}">{{cta.primaryLabel}} <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line-light btn--lg" href="{{base}}{{cta.secondaryHref}}">{{cta.secondaryLabel}}</a>
       </div>
+      <ul class="cta__contact" role="list">
+        <li><a href="tel:{{site.phones.0.e164}}"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>{{site.phones.0.label}}</a></li>
+        <li><a href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
+        <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>{{site.hours}}</span></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>

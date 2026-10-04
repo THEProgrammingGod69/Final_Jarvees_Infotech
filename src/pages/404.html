@@ -9,17 +9,19 @@
   "sitemap": false
 }
 -->
-<section class="nf hero" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
+<section class="nf section" aria-labelledby="page-title">
   <div class="container nf__inner">
-    <p class="eyebrow reveal"><span class="pulse" aria-hidden="true"></span>Error 404 · Signal lost</p>
-    <p class="nf__code reveal" data-text="404" aria-hidden="true">404</p>
-    <h1 class="title split" id="page-title">This page drifted <em>out of orbit.</em></h1>
-    <p class="lead reveal">The link may be broken or the page may have moved. Let's get you back on course.</p>
-    <div class="nf__links reveal">
-      <a class="btn btn--primary magnetic" href="/index.html">Back to home <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-      <a class="btn btn--ghost magnetic" href="/courses.html">Browse courses</a>
-      <a class="btn btn--ghost magnetic" href="/contact.html">Contact us</a>
+    <div class="nf__copy">
+      <p class="label label--dot">Error 404 · Signal lost</p>
+      <p class="nf__code" aria-hidden="true">404</p>
+      <h1 class="display display--page" id="page-title">This page drifted <em>out of orbit.</em></h1>
+      <p class="lead">The link may be broken or the page may have moved. Let's get you back on course.</p>
+      <div class="actions nf__links">
+        <a class="btn" href="/index.html">Back to home <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line" href="/courses.html">Browse courses</a>
+        <a class="btn btn--line" href="/contact.html">Contact us</a>
+      </div>
     </div>
+    <div aria-hidden="true">{{@spiral draw}}</div>
   </div>
 </section>

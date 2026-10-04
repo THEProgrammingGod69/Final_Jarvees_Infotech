@@ -22,6 +22,7 @@ import { createHash } from 'node:crypto';
 import { cp, mkdir, readdir, readFile, rm, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { spiralSvg } from './lib/spiral.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const SRC = path.join(ROOT, 'src');
@@ -107,10 +108,10 @@ function quickViewPane(course, ctx) {
         <h4 class="dialog__h">Format</h4>
         <p>Instructor-led · Online or classroom · Customised batches and timings</p>
         <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list">${courseIncludes(course).map((i) => `<li class="tag">${escapeHtml(i)}</li>`).join('')}</ul>
+        <ul class="tags" role="list">${courseIncludes(course).map((i) => `<li class="tag">${escapeHtml(i)}</li>`).join('')}</ul>
       </section>
     </div>
-    <p class="dialog__more"><a class="link-arrow" href="${ctx.base}${coursePath(course.id)}">Full ${escapeHtml(course.title)} course page ${icon('arrow-up-right')}</a></p>
+    <p class="dialog__more"><a class="link" href="${ctx.base}${coursePath(course.id)}">Full ${escapeHtml(course.title)} course page ${icon('arrow-up-right')}</a></p>
   </div>`;
 }
 
@@ -118,17 +119,17 @@ function quickViewPane(course, ctx) {
  * Course card. Its link always points at the course page; in the catalogue
  * (`quickView`) courses.js turns a plain click into the quick-view dialog.
  */
-function courseCard(course, ctx, { index = 0, quickView = false } = {}) {
+function courseCard(course, ctx, { quickView = false } = {}) {
   const cat = categoryById[course.cat];
   const preview = course.topics.slice(0, 3);
   const more = course.topics.length - preview.length;
   const search = [course.title, course.subtitle, course.short, cat.name, ...course.topics].join(' ').toLowerCase();
   const attrs = quickView ? ` id="${course.id}" data-course data-cat="${course.cat}" data-search="${escapeHtml(search)}"` : '';
   return `
-<article class="course card spot reveal"${attrs} style="--d:${(index % 3) * 70}ms">
+<article class="course"${attrs}>
   <div class="course__top">
     <span class="course__cat">${escapeHtml(cat.name)}</span>
-    <span class="icon-tile icon-tile--sm">${icon(cat.icon)}</span>
+    ${icon(cat.icon)}
   </div>
   <h3 class="course__title">${escapeHtml(course.title)}</h3>
   ${course.subtitle ? `<p class="course__sub">${escapeHtml(course.subtitle)}</p>` : ''}
@@ -156,7 +157,7 @@ function relatedTo(course) {
 
 const faqItem = (q, a) => `<details class="faq__item">
   <summary class="faq__q">${escapeHtml(q)}<span class="faq__icon" aria-hidden="true"></span></summary>
-  <div class="faq__a"><div><p>${escapeHtml(a)}</p></div></div>
+  <div class="faq__a"><p>${escapeHtml(a)}</p></div>
 </details>`;
 
 const GENERATORS = {
@@ -187,19 +188,19 @@ const GENERATORS = {
 
   /** Full course grid; each card carries a hidden quick-view pane for the dialog. */
   courseGrid(_arg, ctx) {
-    return catalog.courses.map((course, index) => courseCard(course, ctx, { index, quickView: true })).join('\n');
+    return catalog.courses.map((course) => courseCard(course, ctx, { quickView: true })).join('\n');
   },
 
-  /** Category tiles linking into the filtered catalogue. */
+  /** Track index rows linking into the filtered catalogue. */
   categoryTiles(_arg, ctx) {
     return catalog.categories
-      .map((cat, i) => {
+      .map((cat) => {
         const n = coursesIn(cat.id).length;
-        return `<a class="cat-tile card spot" href="${ctx.base}courses.html?cat=${cat.id}" style="--d:${i * 60}ms">
-  <span class="icon-tile">${icon(cat.icon)}</span>
-  <span class="cat-tile__body"><span class="cat-tile__name">${escapeHtml(cat.name)}</span><span class="cat-tile__blurb">${escapeHtml(cat.blurb)}</span></span>
-  <span class="cat-tile__count">${n} ${n === 1 ? 'course' : 'courses'}</span>
-  ${icon('arrow-up-right', 'i cat-tile__arrow')}
+        return `<a class="track" href="${ctx.base}courses.html?cat=${cat.id}">
+  <span class="track__name">${escapeHtml(cat.name)}</span>
+  <span class="track__blurb">${escapeHtml(cat.blurb)}</span>
+  <span class="track__count">${n} ${n === 1 ? 'course' : 'courses'}</span>
+  ${icon('arrow-up-right')}
 </a>`;
       })
       .join('\n');
@@ -238,7 +239,7 @@ const GENERATORS = {
   /** Numbered syllabus tiles. */
   courseSyllabus(_arg, ctx) {
     return ctx.course.topics
-      .map((t, i) => `<li class="card spot syllabus__item"><span class="journey__num">${String(i + 1).padStart(2, '0')}</span><p>${escapeHtml(t)}</p></li>`)
+      .map((t, i) => `<li class="syllabus__item"><span class="journey__num">${String(i + 1).padStart(2, '0')}</span><p>${escapeHtml(t)}</p></li>`)
       .join('\n');
   },
 
@@ -276,21 +277,27 @@ const GENERATORS = {
   /** Related course cards. */
   relatedCourses(_arg, ctx) {
     return relatedTo(ctx.course)
-      .map((c, index) => courseCard(c, ctx, { index }))
+      .map((c) => courseCard(c, ctx))
       .join('\n');
   },
 
-  /** Programmes (add-ons) cards for the academy page. */
+  /** Programme (add-on) cells for the academy and courses pages. */
   programmeCards() {
     return catalog.programmes
       .map(
-        (p, i) => `<article class="card spot program reveal" style="--d:${i * 80}ms">
-  <span class="icon-tile">${icon(p.icon)}</span>
+        (p, i) => `<article class="cell">
+  <div class="cell__head"><span class="cell__num">${String(i + 1).padStart(2, '0')}</span>${icon(p.icon, 'i cell__icon')}</div>
   <h3 class="h3">${escapeHtml(p.title)}</h3>
   <p>${escapeHtml(p.text)}</p>
 </article>`
       )
       .join('\n');
+  },
+
+  /** Golden-spiral drawing. "hero": draws itself with four numbered tags; "draw": draws itself; default: static. */
+  spiral(arg) {
+    if (arg === 'hero') return spiralSvg({ className: 'spiral spiral--draw', tags: 4 });
+    return spiralSvg({ className: arg === 'draw' ? 'spiral spiral--draw' : 'spiral' });
   },
 
   /** schema.org structured data: the organisation, plus course and catalogue nodes where relevant. */
@@ -397,32 +404,6 @@ async function runGenerators(str, ctx) {
   return out;
 }
 
-/**
- * Pre-split headings marked `.split` into word spans at build time, so the
- * word-by-word entrance needs no JavaScript and causes no layout shift.
- */
-function splitHeadings(html) {
-  return html.replace(/<(h[1-6])(\s[^>]*)>([\s\S]*?)<\/\1>/g, (match, tag, attrs, inner) => {
-    const cls = attrs.match(/class="([^"]*)"/);
-    if (!cls || !/\bsplit\b/.test(cls[1])) return match;
-    let index = 0;
-    const words = inner
-      .split(/(<[^>]+>)/)
-      .map((part) =>
-        part.startsWith('<')
-          ? part
-          : part
-              .split(/(\s+)/)
-              .map((w) => (!w ? '' : /^\s+$/.test(w) ? ' ' : `<span class="w" aria-hidden="true"><span class="w__i" style="--wi:${index++}">${w}</span></span>`))
-              .join('')
-      )
-      .join('');
-    const label = inner.replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim().replace(/"/g, '&quot;');
-    const newAttrs = attrs.replace(/class="([^"]*)"/, (_m, c) => `class="${c} is-split"`);
-    return `<${tag}${newAttrs} aria-label="${label}">${words}</${tag}>`;
-  });
-}
-
 /** Conservative CSS minifier: comments, whitespace runs, spaces around { } ; */
 const minifyCss = (css) =>
   css
@@ -487,7 +468,6 @@ async function renderPage(body, meta, { slug, outFile }) {
 
   // Mark the active navigation item in every menu ("true" for pages below a section).
   if (ctx.nav) html = html.replaceAll(`data-nav="${ctx.nav}"`, `data-nav="${ctx.nav}" aria-current="${ctx.navCurrent}"`);
-  html = splitHeadings(html);
 
   const target = path.join(OUT, outFile);
   await mkdir(path.dirname(target), { recursive: true });

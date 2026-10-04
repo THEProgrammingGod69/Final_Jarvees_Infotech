@@ -36,50 +36,27 @@
       history.replaceState(history.state, '', url);
     };
 
-    /** Show matching cards; `reveal` forces entrance state for cards shown by user filtering. */
-    const apply = (reveal = true) => {
+    /** Show the cards that match the current track and search terms. */
+    const apply = () => {
       const terms = query.toLowerCase().split(/\s+/).filter(Boolean);
       let shown = 0;
       for (const card of cards) {
         const match = (cat === 'all' || card.dataset.cat === cat) && terms.every((t) => card.dataset.search.includes(t));
         card.hidden = !match;
-        if (match) {
-          shown += 1;
-          if (reveal) card.classList.add('is-in', 'is-done');
-        }
+        if (match) shown += 1;
       }
       count.textContent = String(shown);
       empty.hidden = shown !== 0;
       chips.forEach((chip) => chip.setAttribute('aria-pressed', String(chip.dataset.filter === cat)));
     };
 
-    /** Animate layout changes with the View Transitions API where supported. */
-    const animate = (fn) => {
-      if (!App.motionOK || typeof doc.startViewTransition !== 'function') {
-        fn();
-        return;
-      }
-      const root = doc.documentElement;
-      const name = (card) => (card.hidden ? '' : `course-${card.id}`);
-      cards.forEach((card) => (card.style.viewTransitionName = name(card)));
-      root.classList.add('vt-filter');
-      const transition = doc.startViewTransition(() => {
-        fn();
-        cards.forEach((card) => (card.style.viewTransitionName = name(card)));
-      });
-      transition.finished.finally(() => {
-        cards.forEach((card) => (card.style.viewTransitionName = ''));
-        root.classList.remove('vt-filter');
-      });
-    };
-
-    apply(false);
+    apply();
 
     chips.forEach((chip) =>
       chip.addEventListener('click', () => {
         if (cat === chip.dataset.filter) return;
         cat = chip.dataset.filter;
-        animate(() => apply());
+        apply();
         syncUrl();
       })
     );
@@ -106,7 +83,7 @@
       cat = 'all';
       query = '';
       search.value = '';
-      animate(() => apply());
+      apply();
       syncUrl();
       search.focus();
     });
@@ -159,7 +136,7 @@
         dialog.classList.remove('is-closing');
         closing = false;
         dialog.close();
-      }, 280);
+      }, 240);
     };
 
     dialog.addEventListener('close', () => {
@@ -199,7 +176,7 @@
       openCourse(id);
     };
     addEventListener('hashchange', openFromHash);
-    if (location.hash) setTimeout(openFromHash, App.motionOK ? 450 : 0);
+    if (location.hash) openFromHash();
   }
 
   if (doc.prerendering) doc.addEventListener('prerenderingchange', init, { once: true });

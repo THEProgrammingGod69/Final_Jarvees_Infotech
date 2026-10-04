@@ -95,6 +95,33 @@ test('unknown URLs get the 404 page, whose links work from any depth', async () 
   await Promise.all([page.waitForURL(/\/index\.html$/), page.click('.nf__links a[href="/index.html"]')]);
 });
 
+test('no page runs looping animations, canvases or pointer-driven effects', async () => {
+  for (const p of [...PAGES, ...SAMPLE_COURSES]) {
+    const { page } = await open(p, { reducedMotion: 'no-preference' });
+    await page.mouse.move(400, 300);
+    await page.waitForTimeout(300);
+    const found = await page.evaluate(() => ({
+      looping: document.getAnimations().filter((a) => a.effect?.getTiming().iterations === Infinity).length,
+      canvases: document.querySelectorAll('canvas').length,
+    }));
+    equal(found.looping, 0, `${p} infinite animations`);
+    equal(found.canvases, 0, `${p} canvases`);
+  }
+});
+
+test('entrances finish once scrolled into view, with animations on', async () => {
+  const { page } = await open('index.html', { reducedMotion: 'no-preference' });
+  await page.evaluate(async () => {
+    for (let y = 0; y < document.documentElement.scrollHeight; y += 500) {
+      window.scrollTo(0, y);
+      await new Promise((r) => setTimeout(r, 40));
+    }
+  });
+  await page.waitForTimeout(1500);
+  const pending = await page.$$eval('.rv', (els) => els.filter((el) => !el.classList.contains('is-in') || Number(getComputedStyle(el).opacity) < 0.95).length);
+  equal(pending, 0, 'entrances still hidden');
+});
+
 test('home page content renders without JavaScript', async () => {
   const { page } = await open('index.html', { javaScriptEnabled: false });
   assert(await page.evaluate(() => document.documentElement.classList.contains('no-js')), 'html.no-js');
@@ -104,7 +131,7 @@ test('home page content renders without JavaScript', async () => {
 
 test('reduced motion shows every entrance immediately', async () => {
   const { page } = await open('index.html');
-  const pending = await page.$$eval('.reveal', (els) => els.filter((el) => !el.classList.contains('is-in')).length);
+  const pending = await page.$$eval('.rv', (els) => els.filter((el) => !el.classList.contains('is-in')).length);
   equal(pending, 0, 'reveal elements without .is-in');
 });
 
@@ -219,9 +246,9 @@ test('every course page shows its syllabus, enquiry links and structured data', 
     const response = await page.goto(BASE + url);
     equal(response.status(), 200, `${url} status`);
     const data = await page.evaluate(() => ({
-      h1: document.querySelector('h1').getAttribute('aria-label'),
+      h1: document.querySelector('h1').textContent.replace(/\s+/g, ' ').trim(),
       topics: document.querySelectorAll('.syllabus__item').length,
-      enquire: document.querySelector('.hero__ctas a').getAttribute('href'),
+      enquire: document.querySelector('.hero .actions a').getAttribute('href'),
       faqs: document.querySelectorAll('.faq__item').length,
       related: [...document.querySelectorAll('#related .course__open')].map((a) => a.getAttribute('href')),
       ld: JSON.parse(document.querySelector('script[type="application/ld+json"]').textContent)['@graph'].map((n) => n['@type']),
@@ -247,7 +274,7 @@ test('related course cards navigate to their pages', async () => {
 
 test('course pages render fully without JavaScript', async () => {
   const { page } = await open('course/sap-abap.html', { javaScriptEnabled: false });
-  const hidden = await page.$$eval('.reveal, .syllabus__item', (els) => els.filter((el) => getComputedStyle(el).opacity !== '1').length);
+  const hidden = await page.$$eval('.rv, .syllabus__item', (els) => els.filter((el) => getComputedStyle(el).opacity !== '1').length);
   equal(hidden, 0, 'elements hidden without JS');
 });
 

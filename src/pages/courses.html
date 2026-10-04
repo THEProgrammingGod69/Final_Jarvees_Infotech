@@ -17,25 +17,25 @@
 }
 -->
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
-      <h1 class="display split" id="page-title">{{@courseCount}} courses. <em>One standard: job-ready.</em></h1>
-      <p class="lead reveal" style="--d:240ms">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="index.html">Home</a><span aria-hidden="true">/</span><span aria-current="page">Courses</span></nav>
+      <h1 class="display display--page" id="page-title">{{@courseCount}} courses. <em>One standard: job-ready.</em></h1>
+      <p class="lead">SAP functional and technical modules, S/4HANA, Salesforce, testing, data science, programming and office skills. Filter by track or search for any topic.</p>
     </div>
-    <aside class="hud reveal" style="--d:320ms" aria-label="Catalogue summary">
-      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
-      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Catalogue</p>
-      <div class="hud__row"><span>Courses</span><b>{{@courseCount}}</b></div>
-      <div class="hud__row"><span>Tracks</span><b>{{@categoryCount}}</b></div>
-      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
-      <div class="hud__row"><span>Included</span><b>Projects · Notes · Certificate</b></div>
+    <aside class="sheet" aria-label="Catalogue summary">
+      <p class="sheet__title label">Catalogue <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg></p>
+      <dl>
+        <div><dt>Courses</dt><dd>{{@courseCount}}</dd></div>
+        <div><dt>Tracks</dt><dd>{{@categoryCount}}</dd></div>
+        <div><dt>Modes</dt><dd>Online · Classroom</dd></div>
+        <div><dt>Included</dt><dd>Projects · Notes · Certificate</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
 
-<section class="section section--flush-top catalog" aria-labelledby="catalog-title">
+<section class="section section--flush catalog" aria-labelledby="catalog-title">
   <div class="container">
     <h2 class="sr-only" id="catalog-title">Course catalogue</h2>
     <div class="catalog__bar" role="search">
@@ -57,27 +57,27 @@
     </div>
 
     <div class="empty" data-course-empty hidden>
-      <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-search"/></svg></span>
+      <svg class="i cell__icon" aria-hidden="true"><use href="#i-search"/></svg>
       <h2 class="h3">No courses match that search</h2>
       <p>Try a different keyword or track, or ask us directly. We regularly run custom and corporate programmes.</p>
-      <div class="hero__ctas">
-        <button class="btn btn--ghost" type="button" data-course-reset>Clear filters</button>
-        <a class="btn btn--primary" href="contact.html">Ask the team <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <div class="actions">
+        <button class="btn btn--line" type="button" data-course-reset>Clear filters</button>
+        <a class="btn" href="contact.html">Ask the team <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       </div>
     </div>
   </div>
 </section>
 
-<section class="section" id="programmes" aria-labelledby="programmes-title">
+<section class="section section--tint" id="programmes" aria-labelledby="programmes-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">Programmes &amp; add-ons</span>
-        <h2 class="title split" id="programmes-title">Go further than <em>the classroom.</em></h2>
+    <header class="sh">
+      <p class="label">Programmes &amp; add-ons</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="programmes-title">Go further than <em>the classroom.</em></h2>
+        <p class="lead rv">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
       </div>
-      <p class="lead reveal">Pair any course with an internship, certification or one-to-one career guidance, or train a whole team with a corporate programme.</p>
-    </div>
-    <div class="grid grid--4">
+    </header>
+    <div class="cells cells--4" data-stagger="80">
       {{@programmeCards}}
     </div>
   </div>
@@ -98,7 +98,7 @@
   </div>
   <div class="dialog__body" data-dialog-body></div>
   <div class="dialog__foot">
-    <a class="btn btn--ghost" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
-    <a class="btn btn--primary" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+    <a class="btn btn--line" href="https://wa.me/{{site.whatsapp}}" target="_blank" rel="noopener" data-dialog-whatsapp><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+    <a class="btn" href="contact.html" data-dialog-enquire>Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
   </div>
 </dialog>

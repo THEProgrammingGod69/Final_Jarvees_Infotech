@@ -7,8 +7,8 @@
   <meta name="description" content="Own order-to-cash: sales orders, pricing, shipping and billing in SAP. Online and classroom SAP SD training in Pune.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://jarveesinfotech.com/course/sap-sd.html">
-  <meta name="theme-color" content="#05070e">
-  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#f4f0e8">
+  <meta name="color-scheme" content="light">
   <meta name="format-detection" content="telephone=no">
 
   <meta property="og:type" content="website">
@@ -28,28 +28,22 @@
   <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
   <link rel="manifest" href="../site.webmanifest">
 
-  <link rel="preload" href="../assets/fonts/unbounded-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="../assets/fonts/newsreader-display-400-normal.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="../assets/fonts/instrument-sans-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="../assets/css/main.css?v=b54a62af">
+  <link rel="stylesheet" href="../assets/css/main.css?v=ab9c21de">
 
   <script>
-    /* Runs before first paint: enable JS-only styles and the once-per-session home intro. */
-    (function (d) {
-      var h = d.documentElement;
+    /* Before first paint: enable JS-only styles. If main.js never runs, show everything after 2.5 s. */
+    (function (h) {
       h.classList.remove('no-js');
       h.classList.add('js');
-      try {
-        if (h.hasAttribute('data-intro') && !matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('jv-intro')) {
-          h.classList.add('is-intro');
-          sessionStorage.setItem('jv-intro', '1');
-        }
-      } catch (e) { /* storage blocked: skip the intro */ }
-    })(document);
+      setTimeout(function () { if (!window.Jarvees) h.classList.add('no-rv'); }, 2500);
+    })(document.documentElement);
   </script>
-  <script src="../assets/js/main.js?v=3ddf989e" defer></script>
+  <script src="../assets/js/main.js?v=683a7565" defer></script>
   
   <script type="speculationrules">
-    {"prerender": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
+    {"prefetch": [{"source": "document", "where": {"and": [{"href_matches": "/*"}, {"not": {"selector_matches": "[target=_blank], [download]"}}]}, "eagerness": "moderate"}]}
   </script>
   <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://jarveesinfotech.com/#organization","name":"Jarvees Infotech","legalName":"Jarvees Infotech Private Limited","url":"https://jarveesinfotech.com","logo":"https://jarveesinfotech.com/assets/img/icon-512.png","slogan":"An Attempt to Achieve a Goal","foundingDate":"2019","email":"jarveesacademy.pune@gmail.com","telephone":["+919022584956","+919307590139"],"address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"sameAs":["https://www.facebook.com/Jarveesacademypune"],"subOrganization":{"@type":"EducationalOrganization","@id":"https://jarveesinfotech.com/#academy","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"},"telephone":"+919022584956"}},{"@type":"Course","@id":"https://jarveesinfotech.com/course/sap-sd.html#course","name":"SAP SD: Sales & Distribution","description":"Own order-to-cash: sales orders, pricing, shipping and billing in SAP.","url":"https://jarveesinfotech.com/course/sap-sd.html","provider":{"@id":"https://jarveesinfotech.com/#academy","@type":"EducationalOrganization","name":"Jarvees Academy","url":"https://jarveesinfotech.com/academy.html"},"teaches":["Enterprise structure for sales","Customer master & Business Partner","Sales documents & item categories","Pricing procedure & condition technique","Availability check & delivery scheduling","Shipping & picking","Billing & revenue account determination","Credit management","Integration with MM & FI"],"audience":{"@type":"Audience","audienceType":"Graduates and professionals from sales, marketing, logistics or commerce backgrounds."},"hasCourseInstance":[{"@type":"CourseInstance","courseMode":"Online"},{"@type":"CourseInstance","courseMode":"Onsite","location":{"@type":"Place","name":"Jarvees Academy","address":{"@type":"PostalAddress","streetAddress":"Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk.","addressLocality":"Pune","addressRegion":"Maharashtra","postalCode":"411046","addressCountry":"IN"}}}]},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://jarveesinfotech.com/"},{"@type":"ListItem","position":2,"name":"Courses","item":"https://jarveesinfotech.com/courses.html"},{"@type":"ListItem","position":3,"name":"SAP SD","item":"https://jarveesinfotech.com/course/sap-sd.html"}]}]}</script>
 </head>
@@ -57,24 +51,18 @@
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
   <defs>
     <linearGradient id="g-gold" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#f6ead0"/>
-      <stop offset=".5" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#9a7533"/>
-    </linearGradient>
-    <linearGradient id="g-edge" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#e9d9b2" stop-opacity=".75"/>
-      <stop offset=".55" stop-color="#e9d9b2" stop-opacity=".12"/>
-      <stop offset="1" stop-color="#4f8cff" stop-opacity=".45"/>
+      <stop offset="0" stop-color="#ecd29a"/>
+      <stop offset=".55" stop-color="#c9a45c"/>
+      <stop offset="1" stop-color="#a8823f"/>
     </linearGradient>
   </defs>
 
-  <!-- Brand mark: Fibonacci spiral on a black tile -->
+  <!-- Brand mark: the Jarvees spiral on an ink tile -->
   <symbol id="mark" viewBox="0 0 64 64">
-    <rect x="1" y="1" width="62" height="62" rx="16" fill="#06080f"/>
-    <rect x="1.5" y="1.5" width="61" height="61" rx="15.5" fill="none" stroke="url(#g-edge)"/>
-    <path class="mark__spiral" d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
-    <circle cx="13" cy="20.24" r="2.6" fill="#e9d9b2"/>
-    <circle cx="40.6" cy="27.2" r="2.4" fill="#e0393f"/>
+    <rect width="64" height="64" rx="12" fill="#15140f"/>
+    <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g-gold)" stroke-width="3.4" stroke-linecap="round"/>
+    <circle cx="13" cy="20.24" r="2.6" fill="#ecd29a"/>
+    <circle cx="40.6" cy="27.2" r="2.4" fill="#d6423e"/>
   </symbol>
 
   <!-- Icons (24×24, stroked via CSS unless noted) -->
@@ -131,11 +119,6 @@
 
   <a class="skip-link" href="#main">Skip to content</a>
 
-  <div class="bg-layers" aria-hidden="true">
-    <div class="bg-layers__aurora"></div>
-    <div class="bg-layers__grid"></div>
-  </div>
-
   <header class="site-header" data-header>
   <div class="container header__inner">
     <a class="brand" href="../index.html" aria-label="Jarvees Infotech home">
@@ -158,10 +141,7 @@
     </nav>
 
     <div class="header__actions">
-      <a class="btn btn--primary btn--sm magnetic header__cta" href="../contact.html">
-        Enquire now
-        <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg>
-      </a>
+      <a class="btn btn--sm header__cta" href="../contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open menu" data-menu-toggle>
         <span class="menu-toggle__bar"></span>
         <span class="menu-toggle__bar"></span>
@@ -174,18 +154,18 @@
   <div class="mobile-nav__inner">
     <nav aria-label="Mobile">
       <ol class="mobile-nav__list" role="list">
-        <li style="--i:0"><a href="../index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
-        <li style="--i:1"><a href="../about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
-        <li style="--i:2"><a href="../services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
-        <li style="--i:3"><a href="../academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
-        <li style="--i:4"><a href="../courses.html" data-nav="courses" aria-current="true"><span class="mobile-nav__idx">05</span>Courses</a></li>
-        <li style="--i:5"><a href="../contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
+        <li><a href="../index.html" data-nav="home"><span class="mobile-nav__idx">01</span>Home</a></li>
+        <li><a href="../about.html" data-nav="about"><span class="mobile-nav__idx">02</span>About</a></li>
+        <li><a href="../services.html" data-nav="services"><span class="mobile-nav__idx">03</span>Services</a></li>
+        <li><a href="../academy.html" data-nav="academy"><span class="mobile-nav__idx">04</span>Academy</a></li>
+        <li><a href="../courses.html" data-nav="courses" aria-current="true"><span class="mobile-nav__idx">05</span>Courses</a></li>
+        <li><a href="../contact.html" data-nav="contact"><span class="mobile-nav__idx">06</span>Contact</a></li>
       </ol>
     </nav>
     <div class="mobile-nav__foot">
       <a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a>
       <a href="mailto:jarveesacademy.pune@gmail.com"><svg class="i" aria-hidden="true"><use href="#i-mail"/></svg>jarveesacademy.pune@gmail.com</a>
-      <a class="btn btn--primary" href="../contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+      <a class="btn" href="../contact.html">Enquire now <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
     </div>
   </div>
 </div>
@@ -193,75 +173,77 @@
 
   <main id="main" tabindex="-1">
 <section class="hero hero--page" aria-labelledby="page-title">
-  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
   <div class="container hero__grid">
     <div class="hero__copy">
-      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../courses.html">Courses</a><span aria-hidden="true">/</span><span aria-current="page">SAP SD</span></nav>
-      <h1 class="display split is-split" id="page-title" aria-label="SAP SD course in Pune."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">SD</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">course</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">in</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">Pune.</span></span></em></h1>
-      <p class="lead reveal" style="--d:240ms">Own order-to-cash: sales orders, pricing, shipping and billing in SAP.</p>
-      <div class="hero__ctas reveal" style="--d:360ms">
-        <a class="btn btn--primary btn--lg magnetic" href="../contact.html?interest=sap-sd">Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-        <a class="btn btn--ghost btn--lg magnetic" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I&#39;d%20like%20details%20about%20the%20SAP%20SD%20course%20(fees%20and%20next%20batch)." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+      <nav class="crumbs" aria-label="Breadcrumb"><a href="../index.html">Home</a><span aria-hidden="true">/</span><a href="../courses.html">Courses</a><span aria-hidden="true">/</span><span aria-current="page">SAP SD</span></nav>
+      <h1 class="display display--page" id="page-title">SAP SD <em>course in Pune.</em></h1>
+      <p class="lead">Own order-to-cash: sales orders, pricing, shipping and billing in SAP.</p>
+      <div class="actions">
+        <a class="btn btn--lg" href="../contact.html?interest=sap-sd">Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line btn--lg" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I&#39;d%20like%20details%20about%20the%20SAP%20SD%20course%20(fees%20and%20next%20batch)." target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
       </div>
     </div>
-    <aside class="hud reveal" style="--d:320ms" aria-label="Course summary">
-      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
-      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Course summary</p>
-      <div class="hud__row"><span>Track</span><b>SAP Functional</b></div>
-      <div class="hud__row"><span>Focus</span><b>Sales &amp; Distribution</b></div>
-      <div class="hud__row"><span>Syllabus</span><b>9 core topics</b></div>
-      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
-      <div class="hud__row"><span>Batches</span><b>Customised timings</b></div>
+    <aside class="sheet" aria-label="Course summary">
+      <p class="sheet__title label">Course summary <svg class="brand__mark" viewBox="0 0 64 64" aria-hidden="true"><use href="#mark"/></svg></p>
+      <dl>
+        <div><dt>Track</dt><dd>SAP Functional</dd></div>
+        <div><dt>Focus</dt><dd>Sales &amp; Distribution</dd></div>
+        <div><dt>Syllabus</dt><dd>9 core topics</dd></div>
+        <div><dt>Modes</dt><dd>Online · Classroom</dd></div>
+        <div><dt>Batches</dt><dd>Customised timings</dd></div>
+      </dl>
     </aside>
   </div>
 </section>
 
 <!-- 01 · Syllabus -->
-<section class="section section--flush-top" id="syllabus" aria-labelledby="syllabus-title">
+<section class="section section--flush" id="syllabus" aria-labelledby="syllabus-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">01 / Syllabus</span>
-        <h2 class="title split is-split" id="syllabus-title" aria-label="What you'll learn."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">What</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">you'll</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">learn.</span></span></em></h2>
+    <header class="sh">
+      <p class="label"><span class="label__num">01</span>Syllabus</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="syllabus-title">What you'll <em>learn.</em></h2>
+        <p class="lead rv">The 9 core topics of the SAP SD course, taught in instructor-led sessions, online or in the classroom.</p>
       </div>
-      <p class="lead reveal">The 9 core topics of the SAP SD course, taught in instructor-led sessions, online or in the classroom.</p>
-    </div>
-    <ol class="syllabus" role="list" data-stagger="50">
-      <li class="card spot syllabus__item"><span class="journey__num">01</span><p>Enterprise structure for sales</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">02</span><p>Customer master &amp; Business Partner</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">03</span><p>Sales documents &amp; item categories</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">04</span><p>Pricing procedure &amp; condition technique</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">05</span><p>Availability check &amp; delivery scheduling</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">06</span><p>Shipping &amp; picking</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">07</span><p>Billing &amp; revenue account determination</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">08</span><p>Credit management</p></li>
-<li class="card spot syllabus__item"><span class="journey__num">09</span><p>Integration with MM &amp; FI</p></li>
+    </header>
+    <ol class="syllabus" role="list" data-stagger="40">
+      <li class="syllabus__item"><span class="journey__num">01</span><p>Enterprise structure for sales</p></li>
+<li class="syllabus__item"><span class="journey__num">02</span><p>Customer master &amp; Business Partner</p></li>
+<li class="syllabus__item"><span class="journey__num">03</span><p>Sales documents &amp; item categories</p></li>
+<li class="syllabus__item"><span class="journey__num">04</span><p>Pricing procedure &amp; condition technique</p></li>
+<li class="syllabus__item"><span class="journey__num">05</span><p>Availability check &amp; delivery scheduling</p></li>
+<li class="syllabus__item"><span class="journey__num">06</span><p>Shipping &amp; picking</p></li>
+<li class="syllabus__item"><span class="journey__num">07</span><p>Billing &amp; revenue account determination</p></li>
+<li class="syllabus__item"><span class="journey__num">08</span><p>Credit management</p></li>
+<li class="syllabus__item"><span class="journey__num">09</span><p>Integration with MM &amp; FI</p></li>
     </ol>
   </div>
 </section>
 
 <!-- 02 · Course details -->
-<section class="section section--tight" id="details" aria-labelledby="details-title">
+<section class="section section--tint" id="details" aria-labelledby="details-title">
   <div class="container">
-    <div class="section-head">
-      <span class="kicker reveal">02 / Course details</span>
-      <h2 class="title split is-split" id="details-title" aria-label="Built around your goals."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Built</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">around</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">goals.</span></span></em></h2>
-    </div>
-    <div class="grid grid--3" data-stagger="90">
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
+    <header class="sh">
+      <p class="label"><span class="label__num">02</span>Course details</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="details-title">Built around <em>your goals.</em></h2>
+      </div>
+    </header>
+    <div class="cells" data-stagger="80">
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">01</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-users"/></svg></div>
         <h3 class="h3">Who it's for</h3>
         <p>Graduates and professionals from sales, marketing, logistics or commerce backgrounds.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">02</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-laptop"/></svg></div>
         <h3 class="h3">Format</h3>
         <p>Instructor-led sessions, online or in the classroom, with customised batches and timings for students and working professionals.</p>
       </article>
-      <article class="card spot feature">
-        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
+      <article class="cell">
+        <div class="cell__head"><span class="cell__num">03</span><svg class="i cell__icon" aria-hidden="true"><use href="#i-award"/></svg></div>
         <h3 class="h3">What's included</h3>
-        <ul class="tag-list" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
+        <ul class="tags" role="list"><li class="tag">Live project experience</li><li class="tag">Structured training notes</li><li class="tag">Course certificate</li><li class="tag">100% placement assistance</li></ul>
       </article>
     </div>
   </div>
@@ -269,50 +251,53 @@
 
 <!-- 03 · Enrolment -->
 <section class="section" id="enrol" aria-labelledby="enrol-title">
-  <div class="container two-col">
-    <div class="stack split-panel__copy">
-      <span class="kicker reveal">03 / Enrolment</span>
-      <h2 class="title split is-split" id="enrol-title" aria-label="Three steps to your first class."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Three</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">steps</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">to</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">your</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">first</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:5">class.</span></span></em></h2>
-      <p class="lead reveal">Talk to us, get the current fee and batch dates, then choose the batch that suits you.</p>
-      <div class="note reveal">
-        <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
-        <div>
-          <h3 class="h3">Transparent fees</h3>
-          <p>Fees depend on the mode and batch you choose. Ask for the current fee and batch schedule and you will get a clear breakdown before you enrol.</p>
-        </div>
+  <div class="container">
+    <header class="sh">
+      <p class="label"><span class="label__num">03</span>Enrolment</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="enrol-title">Three steps <em>to your first class.</em></h2>
+        <p class="lead rv">Talk to us, get the current fee and batch dates, then choose the batch that suits you.</p>
       </div>
+    </header>
+    <div class="split">
+      <div class="note rv">
+        <h3 class="h3">Transparent fees</h3>
+        <p>Fees depend on the mode and batch you choose. Ask for the current fee and batch schedule and you will get a clear breakdown before you enrol.</p>
+      </div>
+      <ol class="journey" role="list" data-stagger="80">
+        <li class="journey__step"><span class="journey__num">01</span><div><h3 class="h3">Send an enquiry</h3><p>Use the enquiry form or WhatsApp to tell us about your background and the mode you prefer.</p></div></li>
+        <li class="journey__step"><span class="journey__num">02</span><div><h3 class="h3">Talk to a counsellor</h3><p>We reply with the current fee, the next batch dates and the available modes for SAP SD.</p></div></li>
+        <li class="journey__step"><span class="journey__num">03</span><div><h3 class="h3">Start learning</h3><p>Join an online or classroom batch at a time that works around your studies or job.</p></div></li>
+      </ol>
     </div>
-    <ol class="journey" role="list" data-stagger="90">
-      <li class="card spot journey__step"><span class="journey__num">01</span><div><h3 class="h3">Send an enquiry</h3><p>Use the enquiry form or WhatsApp to tell us about your background and the mode you prefer.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">02</span><div><h3 class="h3">Talk to a counsellor</h3><p>We reply with the current fee, the next batch dates and the available modes for SAP SD.</p></div></li>
-      <li class="card spot journey__step"><span class="journey__num">03</span><div><h3 class="h3">Start learning</h3><p>Join an online or classroom batch at a time that works around your studies or job.</p></div></li>
-    </ol>
   </div>
 </section>
 
 <!-- 04 · FAQ -->
-<section class="section section--tight" id="faq" aria-labelledby="faq-title">
+<section class="section section--flush" id="faq" aria-labelledby="faq-title">
   <div class="container">
-    <div class="section-head section-head--center">
-      <span class="kicker reveal">04 / FAQ</span>
-      <h2 class="title split is-split" id="faq-title" aria-label="Questions about SAP SD."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Questions</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">about</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">SD.</span></span></em></h2>
-    </div>
-    <div class="faq" data-stagger="60">
+    <header class="sh">
+      <p class="label"><span class="label__num">04</span>FAQ</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="faq-title">Questions about <em>SAP SD.</em></h2>
+      </div>
+    </header>
+    <div class="faq offset">
       <details class="faq__item">
   <summary class="faq__q">What are the fees for the SAP SD course?<span class="faq__icon" aria-hidden="true"></span></summary>
-  <div class="faq__a"><div><p>Fees depend on the mode and batch you choose. Send an enquiry and we will reply with the current fee and the next batch dates, with a clear breakdown before you enrol.</p></div></div>
+  <div class="faq__a"><p>Fees depend on the mode and batch you choose. Send an enquiry and we will reply with the current fee and the next batch dates, with a clear breakdown before you enrol.</p></div>
 </details>
 <details class="faq__item">
   <summary class="faq__q">Can I learn SAP SD online?<span class="faq__icon" aria-hidden="true"></span></summary>
-  <div class="faq__a"><div><p>Yes. SAP SD runs in both online and classroom modes, and batches and timings can be customised for students and working professionals.</p></div></div>
+  <div class="faq__a"><p>Yes. SAP SD runs in both online and classroom modes, and batches and timings can be customised for students and working professionals.</p></div>
 </details>
 <details class="faq__item">
   <summary class="faq__q">Do you provide placement assistance after SAP SD?<span class="faq__icon" aria-hidden="true"></span></summary>
-  <div class="faq__a"><div><p>Yes, 100% placement assistance for eligible learners: career advice, resume and interview preparation, and support with openings. We assist with placement; we do not sell job guarantees.</p></div></div>
+  <div class="faq__a"><p>Yes, 100% placement assistance for eligible learners: career advice, resume and interview preparation, and support with openings. We assist with placement; we do not sell job guarantees.</p></div>
 </details>
 <details class="faq__item">
   <summary class="faq__q">Will I get a certificate?<span class="faq__icon" aria-hidden="true"></span></summary>
-  <div class="faq__a"><div><p>Yes. You earn a Jarvees course certificate when you complete SAP SD.</p></div></div>
+  <div class="faq__a"><p>Yes. You earn a Jarvees course certificate when you complete SAP SD.</p></div>
 </details>
     </div>
   </div>
@@ -321,22 +306,20 @@
 <!-- Related courses -->
 <section class="section" id="related" aria-labelledby="related-title">
   <div class="container">
-    <div class="section-head section-head--split">
-      <div>
-        <span class="kicker reveal">Keep exploring</span>
-        <h2 class="title split is-split" id="related-title" aria-label="Related courses."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Related</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">courses.</span></span></em></h2>
+    <header class="sh">
+      <p class="label">Keep exploring</p>
+      <div class="sh__body">
+        <h2 class="h2 rv" id="related-title">Related <em>courses.</em></h2>
+        <p class="lead rv">More from SAP Functional and our most popular tracks.</p>
+        <a class="link rv" href="../courses.html?cat=sap-functional">All SAP Functional courses <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
       </div>
-      <div class="stack reveal">
-        <p class="lead">More from SAP Functional and our most popular tracks.</p>
-        <a class="link-arrow" href="../courses.html?cat=sap-functional">All SAP Functional courses <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
-      </div>
-    </div>
+    </header>
     <div class="course-grid">
       
-<article class="course card spot reveal" style="--d:0ms">
+<article class="course">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP FICO</h3>
   <p class="course__sub">Finance &amp; Controlling</p>
@@ -351,10 +334,10 @@
   
 </article>
 
-<article class="course card spot reveal" style="--d:70ms">
+<article class="course">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP MM</h3>
   <p class="course__sub">Materials Management</p>
@@ -369,10 +352,10 @@
   
 </article>
 
-<article class="course card spot reveal" style="--d:140ms">
+<article class="course">
   <div class="course__top">
     <span class="course__cat">SAP Functional</span>
-    <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-layers"/></svg></span>
+    <svg class="i" aria-hidden="true"><use href="#i-layers"/></svg>
   </div>
   <h3 class="course__title">SAP PP</h3>
   <p class="course__sub">Production Planning</p>
@@ -390,25 +373,23 @@
   </div>
 </section>
 
-<section class="section section--cta" aria-labelledby="cta-title">
+<section class="cta" aria-labelledby="cta-title">
   <div class="container">
-    <div class="cta reveal reveal--scale">
-      <div class="cta__floor" aria-hidden="true"><div class="cta__plane"></div></div>
-      <div class="cta__glow" aria-hidden="true"></div>
-      <div class="cta__content">
-        <span class="kicker">Next batch</span>
-        <h2 class="title cta__title split is-split" id="cta-title" aria-label="Start SAP SD with Jarvees."><span class="w" aria-hidden="true"><span class="w__i" style="--wi:0">Start</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:1">SAP</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:2">SD</span></span> <em><span class="w" aria-hidden="true"><span class="w__i" style="--wi:3">with</span></span> <span class="w" aria-hidden="true"><span class="w__i" style="--wi:4">Jarvees.</span></span></em></h2>
-        <p class="lead">Ask for the current fee, the next batch dates and the mode that suits you. We reply every day between 9 AM and 9 PM.</p>
-        <div class="cta__actions">
-          <a class="btn btn--primary btn--lg magnetic" href="../contact.html?interest=sap-sd">Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
-          <a class="btn btn--ghost btn--lg magnetic" href="../courses.html">All courses</a>
-        </div>
-        <ul class="cta__contact" role="list">
-          <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
-          <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
-          <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
-        </ul>
+    <div class="cta__inner">
+    <p class="label">Next batch</p>
+    <div class="cta__body">
+      <h2 class="cta__title rv" id="cta-title">Start SAP SD <em>with Jarvees.</em></h2>
+      <p class="cta__text rv">Ask for the current fee, the next batch dates and the mode that suits you. We reply every day between 9 AM and 9 PM.</p>
+      <div class="actions rv">
+        <a class="btn btn--light btn--lg" href="../contact.html?interest=sap-sd">Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--line-light btn--lg" href="../courses.html">All courses</a>
       </div>
+      <ul class="cta__contact" role="list">
+        <li><a href="tel:+919022584956"><svg class="i" aria-hidden="true"><use href="#i-phone"/></svg>+91 90225 84956</a></li>
+        <li><a href="https://wa.me/919022584956" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>WhatsApp us</a></li>
+        <li><span><svg class="i" aria-hidden="true"><use href="#i-clock"/></svg>Open daily, 9 AM – 9 PM</span></li>
+      </ul>
+    </div>
     </div>
   </div>
 </section>
@@ -430,7 +411,7 @@
         <p class="footer__tagline">“An Attempt to Achieve a Goal”</p>
         <p class="footer__about">SAP consulting company and the parent of Jarvees Academy, Pune. Implementation, migration, support and consultant-led training, all under one roof.</p>
         <ul class="footer__badges" role="list">
-          <li class="tag tag--gold"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
+          <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg>ISO 9001 certified</li>
           <li class="tag"><svg class="i" aria-hidden="true"><use href="#i-calendar"/></svg>Since 2019</li>
         </ul>
       </div>
@@ -474,43 +455,20 @@
       </div>
     </div>
 
-    <svg class="footer__wordmark" viewBox="0 0 1200 200" aria-hidden="true" focusable="false">
-      <defs>
-        <linearGradient id="g-wordmark" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0" stop-color="#c9a45c" stop-opacity=".34"/>
-          <stop offset=".85" stop-color="#c9a45c" stop-opacity="0"/>
-        </linearGradient>
-      </defs>
-      <text x="600" y="186" text-anchor="middle" textLength="1196" lengthAdjust="spacingAndGlyphs" font-size="198" fill="url(#g-wordmark)">JARVEES</text>
-    </svg>
+    <p class="footer__wordmark" aria-hidden="true">Jarvees</p>
 
     <div class="footer__bottom">
-      <p>© <span data-year>2026</span> Jarvees Infotech Private Limited. All rights reserved.</p>
+      <p>© 2026 Jarvees Infotech Private Limited. All rights reserved.</p>
       <p class="footer__made">Engineered in Pune, India</p>
       <a class="footer__top" href="#top">Back to top <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
     </div>
   </div>
 </footer>
 
-  <div class="scroll-progress" aria-hidden="true" data-progress></div>
-
-<a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
+  <a class="fab" href="https://wa.me/919022584956?text=Hi%20Jarvees%2C%20I%27d%20like%20to%20know%20more." target="_blank" rel="noopener" aria-label="Chat with Jarvees on WhatsApp">
   <svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>
   <span class="fab__label">Chat with us</span>
 </a>
-
-<div class="cursor" aria-hidden="true" data-cursor></div>
-
-<div class="intro" aria-hidden="true">
-  <div class="intro__core">
-    <svg class="intro__mark" viewBox="0 0 64 64">
-      <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" pathLength="1" fill="none" stroke="url(#g-gold)" stroke-width="2.6" stroke-linecap="round"/>
-      <circle cx="40.6" cy="27.2" r="2.2" fill="#e0393f"/>
-    </svg>
-    <p class="intro__word"><span>J</span><span>A</span><span>R</span><span>V</span><span>E</span><span>E</span><span>S</span></p>
-    <p class="intro__meta">Infotech · Academy · Pune</p>
-  </div>
-</div>
 
 </body>
 </html>
