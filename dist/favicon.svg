@@ -1,13 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 64 64">
   <defs>
     <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0" stop-color="#ecd29a"/>
-      <stop offset=".55" stop-color="#c9a45c"/>
-      <stop offset="1" stop-color="#a8823f"/>
+      <stop offset="0" stop-color="#f3dc9e"/>
+      <stop offset=".5" stop-color="#d0a65a"/>
+      <stop offset="1" stop-color="#9c7432"/>
     </linearGradient>
   </defs>
   <rect width="64" height="64" rx="12" fill="#15140f"/>
-  <path d="M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24" fill="none" stroke="url(#g)" stroke-width="4.2" stroke-linecap="round"/>
-  <circle cx="13" cy="20.24" r="3" fill="#ecd29a"/>
-  <circle cx="40.6" cy="27.2" r="3" fill="#d6423e"/>
+  <g transform="translate(32 32) scale(.8)" fill="url(#g)" stroke="url(#g)" stroke-width=".8" stroke-linejoin="round"><path id="jv-blade" d="M1.1 -3.81 L1.2 -4.48 L1.39 -5.15 L1.65 -5.81 L1.99 -6.46 L2.39 -7.08 L2.86 -7.69 L3.39 -8.26 L3.98 -8.8 L4.63 -9.31 L5.34 -9.77 L6.1 -10.19 L6.91 -10.55 L7.76 -10.87 L8.66 -11.13 L9.59 -11.33 L10.56 -11.46 L11.57 -11.54 L12.6 -11.54 L13.65 -11.48 L14.72 -11.35 L15.81 -11.14 L16.91 -10.86 L18.01 -10.5 L19.12 -10.07 L20.22 -9.55 L21.31 -8.96 L22.39 -8.3 L23.45 -7.55 L24.49 -6.73 L25.5 -5.83 L28.49 -6.05 L21.31 -11.49 L19.65 -19.83 L18.5 -17.96 L17.24 -18.15 L16 -18.27 L14.77 -18.33 L13.57 -18.32 L12.4 -18.24 L11.25 -18.1 L10.14 -17.9 L9.06 -17.64 L8.01 -17.32 L7.01 -16.95 L6.05 -16.53 L5.14 -16.06 L4.27 -15.55 L3.46 -14.99 L2.69 -14.4 L1.97 -13.77 L1.31 -13.11 L0.71 -12.43 L0.16 -11.71 L-0.34 -10.98 L-0.78 -10.22 L-1.16 -9.45 L-1.48 -8.67 L-1.74 -7.88 L-1.95 -7.08 L-2.11 -6.28 L-2.21 -5.48 L-2.26 -4.69 L-2.26 -3.89 L-2.22 -3.11Z"/><use xlink:href="#jv-blade" transform="rotate(60)"/><use xlink:href="#jv-blade" transform="rotate(120)"/><use xlink:href="#jv-blade" transform="rotate(180)"/><use xlink:href="#jv-blade" transform="rotate(240)"/><use xlink:href="#jv-blade" transform="rotate(300)"/></g>
 </svg>

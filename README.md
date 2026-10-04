@@ -86,7 +86,7 @@ The form validates the input in the browser, then opens **WhatsApp** (to +91 902
 - **Address:** only the registered office is shown: *Row House 6, Rilicon Fremount Hills CHS, Near Abhinav School, Ambegaon Bk., Pune 411046*. The PIN 411046 matches Ambegaon Budruk.
 - **Left out on purpose:** GST number, CIN, bank details, paid-up capital and staff names.
 - **Mission, vision and objectives:** taken from the company dossier drafts. The goal statement is the company's own.
-- **Logo:** the low-resolution spiral mark was redrawn as a crisp SVG (`src/static/favicon.svg`, `#mark` in `src/partials/sprite.html`).
+- **Logo:** the gold six-blade swirl from the company dossier (only an 87×105 px bitmap was available) is redrawn as SVG: `#mark` in `src/partials/sprite.html`, `src/static/favicon.svg` and `scripts/render-images.mjs`. Swap in the original vector when the client sends it.
 
 ## Credits
 

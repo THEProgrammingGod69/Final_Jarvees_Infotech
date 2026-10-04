@@ -42,7 +42,7 @@ Paste this file into a new chat to continue the work. It is self-contained.
 - **Tests:** `npm test` builds, runs the static checker and 26 Playwright tests. One test fails if any page runs an infinite animation or contains a canvas.
 
 ## Open items and ideas
-- Add real photos and the original vector logo when the client sends them. The spiral mark is currently redrawn as SVG.
+- The swirl logo is redrawn as SVG from the dossier's low-res file; replace it with the original vector when available. Dossier photos (classroom, certificate batch, signboard) are 820×615 and could go on About/Academy once the client approves showing people.
 - Check that the Google Maps embed loads on the live domain; it was blocked in the sandbox.
 - Confirm the PIN code and that the WhatsApp number is active.
 - Optionally open a PR and deploy to Vercel or Netlify, or upload `dist/` to Hostinger.
