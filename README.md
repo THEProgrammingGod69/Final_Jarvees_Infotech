@@ -3,7 +3,8 @@
 A fast, animated, multi-page website for **Jarvees Infotech Pvt. Ltd.** (SAP consulting) and its training arm, **Jarvees Academy**, Pune.
 
 - **8 pages:** Home, About, Services, Academy, Courses, Contact, Privacy and a custom 404
-- **26-course catalogue** with track filters, live search, shareable URLs and an accessible details dialog
+- **26-course catalogue** with track filters, live search, shareable URLs and an accessible quick-view dialog
+- **A page per course** (`course/<id>.html`) generated from the catalogue data, with syllabus, FAQ, related courses and `Course` structured data
 - **Enquiry form** that hands off to WhatsApp or email with the message pre-filled (no backend needed)
 - **Motion:**
   - home-page intro and word-by-word hero headlines (pure CSS, start at first paint)
@@ -30,6 +31,8 @@ Requires Node.js 18 or newer. There are no dependencies to install.
 ```bash
 npm start          # build into dist/ and serve it at http://localhost:5173
 npm run build      # build only
+npm run check      # static checks on dist/: links, anchors, ids, ARIA references, JSON-LD
+npm test           # build, check, then browser tests (needs Playwright)
 ```
 
 Preview through a local server (`npm start`) rather than double-clicking the HTML files. Browsers block web fonts and some features on `file://` URLs.
@@ -39,6 +42,7 @@ Preview through a local server (`npm start`) rather than double-clicking the HTM
 ```
 src/
   pages/          Page bodies (one file per page, JSON front matter at the top)
+  templates/      course.html, rendered once per course into dist/course/<id>.html
   partials/       Shared layout, header, footer, CTA band, icon sprite…
   data/
     site.json     Company details: address, phones, email, hours, rating
@@ -49,6 +53,8 @@ src/
 scripts/
   build.mjs       Zero-dependency static site builder
   serve.mjs       Local preview server
+  check.mjs       Static checks for dist/ (zero dependencies)
+  test.mjs        Browser tests with Playwright
   render-images.mjs  Regenerates the social card and app icons (needs Playwright)
 dist/             The built website. This is the folder you deploy.
 ```
@@ -58,7 +64,7 @@ dist/             The built website. This is the folder you deploy.
 | To change… | Edit |
 | --- | --- |
 | Phone numbers, email, address, hours, rating | `src/data/site.json` |
-| Courses, topics, tracks, programmes | `src/data/courses.json` (the catalogue, filters, footer and enquiry form all update) |
+| Courses, topics, tracks, programmes | `src/data/courses.json` (the catalogue, course pages, filters, footer and enquiry form all update) |
 | Services listed in the enquiry form | `src/data/services.json` |
 | Page copy | `src/pages/*.html` |
 | Header, footer, closing call-to-action | `src/partials/*.html` |

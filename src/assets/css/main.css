@@ -798,7 +798,7 @@ html.is-locked body {
   color: var(--text);
   background: rgba(255, 255, 255, 0.06);
 }
-.nav__link[aria-current="page"] {
+.nav__link[aria-current] {
   color: var(--gold-3);
   background: rgba(201, 164, 92, 0.13);
   box-shadow: inset 0 0 0 1px rgba(201, 164, 92, 0.3);
@@ -898,7 +898,7 @@ html.is-locked body {
   opacity: 1;
   transform: none;
 }
-.mobile-nav__list a[aria-current="page"],
+.mobile-nav__list a[aria-current],
 .mobile-nav__list a:hover {
   color: var(--gold-2);
 }
@@ -2633,6 +2633,40 @@ html.is-locked body {
   max-width: 46ch;
 }
 
+/* ---------- Course pages ---------- */
+.syllabus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(12px, 1.4vw, 18px);
+}
+.syllabus__item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 16px;
+  align-items: center;
+  padding: 18px 20px;
+}
+.syllabus__item p {
+  font-weight: 500;
+  line-height: 1.4;
+}
+.feature .tag-list {
+  margin-top: 2px;
+}
+@media (max-width: 1024px) {
+  .syllabus {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (max-width: 760px) {
+  .syllabus {
+    grid-template-columns: minmax(0, 1fr);
+  }
+  .syllabus__item {
+    padding: 14px 16px;
+  }
+}
+
 /* Course dialog */
 .course-dialog {
   width: min(920px, calc(100% - 24px));
@@ -2761,6 +2795,11 @@ html.is-locked body {
   color: var(--text-2);
   font-size: 0.95rem;
   margin-bottom: 16px;
+}
+.dialog__more {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px dashed var(--line);
 }
 .dialog__foot {
   display: flex;

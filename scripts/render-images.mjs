@@ -7,24 +7,14 @@
  *   node scripts/render-images.mjs
  */
 import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises';
-import { createRequire } from 'node:module';
 import os from 'node:os';
 import path from 'node:path';
 import { fileURLToPath, pathToFileURL } from 'node:url';
+import { launchOptions, loadPlaywright } from './lib/playwright.mjs';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT = path.join(ROOT, 'src', 'assets', 'img');
 const FONTS = pathToFileURL(path.join(ROOT, 'src', 'assets', 'fonts')).href;
-
-async function loadPlaywright() {
-  try {
-    return await import('playwright');
-  } catch {
-    // Fall back to a globally installed copy.
-    const globalRoot = path.join(path.dirname(process.execPath), '..', 'lib', 'node_modules');
-    return createRequire(path.join(globalRoot, 'noop.js'))('playwright');
-  }
-}
 
 const SPIRAL =
   'M40.14 25.67 A1.81 1.81 0 0 1 41.95 27.48 A1.81 1.81 0 0 1 40.14 29.29 A3.62 3.62 0 0 1 36.52 25.67 A5.43 5.43 0 0 1 41.95 20.24 A9.05 9.05 0 0 1 51 29.29 A14.48 14.48 0 0 1 36.52 43.76 A23.52 23.52 0 0 1 13 20.24';
@@ -117,7 +107,7 @@ const jobs = [
 ];
 
 const { chromium } = await loadPlaywright();
-const browser = await chromium.launch(process.env.CHROMIUM_PATH ? { executablePath: process.env.CHROMIUM_PATH } : {});
+const browser = await chromium.launch(launchOptions());
 const tmp = await mkdtemp(path.join(os.tmpdir(), 'jarvees-img-'));
 try {
   for (const job of jobs) {

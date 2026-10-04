@@ -1,0 +1,128 @@
+<!--
+  Course page template: rendered once per course in src/data/courses.json
+  into dist/course/<id>.html. `course` holds the record (see courseMeta in
+  scripts/build.mjs); pages live one folder down, so shared links use {{base}}.
+-->
+<section class="hero hero--page" aria-labelledby="page-title">
+  <div class="hero__bg" aria-hidden="true"><canvas data-fx="network"></canvas></div>
+  <div class="container hero__grid">
+    <div class="hero__copy">
+      <nav class="crumbs reveal" aria-label="Breadcrumb"><a href="{{base}}index.html">Home</a><span aria-hidden="true">/</span><a href="{{base}}courses.html">Courses</a><span aria-hidden="true">/</span><span aria-current="page">{{course.title}}</span></nav>
+      <h1 class="display split" id="page-title">{{course.title}} <em>course in Pune.</em></h1>
+      <p class="lead reveal" style="--d:240ms">{{course.short}}</p>
+      <div class="hero__ctas reveal" style="--d:360ms">
+        <a class="btn btn--primary btn--lg magnetic" href="{{base}}contact.html?interest={{course.id}}">Enquire about this course <svg class="i" aria-hidden="true"><use href="#i-arrow-right"/></svg></a>
+        <a class="btn btn--ghost btn--lg magnetic" href="{{course.whatsappHref}}" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-whatsapp"/></svg>Ask on WhatsApp</a>
+      </div>
+    </div>
+    <aside class="hud reveal" style="--d:320ms" aria-label="Course summary">
+      <span class="hud__corner hud__corner--tl" aria-hidden="true"></span><span class="hud__corner hud__corner--tr" aria-hidden="true"></span><span class="hud__corner hud__corner--bl" aria-hidden="true"></span><span class="hud__corner hud__corner--br" aria-hidden="true"></span>
+      <p class="hud__title"><span class="pulse" aria-hidden="true"></span>Course summary</p>
+      <div class="hud__row"><span>Track</span><b>{{course.catName}}</b></div>
+      <div class="hud__row"><span>Focus</span><b>{{course.subtitle}}</b></div>
+      <div class="hud__row"><span>Syllabus</span><b>{{course.topicCount}} core topics</b></div>
+      <div class="hud__row"><span>Modes</span><b>Online · Classroom</b></div>
+      <div class="hud__row"><span>Batches</span><b>Customised timings</b></div>
+    </aside>
+  </div>
+</section>
+
+<!-- 01 · Syllabus -->
+<section class="section section--flush-top" id="syllabus" aria-labelledby="syllabus-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <span class="kicker reveal">01 / Syllabus</span>
+        <h2 class="title split" id="syllabus-title">What you'll <em>learn.</em></h2>
+      </div>
+      <p class="lead reveal">The {{course.topicCount}} core topics of the {{course.title}} course, taught in instructor-led sessions, online or in the classroom.</p>
+    </div>
+    <ol class="syllabus" role="list" data-stagger="50">
+      {{@courseSyllabus}}
+    </ol>
+  </div>
+</section>
+
+<!-- 02 · Course details -->
+<section class="section section--tight" id="details" aria-labelledby="details-title">
+  <div class="container">
+    <div class="section-head">
+      <span class="kicker reveal">02 / Course details</span>
+      <h2 class="title split" id="details-title">Built around <em>your goals.</em></h2>
+    </div>
+    <div class="grid grid--3" data-stagger="90">
+      <article class="card spot feature">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-users"/></svg></span>
+        <h3 class="h3">Who it's for</h3>
+        <p>{{course.audience}}</p>
+      </article>
+      <article class="card spot feature">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-laptop"/></svg></span>
+        <h3 class="h3">Format</h3>
+        <p>Instructor-led sessions, online or in the classroom, with customised batches and timings for students and working professionals.</p>
+      </article>
+      <article class="card spot feature">
+        <span class="icon-tile"><svg class="i" aria-hidden="true"><use href="#i-award"/></svg></span>
+        <h3 class="h3">What's included</h3>
+        <ul class="tag-list" role="list">{{@courseIncludes}}</ul>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- 03 · Enrolment -->
+<section class="section" id="enrol" aria-labelledby="enrol-title">
+  <div class="container two-col">
+    <div class="stack split-panel__copy">
+      <span class="kicker reveal">03 / Enrolment</span>
+      <h2 class="title split" id="enrol-title">Three steps <em>to your first class.</em></h2>
+      <p class="lead reveal">Talk to us, get the current fee and batch dates, then choose the batch that suits you.</p>
+      <div class="note reveal">
+        <span class="icon-tile icon-tile--sm"><svg class="i" aria-hidden="true"><use href="#i-rupee"/></svg></span>
+        <div>
+          <h3 class="h3">Transparent fees</h3>
+          <p>Fees depend on the mode and batch you choose. Ask for the current fee and batch schedule and you will get a clear breakdown before you enrol.</p>
+        </div>
+      </div>
+    </div>
+    <ol class="journey" role="list" data-stagger="90">
+      <li class="card spot journey__step"><span class="journey__num">01</span><div><h3 class="h3">Send an enquiry</h3><p>Use the enquiry form or WhatsApp to tell us about your background and the mode you prefer.</p></div></li>
+      <li class="card spot journey__step"><span class="journey__num">02</span><div><h3 class="h3">Talk to a counsellor</h3><p>We reply with the current fee, the next batch dates and the available modes for {{course.title}}.</p></div></li>
+      <li class="card spot journey__step"><span class="journey__num">03</span><div><h3 class="h3">Start learning</h3><p>Join an online or classroom batch at a time that works around your studies or job.</p></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- 04 · FAQ -->
+<section class="section section--tight" id="faq" aria-labelledby="faq-title">
+  <div class="container">
+    <div class="section-head section-head--center">
+      <span class="kicker reveal">04 / FAQ</span>
+      <h2 class="title split" id="faq-title">Questions about <em>{{course.title}}.</em></h2>
+    </div>
+    <div class="faq" data-stagger="60">
+      {{@courseFaq}}
+    </div>
+  </div>
+</section>
+
+<!-- Related courses -->
+<section class="section" id="related" aria-labelledby="related-title">
+  <div class="container">
+    <div class="section-head section-head--split">
+      <div>
+        <span class="kicker reveal">Keep exploring</span>
+        <h2 class="title split" id="related-title">Related <em>courses.</em></h2>
+      </div>
+      <div class="stack reveal">
+        <p class="lead">More from {{course.catName}} and our most popular tracks.</p>
+        <a class="link-arrow" href="{{base}}courses.html?cat={{course.catId}}">All {{course.catName}} courses <svg class="i" aria-hidden="true"><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+    </div>
+    <div class="course-grid">
+      {{@relatedCourses}}
+    </div>
+  </div>
+</section>
+
+{{> cta}}

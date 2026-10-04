@@ -4,6 +4,7 @@
  *
  *   src/pages/*.html     Page bodies. Each starts with a JSON front-matter comment:
  *                        <!--meta { "title": "...", "description": "...", "nav": "about" } -->
+ *   src/templates/*.html Bodies rendered once per data record (course.html → course/<id>.html).
  *   src/partials/*.html  Reusable fragments, included with {{> name}}.
  *   src/data/*.json      Content consumed by generators, called with {{@name arg}}.
  *   src/assets/**        Copied to dist/assets.
@@ -59,13 +60,21 @@ const site = await readJson('site.json');
 const catalog = await readJson('courses.json');
 const services = await readJson('services.json');
 
-const partials = {};
-for (const file of await readDir(path.join(SRC, 'partials'))) {
-  if (file.endsWith('.html')) partials[file.replace(/\.html$/, '')] = await readFile(path.join(SRC, 'partials', file), 'utf8');
+async function readHtmlDir(dir) {
+  const out = {};
+  for (const file of await readDir(path.join(SRC, dir))) {
+    if (file.endsWith('.html')) out[file.replace(/\.html$/, '')] = await readFile(path.join(SRC, dir, file), 'utf8');
+  }
+  return out;
 }
+
+const partials = await readHtmlDir('partials');
+const templates = await readHtmlDir('templates');
 
 const categoryById = Object.fromEntries(catalog.categories.map((c) => [c.id, c]));
 const coursesIn = (catId) => catalog.courses.filter((c) => c.cat === catId);
+const coursePath = (id) => `course/${id}.html`;
+const courseIncludes = (course) => course.includes || categoryById[course.cat].includes;
 
 /** Content hashes for cache-busting asset URLs (?v=hash). */
 const assetHashes = new Map();
@@ -82,6 +91,73 @@ async function assetHash(relPath) {
 /* ------------------------------------------------------------------ */
 
 const icon = (id, cls = 'i') => `<svg class="${cls}" aria-hidden="true"><use href="#i-${id}"/></svg>`;
+
+/** Details shown in the catalogue's quick-view dialog (cloned from the card by courses.js). */
+function quickViewPane(course, ctx) {
+  return `<div class="course__detail" hidden>
+    <p class="dialog__lead">${escapeHtml(course.short)}</p>
+    <div class="dialog__cols">
+      <section>
+        <h4 class="dialog__h">What you'll learn</h4>
+        <ul class="check-list" role="list">${course.topics.map((t) => `<li>${icon('check')}<span>${escapeHtml(t)}</span></li>`).join('')}</ul>
+      </section>
+      <section class="dialog__side">
+        <h4 class="dialog__h">Who it's for</h4>
+        <p>${escapeHtml(course.audience)}</p>
+        <h4 class="dialog__h">Format</h4>
+        <p>Instructor-led · Online or classroom · Customised batches and timings</p>
+        <h4 class="dialog__h">Included</h4>
+        <ul class="tag-list" role="list">${courseIncludes(course).map((i) => `<li class="tag">${escapeHtml(i)}</li>`).join('')}</ul>
+      </section>
+    </div>
+    <p class="dialog__more"><a class="link-arrow" href="${ctx.base}${coursePath(course.id)}">Full ${escapeHtml(course.title)} course page ${icon('arrow-up-right')}</a></p>
+  </div>`;
+}
+
+/**
+ * Course card. Its link always points at the course page; in the catalogue
+ * (`quickView`) courses.js turns a plain click into the quick-view dialog.
+ */
+function courseCard(course, ctx, { index = 0, quickView = false } = {}) {
+  const cat = categoryById[course.cat];
+  const preview = course.topics.slice(0, 3);
+  const more = course.topics.length - preview.length;
+  const search = [course.title, course.subtitle, course.short, cat.name, ...course.topics].join(' ').toLowerCase();
+  const attrs = quickView ? ` id="${course.id}" data-course data-cat="${course.cat}" data-search="${escapeHtml(search)}"` : '';
+  return `
+<article class="course card spot reveal"${attrs} style="--d:${(index % 3) * 70}ms">
+  <div class="course__top">
+    <span class="course__cat">${escapeHtml(cat.name)}</span>
+    <span class="icon-tile icon-tile--sm">${icon(cat.icon)}</span>
+  </div>
+  <h3 class="course__title">${escapeHtml(course.title)}</h3>
+  ${course.subtitle ? `<p class="course__sub">${escapeHtml(course.subtitle)}</p>` : ''}
+  <p class="course__text">${escapeHtml(course.short)}</p>
+  <ul class="course__topics" role="list">
+    ${preview.map((t) => `<li class="pill">${escapeHtml(t)}</li>`).join('')}${more > 0 ? `<li class="pill pill--more">+${more} more</li>` : ''}
+  </ul>
+  <div class="course__foot">
+    <span class="course__modes">${icon('laptop')} Online · Classroom</span>
+    <a class="course__open" href="${ctx.base}${coursePath(course.id)}"${quickView ? ` data-open-course="${course.id}"` : ''}>${quickView ? 'Details' : 'View course'}<span class="sr-only">: ${escapeHtml(course.title)}</span> ${icon('arrow-up-right')}</a>
+  </div>
+  ${quickView ? quickViewPane(course, ctx) : ''}
+</article>`;
+}
+
+/** Up to three courses to suggest next: same track first, then flagship courses. */
+function relatedTo(course) {
+  const picks = coursesIn(course.cat).filter((c) => c.id !== course.id);
+  for (const id of catalog.featured) {
+    const c = catalog.courses.find((x) => x.id === id);
+    if (c && c.id !== course.id && !picks.includes(c)) picks.push(c);
+  }
+  return picks.slice(0, 3);
+}
+
+const faqItem = (q, a) => `<details class="faq__item">
+  <summary class="faq__q">${escapeHtml(q)}<span class="faq__icon" aria-hidden="true"></span></summary>
+  <div class="faq__a"><div><p>${escapeHtml(a)}</p></div></div>
+</details>`;
 
 const GENERATORS = {
   /** Cache-busted asset URL. */
@@ -109,51 +185,9 @@ const GENERATORS = {
     return [chip('all', 'All', catalog.courses.length), ...catalog.categories.map((c) => chip(c.id, c.name, coursesIn(c.id).length))].join('\n');
   },
 
-  /** Full course grid with hidden detail panes (used by the dialog). */
-  courseGrid() {
-    return catalog.courses
-      .map((course, index) => {
-        const cat = categoryById[course.cat];
-        const search = [course.title, course.subtitle, course.short, cat.name, ...course.topics].join(' ').toLowerCase();
-        const preview = course.topics.slice(0, 3);
-        const more = course.topics.length - preview.length;
-        const includes = course.includes || cat.includes;
-        return `
-<article class="course card spot reveal" id="${course.id}" data-course data-cat="${course.cat}" data-search="${escapeHtml(search)}" style="--d:${(index % 3) * 70}ms">
-  <div class="course__top">
-    <span class="course__cat">${escapeHtml(cat.name)}</span>
-    <span class="icon-tile icon-tile--sm">${icon(cat.icon)}</span>
-  </div>
-  <h3 class="course__title">${escapeHtml(course.title)}</h3>
-  ${course.subtitle ? `<p class="course__sub">${escapeHtml(course.subtitle)}</p>` : ''}
-  <p class="course__text">${escapeHtml(course.short)}</p>
-  <ul class="course__topics" role="list">
-    ${preview.map((t) => `<li class="pill">${escapeHtml(t)}</li>`).join('')}${more > 0 ? `<li class="pill pill--more">+${more} more</li>` : ''}
-  </ul>
-  <div class="course__foot">
-    <span class="course__modes">${icon('laptop')} Online · Classroom</span>
-    <button class="course__open" type="button" data-open-course="${course.id}">Details ${icon('arrow-up-right')}</button>
-  </div>
-  <div class="course__detail" hidden>
-    <p class="dialog__lead">${escapeHtml(course.short)}</p>
-    <div class="dialog__cols">
-      <section>
-        <h4 class="dialog__h">What you'll learn</h4>
-        <ul class="check-list" role="list">${course.topics.map((t) => `<li>${icon('check')}<span>${escapeHtml(t)}</span></li>`).join('')}</ul>
-      </section>
-      <section class="dialog__side">
-        <h4 class="dialog__h">Who it's for</h4>
-        <p>${escapeHtml(course.audience)}</p>
-        <h4 class="dialog__h">Format</h4>
-        <p>Instructor-led · Online or classroom · Customised batches and timings</p>
-        <h4 class="dialog__h">Included</h4>
-        <ul class="tag-list" role="list">${includes.map((i) => `<li class="tag">${escapeHtml(i)}</li>`).join('')}</ul>
-      </section>
-    </div>
-  </div>
-</article>`;
-      })
-      .join('\n');
+  /** Full course grid; each card carries a hidden quick-view pane for the dialog. */
+  courseGrid(_arg, ctx) {
+    return catalog.courses.map((course, index) => courseCard(course, ctx, { index, quickView: true })).join('\n');
   },
 
   /** Category tiles linking into the filtered catalogue. */
@@ -195,8 +229,55 @@ const GENERATORS = {
     return catalog.featured
       .map((id) => catalog.courses.find((c) => c.id === id))
       .filter(Boolean)
-      .map((c) => `<li><a href="${ctx.base}courses.html#${c.id}">${escapeHtml(c.title)}</a></li>`)
+      .map((c) => `<li><a href="${ctx.base}${coursePath(c.id)}">${escapeHtml(c.title)}</a></li>`)
       .join('');
+  },
+
+  /* ---------- Course pages (ctx.course is set by buildCoursePages) ---------- */
+
+  /** Numbered syllabus tiles. */
+  courseSyllabus(_arg, ctx) {
+    return ctx.course.topics
+      .map((t, i) => `<li class="card spot syllabus__item"><span class="journey__num">${String(i + 1).padStart(2, '0')}</span><p>${escapeHtml(t)}</p></li>`)
+      .join('\n');
+  },
+
+  /** "Included" tags. */
+  courseIncludes(_arg, ctx) {
+    return courseIncludes(ctx.course)
+      .map((i) => `<li class="tag">${escapeHtml(i)}</li>`)
+      .join('');
+  },
+
+  /** FAQ answers built only from facts in the catalogue data. */
+  courseFaq(_arg, ctx) {
+    const { title } = ctx.course;
+    const includes = courseIncludes(ctx.course);
+    const placement = includes.find((i) => /placement/i.test(i));
+    const items = [
+      [`What are the fees for the ${title} course?`, 'Fees depend on the mode and batch you choose. Send an enquiry and we will reply with the current fee and the next batch dates, with a clear breakdown before you enrol.'],
+      [`Can I learn ${title} online?`, `Yes. ${title} runs in both online and classroom modes, and batches and timings can be customised for students and working professionals.`],
+    ];
+    if (placement) {
+      items.push([
+        `Do you provide placement assistance after ${title}?`,
+        `Yes, ${placement.toLowerCase()} for eligible learners: career advice, resume and interview preparation, and support with openings. We assist with placement; we do not sell job guarantees.`,
+      ]);
+    }
+    if (includes.includes('Experience letter')) {
+      items.push(['Will I get an experience letter?', 'Yes. Freshers who complete the live project receive an experience letter for their first job application.']);
+    }
+    if (includes.includes('Course certificate')) {
+      items.push(['Will I get a certificate?', `Yes. You earn a Jarvees course certificate when you complete ${title}.`]);
+    }
+    return items.map(([q, a]) => faqItem(q, a)).join('\n');
+  },
+
+  /** Related course cards. */
+  relatedCourses(_arg, ctx) {
+    return relatedTo(ctx.course)
+      .map((c, index) => courseCard(c, ctx, { index }))
+      .join('\n');
   },
 
   /** Programmes (add-ons) cards for the academy page. */
@@ -212,8 +293,8 @@ const GENERATORS = {
       .join('\n');
   },
 
-  /** schema.org structured data. */
-  jsonLd() {
+  /** schema.org structured data: the organisation, plus course and catalogue nodes where relevant. */
+  jsonLd(_arg, ctx) {
     const address = {
       '@type': 'PostalAddress',
       streetAddress: `${site.address.line1}, ${site.address.line2}`,
@@ -222,33 +303,71 @@ const GENERATORS = {
       postalCode: site.address.postal,
       addressCountry: site.address.country,
     };
-    const data = {
-      '@context': 'https://schema.org',
-      '@graph': [
-        {
-          '@type': 'Organization',
-          '@id': `${site.url}/#organization`,
-          name: site.name,
-          legalName: site.legalName,
-          url: site.url,
-          logo: `${site.url}/assets/img/icon-512.png`,
-          slogan: site.tagline,
-          foundingDate: site.founded,
-          email: site.email,
-          telephone: site.phones.map((p) => p.e164),
-          address,
-          sameAs: [site.facebook],
-          subOrganization: {
-            '@type': 'EducationalOrganization',
-            name: site.academy,
-            url: `${site.url}/academy.html`,
-            address,
-            telephone: site.phones[0].e164,
-          },
-        },
-      ],
+    const academy = {
+      '@type': 'EducationalOrganization',
+      '@id': `${site.url}/#academy`,
+      name: site.academy,
+      url: `${site.url}/academy.html`,
+      address,
+      telephone: site.phones[0].e164,
     };
-    return `<script type="application/ld+json">${JSON.stringify(data)}</script>`;
+    const graph = [
+      {
+        '@type': 'Organization',
+        '@id': `${site.url}/#organization`,
+        name: site.name,
+        legalName: site.legalName,
+        url: site.url,
+        logo: `${site.url}/assets/img/icon-512.png`,
+        slogan: site.tagline,
+        foundingDate: site.founded,
+        email: site.email,
+        telephone: site.phones.map((p) => p.e164),
+        address,
+        sameAs: [site.facebook],
+        subOrganization: academy,
+      },
+    ];
+
+    if (ctx.slug === 'courses') {
+      graph.push({
+        '@type': 'ItemList',
+        name: `${site.academy} courses`,
+        itemListElement: catalog.courses.map((c, i) => ({ '@type': 'ListItem', position: i + 1, url: `${site.url}/${coursePath(c.id)}` })),
+      });
+    }
+
+    if (ctx.course) {
+      const { course } = ctx;
+      graph.push(
+        {
+          '@type': 'Course',
+          '@id': `${ctx.canonical}#course`,
+          name: course.subtitle ? `${course.title}: ${course.subtitle}` : course.title,
+          description: course.short,
+          url: ctx.canonical,
+          provider: { '@id': academy['@id'], '@type': academy['@type'], name: academy.name, url: academy.url },
+          teaches: course.topics,
+          audience: { '@type': 'Audience', audienceType: course.audience },
+          hasCourseInstance: [
+            { '@type': 'CourseInstance', courseMode: 'Online' },
+            { '@type': 'CourseInstance', courseMode: 'Onsite', location: { '@type': 'Place', name: site.academy, address } },
+          ],
+        },
+        {
+          '@type': 'BreadcrumbList',
+          itemListElement: [
+            ['Home', `${site.url}/`],
+            ['Courses', `${site.url}/courses.html`],
+            [course.title, ctx.canonical],
+          ].map(([name, item], i) => ({ '@type': 'ListItem', position: i + 1, name, item })),
+        }
+      );
+    }
+
+    // Escape "<" so no data value can close the script element early.
+    const json = JSON.stringify({ '@context': 'https://schema.org', '@graph': graph }).replace(/</g, '\\u003c');
+    return `<script type="application/ld+json">${json}</script>`;
   },
 };
 
@@ -341,6 +460,72 @@ const DEFAULT_CTA = {
   secondaryHref: 'courses.html',
 };
 
+/**
+ * Render one page body inside the layout and write it to dist/<outFile>.
+ * `meta` holds the front-matter fields; `base` (in meta) prefixes shared links
+ * for pages outside the site root.
+ */
+async function renderPage(body, meta, { slug, outFile }) {
+  const ctx = {
+    site,
+    year: new Date().getFullYear(),
+    base: '',
+    bodyClass: '',
+    scripts: [],
+    htmlAttrs: '',
+    nav: '',
+    navCurrent: 'page',
+    robots: 'index, follow',
+    ...meta,
+    cta: { ...DEFAULT_CTA, ...meta.cta },
+    slug,
+    canonical: `${site.url}/${outFile === 'index.html' ? '' : outFile}`,
+  };
+
+  ctx.content = await render(body, ctx);
+  let html = await render(partials.layout, ctx);
+
+  // Mark the active navigation item in every menu ("true" for pages below a section).
+  if (ctx.nav) html = html.replaceAll(`data-nav="${ctx.nav}"`, `data-nav="${ctx.nav}" aria-current="${ctx.navCurrent}"`);
+  html = splitHeadings(html);
+
+  const target = path.join(OUT, outFile);
+  await mkdir(path.dirname(target), { recursive: true });
+  await writeFile(target, html);
+  return ctx;
+}
+
+/** Front matter for a generated course page. */
+function courseMeta(course) {
+  const cat = categoryById[course.cat];
+  const title = escapeHtml(course.title);
+  return {
+    title: `${course.title} Course in Pune | ${site.academy}`,
+    description: `${course.short} Online and classroom ${course.title} training in Pune.`,
+    nav: 'courses',
+    navCurrent: 'true',
+    bodyClass: 'page-course',
+    base: '../',
+    course: {
+      ...course,
+      subtitle: course.subtitle || cat.name,
+      catId: cat.id,
+      catName: cat.name,
+      topicCount: course.topics.length,
+      whatsappHref: `https://wa.me/${site.whatsapp}?text=${encodeURIComponent(`Hi Jarvees, I'd like details about the ${course.title} course (fees and next batch).`)}`,
+    },
+    cta: {
+      kicker: 'Next batch',
+      title: `Start ${title} <em>with Jarvees.</em>`,
+      text: 'Ask for the current fee, the next batch dates and the mode that suits you. We reply every day between 9 AM and 9 PM.',
+      primaryLabel: 'Enquire about this course',
+      primaryHref: `contact.html?interest=${course.id}`,
+      secondaryLabel: 'All courses',
+      secondaryHref: 'courses.html',
+    },
+  };
+}
+
 async function build() {
   const started = Date.now();
   await rm(OUT, { recursive: true, force: true });
@@ -360,32 +545,15 @@ async function build() {
     if (!metaMatch) throw new Error(`${file}: missing <!--meta {...} --> front matter`);
     const meta = JSON.parse(metaMatch[1]);
     const slug = file.replace(/\.html$/, '');
-    const pagePath = slug === 'index' ? '' : `${slug}.html`;
-
-    const ctx = {
-      site,
-      year: new Date().getFullYear(),
-      base: '',
-      bodyClass: '',
-      scripts: [],
-      htmlAttrs: '',
-      nav: '',
-      robots: 'index, follow',
-      ...meta,
-      cta: { ...DEFAULT_CTA, ...meta.cta },
-      slug,
-      canonical: `${site.url}/${pagePath}`,
-    };
-
-    ctx.content = await render(raw.slice(metaMatch[0].length), ctx);
-    let html = await render(partials.layout, ctx);
-
-    // Mark the active navigation item in every menu.
-    if (ctx.nav) html = html.replaceAll(`data-nav="${ctx.nav}"`, `data-nav="${ctx.nav}" aria-current="page"`);
-    html = splitHeadings(html);
-
-    await writeFile(path.join(OUT, file), html);
+    const ctx = await renderPage(raw.slice(metaMatch[0].length), meta, { slug, outFile: file });
     if (meta.sitemap !== false) sitemap.push({ loc: ctx.canonical, priority: slug === 'index' ? '1.0' : '0.8' });
+  }
+
+  if (!templates.course) throw new Error('Missing src/templates/course.html');
+  const courseBody = templates.course.replace(/^<!--[\s\S]*?-->\s*/, ''); // drop the template's doc comment
+  for (const course of catalog.courses) {
+    const ctx = await renderPage(courseBody, courseMeta(course), { slug: `course-${course.id}`, outFile: coursePath(course.id) });
+    sitemap.push({ loc: ctx.canonical, priority: '0.7' });
   }
 
   const today = new Date().toISOString().slice(0, 10);
@@ -397,7 +565,7 @@ async function build() {
   );
   await writeFile(path.join(OUT, 'robots.txt'), `User-agent: *\nAllow: /\n\nSitemap: ${site.url}/sitemap.xml\n`);
 
-  console.log(`Built ${pageFiles.length} pages → dist/ in ${Date.now() - started} ms`);
+  console.log(`Built ${pageFiles.length} pages and ${catalog.courses.length} course pages → dist/ in ${Date.now() - started} ms`);
 }
 
 build().catch((err) => {

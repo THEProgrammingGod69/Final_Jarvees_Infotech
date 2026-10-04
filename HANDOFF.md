@@ -3,13 +3,14 @@
 Paste this file into a new chat to continue the work. It is self-contained.
 
 ## Project
-- **Repo:** `THEProgrammingGod69/Final_Jarvees_Infotech`, branch `ccr-18e0c8be-6c1qtu` (latest commit `b2e3fd9`). No PR has been opened yet.
+- **Repo:** `THEProgrammingGod69/Final_Jarvees_Infotech`, branch `claude/festive-gates-u5ikcq`. No PR has been opened yet.
 - **What it is:** a static, multi-page, dark/futuristic website for **Jarvees Infotech Pvt. Ltd.** (SAP consulting, Pune) and its training arm, **Jarvees Academy**.
 - **Stack:** plain HTML/CSS/JS with no dependencies. `scripts/build.mjs` builds `src/` into `dist/`, and `dist/` is committed.
 - **Commands:** `npm start` (build and serve at http://localhost:5173), `npm run build`, `npm run images` (regenerates the OG image and icons; needs Playwright).
 
 ## Structure
 - `src/pages/*.html`: index, about, services, academy, courses, contact, privacy, 404. Each file starts with JSON front matter in `<!--meta {...} -->` (title, description, nav, scripts, cta).
+- `src/templates/course.html`: rendered once per course into `dist/course/<id>.html` (syllabus, details, enrolment, FAQ built from the data, related courses, Course + BreadcrumbList JSON-LD).
 - `src/partials/`: layout, header, footer, cta, sprite (SVG icons and the spiral `#mark` logo), steps, stars, marquee items.
 - `src/data/site.json`: contact details, address, rating. `courses.json`: 8 tracks, 26 courses and the programmes. `services.json`: the consulting services.
 - `src/assets/css/main.css`: design tokens at the top. The "Motion layer v2" section holds the newer animations.
@@ -37,7 +38,7 @@ Paste this file into a new chat to continue the work. It is self-contained.
   - blur kept on the scrolled header only
   - looping animations pause when their section is off screen
 - **Measured result (4× CPU throttle):** home LCP 2224 → 272 ms, idle main-thread load 18.6% → 4.4%.
-- **Tests:** 27 Playwright interaction checks pass, there are 0 broken internal links, and no page logs a console error.
+- **Tests:** `npm test` runs the static checker (`scripts/check.mjs`) and 24 Playwright browser tests (`scripts/test.mjs`). All pass.
 
 ## Open items and ideas
 - Add real photos and the original vector logo when the client sends them. The spiral mark is currently redrawn as SVG.

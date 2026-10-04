@@ -176,9 +176,12 @@
     });
     el('[data-dialog-close]').addEventListener('click', closeCourse);
 
+    // A plain click opens the quick view; modified clicks (new tab/window) follow the link to the course page.
     grid.addEventListener('click', (e) => {
       const trigger = e.target instanceof Element ? e.target.closest('[data-open-course]') : null;
-      if (trigger) openCourse(trigger.dataset.openCourse);
+      if (!trigger || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+      e.preventDefault();
+      openCourse(trigger.dataset.openCourse);
     });
 
     /** Deep links such as courses.html#sap-fico open the matching course. */
